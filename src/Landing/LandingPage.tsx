@@ -5,8 +5,11 @@ import OptionsHeader from './OptionsHeader'
 function LandingPage() {
   return (
     <>
-      <HeaderLading />
+    <div>
+    <HeaderLading />
       <OptionsHeader />
+    </div>
+      
     </>
   )
 }
