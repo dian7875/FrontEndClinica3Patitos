@@ -1,15 +1,16 @@
-// src/App.tsx
 import React from 'react';
-import LandingPage from './Landing/LandingPage';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import LogEjemplo from './Landing/LogEjemplo';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
 const App: React.FC = () => {
   return (
     <>
      <BrowserRouter>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<LogEjemplo/>} />
+            <Route path="/" element={<Home/>}/>
+            <Route path="/Login" element={<Login/>}/>
+            <Route path='/Register' element={<Register/>}/>
           </Routes>
         </BrowserRouter>    
     </>

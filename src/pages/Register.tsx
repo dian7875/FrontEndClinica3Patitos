@@ -1,5 +1,7 @@
 import { useContext } from "react"
-import ThemeContext from "../assets/ThemeContext/ThemeContext"
+import ThemeContext from "../Contexts/ThemeContext/ThemeContext"
+import { Link } from "react-router-dom"
+import LogButtoms from "../components/LogButtoms"
 
 const Register = () => {
     const { isDarkMode } = useContext(ThemeContext)
@@ -14,8 +16,10 @@ const Register = () => {
                         <span>Clinic Three Ducklings</span>
                     </div>
                     <div className="w-full">
+                        <Link to={"/Login"}>
                         <button type="button"
                             className="bg-white w-2/4 h-10 text-secondary rounded-l-lg">Login</button>
+                        </Link>
                         <button type="button"
                             className="bg-secondary w-2/4 h-10 text-white rounded-r-lg">Sing Up</button>
                     </div>
@@ -44,8 +48,7 @@ const Register = () => {
                             type="password" name="UserPaswow" id=""
                             placeholder="xxx" />
                     </div>
-                    <button className="w-16 h-10 rounded-md shadow-2xl shadow-white bg-black"
-                        type="submit">GO</button>
+                    <LogButtoms/>
                 </form>
             </div>
         </>

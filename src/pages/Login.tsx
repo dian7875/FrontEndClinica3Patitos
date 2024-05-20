@@ -1,6 +1,7 @@
 import { useContext } from "react"
-import ThemeContext from "../assets/ThemeContext/ThemeContext"
-
+import ThemeContext from "../Contexts/ThemeContext/ThemeContext"
+import { Link } from "react-router-dom";
+import LogButtoms from "../components/LogButtoms";
 
 const Login = () => {
   const { isDarkMode } = useContext(ThemeContext);
@@ -19,8 +20,10 @@ const Login = () => {
           <div className="w-full">
             <button type="button"
               className="bg-secondary w-2/4 h-10 rounded-l-lg">Login</button>
-            <button type="button"
-              className="bg-white w-2/4 h-10 text-secondary rounded-r-lg">Sing Up</button>
+            <Link to={"/Register"}>
+              <button type="button"
+                className="bg-white w-2/4 h-10 text-secondary rounded-r-lg">Sing Up</button>
+            </Link>
           </div>
           <div className="w-full ">
             <span>Email:</span>
@@ -34,8 +37,7 @@ const Login = () => {
               type="password"
               name="UserPaswow" id="" placeholder="xxx" />
           </div>
-          <button className="w-16 h-10 rounded-md shadow-2xl shadow-white bg-black"
-            type="submit">GO</button>
+          <LogButtoms/>
         </form>
       </div>
     </>

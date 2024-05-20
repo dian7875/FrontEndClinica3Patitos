@@ -1,6 +1,3 @@
-
-//Este se puede cambiar a una imagen y acomodarlo en algun lugar dentro del header
-
 const DarkModeToggle = ({ isDarkMode, toggleDarkMode }: { isDarkMode: boolean, toggleDarkMode: () => void }) => {
     return (
         <button
