@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
+
+import AppoimentsContainer from './components/AppoimentsContainer';
 const App: React.FC = () => {
   return (
     <>
@@ -15,6 +17,7 @@ const App: React.FC = () => {
             <Route path='/NotFound' element={<NotFound/>}/>
           </Routes>
         </BrowserRouter>    
+       <AppoimentsContainer/>
     </>
   );
 };
