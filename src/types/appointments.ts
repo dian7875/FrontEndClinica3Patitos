@@ -6,6 +6,7 @@ type Appointment = {
     Date: Date;
     Pat_Name: string;
     Name_Type: string;
+    
   }
  
 export default Appointment
