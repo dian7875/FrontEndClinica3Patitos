@@ -1,10 +1,10 @@
 import { useContext } from "react"
 import ThemeContext from "../../Contexts/ThemeContext/ThemeContext"
 
+
 const Footer = () => {
 
     const {isDarkMode} = useContext(ThemeContext)
-
   return (
     <>
       <footer className={`h-12 text-white ${isDarkMode?`dark bg-Dark-light`:`bg-gray-800`}`}>

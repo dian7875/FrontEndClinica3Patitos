@@ -1,6 +1,5 @@
-import React from 'react';
-import Router from './Router/Router';
-const App: React.FC = () => {
+;import Router from './Router/Router';
+const App= () => {
   return (
     <>
      <Router/>

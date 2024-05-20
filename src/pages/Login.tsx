@@ -2,11 +2,11 @@ import { useContext } from "react"
 import ThemeContext from "../Contexts/ThemeContext/ThemeContext"
 import { Link } from "react-router-dom";
 import LogButtoms from "../components/LogButtoms";
+import useGetUserData from "../Hooks/useGetUserData";
 
 const Login = () => {
   const { isDarkMode } = useContext(ThemeContext);
-
-
+  const {user} = useGetUserData();
   return (
     <>
       <div className={`h-screen flex justify-center items-center ${isDarkMode ? 'dark bg-secondary text-white' : 'bg-white'} `}>
@@ -37,7 +37,7 @@ const Login = () => {
               type="password"
               name="UserPaswow" id="" placeholder="xxx" />
           </div>
-          <LogButtoms/>
+          <LogButtoms />
         </form>
       </div>
     </>
