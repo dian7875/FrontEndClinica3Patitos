@@ -1,7 +1,7 @@
 
 type Appointment = {
     id_Appointmnet: string;
-    Location: string;
+    Branch_Name: string;
     Status: boolean;
     Date: Date;
     Pat_Name: string;
