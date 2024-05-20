@@ -9,9 +9,9 @@ const Login = () => {
 
   return (
     <>
-      <div className={`h-screen flex justify-center items-center ${!isDarkMode ? 'dark bg-secondary text-white' : 'bg-white'} `}>
+      <div className={`h-screen flex justify-center items-center ${isDarkMode ? 'dark bg-secondary text-white' : 'bg-white'} `}>
         <form action="" className={`p-8 rounded-2xl flex flex-col w-2/5 items-center text-white 
-       ${!isDarkMode ? 'dark bg-gray-600 text-white' : 'bg-primary text-black'}
+       ${isDarkMode ? 'dark bg-gray-600 text-white' : 'bg-primary text-black'}
        gap-10`}>
           <div className="flex flex-col items-center text-xl">
             <h1>Welcome Back</h1>

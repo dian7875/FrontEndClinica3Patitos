@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import ThemeContext from "../../Contexts/ThemeContext/ThemeContext";
+import DarkModeToggle from "../DarkModeButton";
+
 function HeaderHome() {
   const {isDarkMode} = useContext(ThemeContext)
   return (
     <>
-      <div className={`bg-primary flex justify-between ${!isDarkMode ?`dark bg-Dark-light`:`bg-primary`}`}>
+      <div className={` flex justify-between ${isDarkMode ?`dark bg-Dark-light`:`bg-primary`}`}>
         <div className="flex gap-3 pl-2 pt-1 ">
           <a className="Instagram" href="">
             <img title="Ig"
@@ -26,7 +28,8 @@ function HeaderHome() {
             />
           </a>
         </div>
-        <div className="">
+        <DarkModeToggle/>
+        <div>
           <Link className="flex gap-3 items-center text-white" to={"/Login"}>
             <h1>Login</h1>
             <img title="ig"

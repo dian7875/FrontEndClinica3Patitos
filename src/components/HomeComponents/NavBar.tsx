@@ -1,33 +1,33 @@
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo.png"
-const NavBar=()=> {
+const NavBar = () => {
   return (
     <>
-      <div className="Mid-Header flex justify-between w-full ">
+      <nav className="Mid-Header flex justify-between w-full ">
         <div className="IcoPage">
           <img className="w-28 h-28 ml-5" src={Logo} alt="" />
         </div>
         <div className="flex gap-6 pt-4 pr-2">
           <Link to={"/"}>
-            <a>Home</a>
+            Home
           </Link>
           <Link to={"/NotFound"}>
-          <a>Medical Services</a>
+            Medical Services
           </Link>
           <Link to={"/MyAppointments"}>
-          <a>Apointments</a>
+            Apointments
           </Link>
           <Link to={"/NotFound"}>
-            <a>Contac Us</a>
+            Contac Us
           </Link>
-          <Link to={""}>
-            <a>My Apointtments</a>
+          <Link to={"MyAppointment"}>
+            My Apointtments
           </Link>
-          <Link to={"/AdminPage"}>
-            <a>Aministration</a>
+          <Link to={"/AdminAppointment"}>
+            Aministration
           </Link>
         </div>
-      </div>
+      </nav>
     </>
   );
 }
