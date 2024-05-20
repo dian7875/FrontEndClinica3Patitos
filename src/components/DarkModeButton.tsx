@@ -1,13 +1,13 @@
+import { useContext } from "react";
+import ThemeContext from "../Contexts/ThemeContext/ThemeContext";
 
-//Este se puede cambiar a una imagen y acomodarlo en algun lugar dentro del header
-
-const DarkModeToggle = ({ isDarkMode, toggleDarkMode }: { isDarkMode: boolean, toggleDarkMode: () => void }) => {
+const DarkModeToggle = () => {
+    const {isDarkMode,toggleDarkMode} = useContext(ThemeContext)
     return (
-        <button
-            onClick={toggleDarkMode}
-            className={isDarkMode ? 'dark bg-Dark text-Dark-light border border-Dark-dark border-2' : 'bg-primary text-black'}
-        >
-            {isDarkMode ? "Desactivar modo oscuro" : "Activar modo oscuro"}
+        <button type="button" onClick={toggleDarkMode}>
+            {isDarkMode ? <img src="https://cdn-icons-png.flaticon.com/128/702/702471.png" width={20} alt="" /> 
+            :
+            <img width={30} className="invert" src="https://cdn-icons-png.flaticon.com/128/2392/2392508.png" alt="" />}
         </button>
     );
 };
