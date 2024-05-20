@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Card from './Card'
 
 export default function AppoimentsContainer() {
@@ -14,11 +14,6 @@ export default function AppoimentsContainer() {
     </div>
     <div className='flex flex-wrap justify-center'>
           <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          
-          
         </div>
 
     </div>
