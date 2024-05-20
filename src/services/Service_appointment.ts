@@ -1,6 +1,6 @@
 
 
-const urlCoursesBase = `https://66456d5ab8925626f891d5c2.mockapi.io/Pacientes/test/cita`;
+const urlCoursesBase = `https://66456d5ab8925626f891d5c2.mockapi.io/Pacientes/test/Appointment`;
 
 
 const getAllAppo = async () =>{
