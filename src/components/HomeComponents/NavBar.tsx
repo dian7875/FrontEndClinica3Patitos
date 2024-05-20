@@ -20,10 +20,10 @@ const NavBar = () => {
           <Link to={"/NotFound"}>
             Contac Us
           </Link>
-          <Link to={"MyAppointment"}>
+          <Link to={"MyAppointments"}>
             My Apointtments
           </Link>
-          <Link to={"/AdminAppointment"}>
+          <Link to={"/GeneralAppo"}>
             Aministration
           </Link>
         </div>
