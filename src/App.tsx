@@ -5,6 +5,7 @@ import DarkModeToggle from './components/DarkModeButton';
 import LandingPage from './Landing/LandingPage';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import LogEjemplo from './Landing/LogEjemplo';
+import Card from './components/Card';
 
 
 const App: React.FC = () => {
@@ -22,6 +23,10 @@ const App: React.FC = () => {
         <DarkModeToggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
        
   </div>*/}
+  <div className='bg-primary h-96 flex justify-center'>
+  <Card/>
+  <Card/>
+  </div>
       
       
     </>
