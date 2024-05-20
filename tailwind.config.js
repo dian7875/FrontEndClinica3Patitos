@@ -4,7 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'media',
+Mode: 'media',
   theme: {
     extend: {
       colors: {
@@ -14,7 +14,7 @@ export default {
           dark: '#95c5c3', //Los elementos del informacion
         },
         Dark:{
-          light: 'FFFFFF', //Blanco Del Texto
+          light: '#4B5563', //Principal
           DEFAULT: '#000000', //Negro Del fondo
           dark: '#0F2C72', //Azul de componentes
         },
