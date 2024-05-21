@@ -1,9 +1,9 @@
-import {Edit} from '../Alerts/Alerts'
-import {example} from '../Alerts/Alerta2'
+
+
 export const ButtonEdit = () => {
   return (
     <>
-      <button onClick={Edit} className="  bg-white rounded-md h-8 w-24 text-xs shadow-lg shadow-purple-500/50">
+      <button  className="  bg-white rounded-md h-8 w-24 text-xs shadow-lg shadow-purple-500/50">
         Edit
       </button>
     </>
@@ -13,7 +13,7 @@ export const ButtonEdit = () => {
 export const ButtonCancelar = () => {
   return (
     <>
-      <button onClick={example} className="sendButton text-white bg-Buttons-Cancel rounded-md h-8 w-24 text-xs shadow-lg">
+      <button  className="sendButton text-white bg-Buttons-Cancel rounded-md h-8 w-24 text-xs shadow-lg">
         Cancel
       </button>
     </>

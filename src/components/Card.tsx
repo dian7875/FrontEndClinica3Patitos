@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import     {  useState } from "react";
 import { ButtonEdit, ButtonCancelar, ButtonEliminar } from "./ButtonCards";
 import UseGetAllAppoiments from "../hooks/UseGetAllAppoiments";
 function Card() {
