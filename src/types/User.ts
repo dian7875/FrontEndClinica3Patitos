@@ -1,8 +1,14 @@
-type User={
+export type LoginData={
     rol:string,
-    nombre:string,
-    telefono:string,
-    email:string,
+    Email:string,
     Password:string
 }
-export default User
+
+export type User={
+    Name:string
+    Email:string
+    Phone:string
+    Password:string
+}
+
+

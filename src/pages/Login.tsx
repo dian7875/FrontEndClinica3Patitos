@@ -3,12 +3,12 @@ import ThemeContext from "../Contexts/ThemeContext/ThemeContext"
 import { Link } from "react-router-dom";
 import LogButtoms from "../components/LogButtoms";
 import { useForm } from "react-hook-form";
-import User from "../types/User";
+import { LoginData } from "../types/User";
 import useLogin from "../Hooks/useLogin";
 
 const Login = () => {
   const { isDarkMode } = useContext(ThemeContext);
-  const {register, handleSubmit } = useForm<User>()
+  const {register, handleSubmit } = useForm<LoginData>()
   const onSubmit = useLogin();
   return (
     <>
@@ -34,7 +34,7 @@ const Login = () => {
             <input required className="text-secondary h-10 w-full rounded-sm pl-2"
               type="Email"
               placeholder="Email@example.com"
-              {...register("email")}/>
+              {...register("Email")}/>
           </div>
           <div className="w-full">
             <span>Password:</span>
