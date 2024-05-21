@@ -3,19 +3,23 @@ import { useCallback, useContext, useEffect, useState } from "react";
 import User from "../types/User";
 import GeneralContext from "../Contexts/GeneralContext/GerneralContext";
 
-const simulatedToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJBZG1pbiIsIm5vbWJyZSI6Ilplcm8iLCJ0ZWxlZm9ubyI6IisxMjM0NTY3ODkiLCJlbWFpbCI6Ilplcm9AZXhhbXBsZS5jb20ifQ.qkpBLU8BHzxrBC6CrDmn8XatFl8Iu5t-8h3GxCZndNk'
-
 const useGetUserData = () => {
     const [user, setUser] = useState<User | null>(null);
     const {setRol} = useContext(GeneralContext)
     const decodeToken = useCallback(() => {
         try {
-            const decoded: User = jwtDecode(simulatedToken);
+            const token = localStorage.getItem('authToken');
+
+            if (token === null) {
+                throw new Error('No token found in localStorage');
+            }
+
+            const decoded: User = jwtDecode(token);
             setUser(decoded);
-            setRol(decoded.rol)
-            console.log(decoded.rol)
+            setRol(decoded.rol);
+            console.log(decoded.rol);
         } catch (error) {
-            console.log('Error JWT Inválido:', error);
+            console.log('Error JWT Inválido o no encontrado:', error);
         }
     }, []);
 
