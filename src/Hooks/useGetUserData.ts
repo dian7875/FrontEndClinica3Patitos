@@ -1,6 +1,6 @@
 import { jwtDecode } from "jwt-decode";
-import { useCallback, useEffect, useState } from "react";
-import User from "../types/User";
+import { useCallback,  useEffect, useState } from "react";
+import { User } from "../types/User";
 
 const useGetUserData = () => {
     const [user, setUser] = useState<User | null>(null);
@@ -13,6 +13,7 @@ const useGetUserData = () => {
             }
             const decoded: User = jwtDecode(token);
             setUser(decoded);
+            console.table(user)
         } catch (error) {
             console.log('Error JWT Inválido o no encontrado:', error);
         }
