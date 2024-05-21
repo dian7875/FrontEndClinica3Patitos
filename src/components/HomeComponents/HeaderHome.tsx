@@ -1,19 +1,15 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import ThemeContext from "../../Contexts/ThemeContext/ThemeContext";
 import DarkModeToggle from "../DarkModeButton";
-import GeneralContext from "../../Contexts/GeneralContext/GerneralContext";
-import UserShowData from "../UserShowData";
+import LoginAcces from "./LoginAcces";
 
 function HeaderHome() {
   const { isDarkMode } = useContext(ThemeContext);
-  const { isLogged } = useContext(GeneralContext);
   return (
     <>
       <div
-        className={` flex justify-between ${
-          isDarkMode ? `dark bg-Dark-light` : `bg-primary`
-        }`}
+        className={` flex justify-between ${isDarkMode ? `dark bg-Dark-light` : `bg-primary`
+          }`}
       >
         <div className="flex gap-3 pl-2 pt-1 ">
           <a className="Instagram" href="">
@@ -39,20 +35,7 @@ function HeaderHome() {
           </a>
         </div>
         <DarkModeToggle />
-        <div className="">
-          <div className="flex  gap-3">
-            {isLogged ? <UserShowData /> : null}
-
-            <Link className="flex gap-3 mt-2 text-white" to={"/Login"}>
-              <h1 className="mt-2">Login</h1>
-              <img
-                title="ig"
-                className="w-10 h-10 invert"
-                src="https://cdn-icons-png.flaticon.com/128/7917/7917260.png"
-              />
-            </Link>
-          </div>
-        </div>
+        <LoginAcces />
       </div>
     </>
   );

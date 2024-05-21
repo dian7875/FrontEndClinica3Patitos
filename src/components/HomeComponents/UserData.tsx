@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function UserShowData() {
+function UserData() {
    
   const [isOpen, setIsOpen] = useState(false);
 
@@ -10,14 +10,11 @@ function UserShowData() {
 
   return (
     <div className="flex flex-col  gap-3 p-4">
-  <div onClick={toggleInfo} className="flex gap-3">
-    <img className='w-8 h-8' src="https://cdn-icons-png.flaticon.com/128/3033/3033143.png" alt="" />
-    <h1
-      className="text-2xl font-bold cursor-pointer"
-      
-    >
+  <div onClick={toggleInfo} className="flex gap-3 mt-2 text-white">
+    <h1 className="text-2xl font-bold cursor-pointer">
       Nombre
     </h1>
+    <img className='w-10 h-10' src="https://cdn-icons-png.flaticon.com/128/3033/3033143.png" alt="" />
   </div>
   {isOpen ? (
     <div >
@@ -29,8 +26,6 @@ function UserShowData() {
     
   );
 
-
- 
 }
 
-export default UserShowData
+export default UserData
