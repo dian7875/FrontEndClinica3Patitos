@@ -7,4 +7,9 @@ const getAllAppo = async () =>{
     const response = await fetch(urlCoursesBase);
     const result = await response.json();
     return result;
+    
+}
+
+export {
+    getAllAppo
 }

@@ -12,6 +12,11 @@ Mode: 'media',
           light: '#207a5a', //verde de las imagenes
           DEFAULT: '#5E3A6B', //El color moradito del header
           dark: '#95c5c3', //Los elementos del informacion
+        
+        },
+        Buttons:{
+          Cancel: '#876DA1',
+          Eliminar: '#543792'
         },
         Dark:{
           light: '#4B5563', //Principal
@@ -22,6 +27,9 @@ Mode: 'media',
           light: '#876DA1', //boton cancelar cita
           DEFAULT: '#000000', //Negro
           dark: '#543792', //Boton de elimiar cita
+        },
+        shadow: {
+          'custom-dark': '100px 100px 100px 100px rgba(0, 0, 0, 0.8)'
         },
         customColor: '#3490dc',
       },
