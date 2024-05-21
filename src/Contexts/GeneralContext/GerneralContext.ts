@@ -1,8 +1,8 @@
 import React from "react";
 
 const GeneralContext = React.createContext({
-    test:''
-
+    rol:'',
+    setRol: (_value: string)=>{},
   });
   
 

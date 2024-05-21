@@ -2,17 +2,21 @@ import { useContext } from "react"
 import ThemeContext from "../Contexts/ThemeContext/ThemeContext"
 import { Link } from "react-router-dom";
 import LogButtoms from "../components/LogButtoms";
+import { useForm } from "react-hook-form";
+import User from "../types/User";
+import useLogin from "../Hooks/useLogin";
 
 const Login = () => {
   const { isDarkMode } = useContext(ThemeContext);
-
-
+  const {register, handleSubmit } = useForm<User>()
+  const onSubmit = useLogin();
   return (
     <>
       <div className={`h-screen flex justify-center items-center ${isDarkMode ? 'dark bg-secondary text-white' : 'bg-white'} `}>
         <form action="" className={`p-8 rounded-2xl flex flex-col w-2/5 items-center text-white 
        ${isDarkMode ? 'dark bg-gray-600 text-white' : 'bg-primary text-black'}
-       gap-10`}>
+       gap-10`}
+       onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col items-center text-xl">
             <h1>Welcome Back</h1>
             <span>Clinic Three Ducklings</span>
@@ -27,17 +31,19 @@ const Login = () => {
           </div>
           <div className="w-full ">
             <span>Email:</span>
-            <input className="text-secondary h-10 w-full rounded-sm pl-2"
+            <input required className="text-secondary h-10 w-full rounded-sm pl-2"
               type="Email"
-              placeholder="Email@example.com" />
+              placeholder="Email@example.com"
+              {...register("email")}/>
           </div>
           <div className="w-full">
             <span>Password:</span>
-            <input className="text-secondary w-full h-10 rounded-sm pl-2"
+            <input required className="text-secondary w-full h-10 rounded-sm pl-2"
               type="password"
-              name="UserPaswow" id="" placeholder="xxx" />
+              id="" placeholder="xxx" 
+              {...register("Password")}/>
           </div>
-          <LogButtoms/>
+          <LogButtoms />
         </form>
       </div>
     </>

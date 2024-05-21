@@ -1,12 +1,10 @@
 import { ReactNode, useState} from 'react';
 import GeneralContext from './GerneralContext';
 
-
-
 const GeneralProvider = ({children}: {children: ReactNode}) => {
-    const [ test, ] = useState('');
+    const [ rol, setRol] = useState('');
   return (
-    <GeneralContext.Provider value={{ test }}>
+    <GeneralContext.Provider value={{ rol, setRol }}>
       {children}
     </GeneralContext.Provider>
   );
