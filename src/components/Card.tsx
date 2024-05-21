@@ -1,26 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ButtonEdit, ButtonCancelar, ButtonEliminar } from "./ButtonCards";
 import UseGetAllAppoiments from "../hooks/UseGetAllAppoiments";
 function Card() {
   const { appoiments } = UseGetAllAppoiments();
-
-  const Handlestatus = true;
-  var Status = "";
-
-  if (Handlestatus === true) {
-    Status = "Activo";
-  } else {
-    Status = "cancelado";
-  }
+  const [inputValue, setInputValue] = useState<string>();
 
   return (
     <>
       {appoiments.map((appoiment) => {
-        
-
         return (
           <div
-          key={appoiment.id_Appointmnet}
+            key={appoiment.id}
             className=" mt-5 bg-white w-2/5 h-1/3 p-1 space-y-2 ml-5 mr-5 rounded-lg"
           >
             <div className="grid grid-cols-3 mt-4 gap-1">
@@ -31,17 +21,18 @@ function Card() {
             <div className="grid grid-cols-3 gap-2">
               <input
                 className="text-xs text-gray-500 border rounded-md border-gray-500"
-                type="datetime-local"
-                value="2003-12-05T10:40"
+                type="date"
+                value="2021-09-01"
+                onChange={(e) => setInputValue(e.target.value)}
               />
               <select
                 className="text-xs  text-gray-500 border rounded-md border-gray-500"
                 name=""
                 id=""
+                value={appoiment.Branch_Name}
+                onChange={(e) => {}}
               >
-                <option value="" selected>
-                  {appoiment.Branch_Name}
-                </option>
+                <option value="">{appoiment.Branch_Name}</option>
                 <option value="">3 Patitos Nicoya</option>
                 <option value="">3 Patitos San Martin</option>
                 <option value="">3 Patitos Desamparados</option>
@@ -50,7 +41,7 @@ function Card() {
                 className="text-xs  text-gray-500 border rounded-md border-gray-500"
                 htmlFor=""
               >
-                {appoiment.Status? "Activo" : "Cancelado"}
+                {appoiment.Status ? "Activo" : "Cancelado"}
               </label>
             </div>
             <div className="grid grid-cols-3  justify-items-center">

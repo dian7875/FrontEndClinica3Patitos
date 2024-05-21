@@ -1,6 +1,6 @@
 
 type Appointment = {
-    id_Appointmnet: string;
+    id: string;
     Branch_Name: string;
     Status: boolean;
     Date: Date;
