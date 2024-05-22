@@ -4,7 +4,7 @@ import { Link, Navigate } from "react-router-dom";
 import LogButtoms from "../components/LogButtoms";
 import { useForm } from "react-hook-form";
 import { LoginData } from "../types/User";
-import useLogin from "../Hooks/useLogin";
+import useLogin from "../hooks/useLogin";
 import AuthContext from "../Contexts/AutContext/AuthContext";
 
 const Login = () => {

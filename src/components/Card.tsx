@@ -1,10 +1,11 @@
 
 import { ButtonEdit, ButtonCancelar, ButtonEliminar } from "./ButtonCards";
-import UseGetAllAppoiments from "../Hooks/UseGetAllAppoiments";
+import UseGetAllAppoiments from "../hooks/UseGetAllAppoiments";
+import {useForm} from "react-hook-form";
 
 function Card() {
   const { appoiments } = UseGetAllAppoiments();
-  const [, setInputValue] = useState<string>();
+const {register} = useForm()
 
   return (
     <>
