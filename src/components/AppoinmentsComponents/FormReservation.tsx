@@ -14,6 +14,7 @@ function FormReservation() {
             <input
               className="text-gray-500 border rounded-md h-full border-gray-500"
               type="datetime-local"
+              value={"2024-05-22T04:16:48"}
               {...register("Date")}
             />
           </div>
