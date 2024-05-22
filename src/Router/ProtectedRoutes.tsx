@@ -1,19 +1,12 @@
 import { useContext } from "react";
-import { Navigate } from "react-router-dom";
-import GeneralContext from "../Contexts/GeneralContext/GerneralContext";
+import { Navigate, Outlet } from "react-router-dom";
+import AuthContext from "../Contexts/AutContext/AuthContext";
 
-const ProtectedRoutes = ({ children, of }: { children: any, of: string }) => {
-  const { rol, isLogged } = useContext(GeneralContext);
-  const requiredRole = of;
+const ProtectedRoutes = () => {
+  const { isLogged } = useContext(AuthContext)
 
-  if (!isLogged) {
-    return <Navigate to='/Login' />;
-  }
-  if (rol !== requiredRole) {
-    alert('No tienes los permisos necesarios para acceder a esta página.');
-    return <Navigate to='/' />;
-  }
-  return children;
+  return isLogged? <Outlet /> : <Navigate to={"/Login"} />;
+
 };
 
 export default ProtectedRoutes;

@@ -1,16 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
 import ThemeProvider from './Contexts/ThemeContext/ThemeProvider.tsx'
-import GeneralProvider from './Contexts/GeneralContext/GeneralProvider.tsx'
-
+import Routes from './Router/Routes.tsx'
+import { RouterProvider } from 'react-router-dom'
+import AuthProvider from './Contexts/AutContext/AuthProvider.tsx'
+import { Toaster } from 'react-hot-toast'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <Toaster/>
     <ThemeProvider>
-    <GeneralProvider>
-    <App/>
-    </GeneralProvider>
+      <AuthProvider>
+        <RouterProvider router={Routes} />
+      </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>,
 )

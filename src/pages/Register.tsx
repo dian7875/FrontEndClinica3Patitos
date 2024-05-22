@@ -1,9 +1,16 @@
 import { useContext } from "react"
 import ThemeContext from "../Contexts/ThemeContext/ThemeContext"
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 import LogButtoms from "../components/LogButtoms"
+import AuthContext from "../Contexts/AutContext/AuthContext"
 
 const Register = () => {
+    const {isLogged} = useContext(AuthContext)
+ 
+    if(isLogged){
+      return <Navigate to={"/"}/>
+    }
+  
     const { isDarkMode } = useContext(ThemeContext)
     return (
         <>

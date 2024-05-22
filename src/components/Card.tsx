@@ -1,9 +1,10 @@
 import     {  useState } from "react";
 import { ButtonEdit, ButtonCancelar, ButtonEliminar } from "./ButtonCards";
-import UseGetAllAppoiments from "../hooks/UseGetAllAppoiments";
+import UseGetAllAppoiments from "../Hooks/UseGetAllAppoiments";
+
 function Card() {
   const { appoiments } = UseGetAllAppoiments();
-  const [inputValue, setInputValue] = useState<string>();
+  const [, setInputValue] = useState<string>();
 
   return (
     <>
@@ -19,18 +20,18 @@ function Card() {
               <label className="text-xs">Tipo</label>
             </div>
             <div className="grid grid-cols-3 gap-2">
-              <input
+              <input title="a"
                 className="text-xs text-gray-500 border rounded-md border-gray-500"
                 type="date"
                 value="2021-09-01"
                 onChange={(e) => setInputValue(e.target.value)}
               />
-              <select
+              <select title="a"
                 className="text-xs  text-gray-500 border rounded-md border-gray-500"
                 name=""
                 id=""
                 value={appoiment.Branch_Name}
-                onChange={(e) => {}}
+                onChange={() => {}}
               >
                 <option value="">{appoiment.Branch_Name}</option>
                 <option value="">3 Patitos Nicoya</option>

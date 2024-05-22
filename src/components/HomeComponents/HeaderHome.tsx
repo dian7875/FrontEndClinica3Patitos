@@ -2,16 +2,19 @@ import { useContext } from "react";
 import ThemeContext from "../../Contexts/ThemeContext/ThemeContext";
 import DarkModeToggle from "../DarkModeButton";
 import LoginAcces from "./LoginAcces";
+import UserData from "./UserData";
+import AuthContext from "../../Contexts/AutContext/AuthContext";
 
 function HeaderHome() {
   const { isDarkMode } = useContext(ThemeContext);
+  const {isLogged} = useContext(AuthContext)
   return (
     <>
       <div
         className={` flex justify-between ${isDarkMode ? `dark bg-Dark-light` : `bg-primary`
           }`}
       >
-        <div className="flex gap-3 pl-2 pt-1 ">
+        <div className="flex gap-3 pl-2 mt-2 ">
           <a className="Instagram" href="">
             <img
               title="Ig"
@@ -35,7 +38,7 @@ function HeaderHome() {
           </a>
         </div>
         <DarkModeToggle />
-        <LoginAcces />
+        {isLogged ? <UserData/> : <LoginAcces/> }  
       </div>
     </>
   );
