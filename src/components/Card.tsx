@@ -1,6 +1,7 @@
 
+import UseGetAllAppoiments from "../Hooks/UseGetAllAppoiments";
 import { ButtonEdit, ButtonCancelar, ButtonEliminar } from "./ButtonCards";
-import UseGetAllAppoiments from "../hooks/UseGetAllAppoiments";
+
 import {useForm} from "react-hook-form";
 
 function Card() {
