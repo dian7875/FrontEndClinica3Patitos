@@ -4,7 +4,7 @@ import AuthContext from './AuthContext';
 
 const AuthProvider = ({children}: {children: ReactNode}) => {
     const [ rol, setRol] = useState('');
-    const [isLogged,setIsLogged]=useState(false);
+    const [isLogged,setIsLogged]=useState(true);
   return (
     <AuthContext.Provider value={{ rol, setRol, isLogged, setIsLogged}}>
       {children}

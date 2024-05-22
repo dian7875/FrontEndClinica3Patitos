@@ -12,11 +12,11 @@ const Login = () => {
   const {register, handleSubmit } = useForm<LoginData>()
   const onSubmit = useLogin();
   const {isLogged} = useContext(AuthContext)
-/* 
+
   if(isLogged){
     return <Navigate to={"/"}/>
   }
-*/
+
   return (
     <>
       <div className={`h-screen flex justify-center items-center ${isDarkMode ? 'dark bg-secondary text-white' : 'bg-white'} `}>
