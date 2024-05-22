@@ -3,7 +3,7 @@ import Logo from "../../assets/Logo.png"
 const NavBar = () => {
   return (
     <>
-      <nav className="Mid-Header flex justify-between w-full ">
+      <nav className="flex justify-between w-full h-1/6 ">
         <div className="IcoPage">
           <img className="w-28 h-28 ml-5" src={Logo} alt="" />
         </div>

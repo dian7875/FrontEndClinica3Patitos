@@ -1,18 +1,19 @@
 
-import UseGetAllAppoiments from "../Hooks/UseGetAllAppoiments";
-import { ButtonEdit, ButtonCancelar, ButtonEliminar } from "./ButtonCards";
+import UseGetAllAppoiments from "../../Hooks/UseGetAllAppoiments";
+import { Appointment } from "../../types/appointments";
+import {ButtonCards} from "./ButtonCards";
 
 import {useForm} from "react-hook-form";
 
 function Card() {
   const { appoiments } = UseGetAllAppoiments();
-const {register} = useForm()
+const {register} = useForm<Appointment>()
 
   return (
     <>
       {appoiments.map((appoiment) => {
         return (
-          <div
+          <form
             key={appoiment.id}
             className=" mt-5 bg-white w-2/5 h-1/3 p-1 space-y-2 ml-5 mr-5 rounded-lg"
           >
@@ -24,8 +25,7 @@ const {register} = useForm()
             <div className="grid grid-cols-3 gap-2">
               <input title="a"
                 className="text-xs text-gray-500 border rounded-md border-gray-500"
-                type="date"
-                value="2021-09-01"
+                type="datetime-local"
                 {...register("Date")}
               />
               <select title="a"
@@ -47,12 +47,10 @@ const {register} = useForm()
               </label>
             </div>
             <div className="grid grid-cols-3  justify-items-center">
-              <ButtonEdit />
-              <ButtonCancelar />
-              <ButtonEliminar />
+              <ButtonCards/>
             </div>
               
-          </div>
+          </form>
         );
       })}
     </>

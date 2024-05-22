@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import ThemeContext from "../../Contexts/ThemeContext/ThemeContext";
-import DarkModeToggle from "../DarkModeButton";
+import DarkModeToggle from "./DarkModeButton";
 import LoginAcces from "./LoginAcces";
 import UserData from "./UserData";
 import AuthContext from "../../Contexts/AutContext/AuthContext";
