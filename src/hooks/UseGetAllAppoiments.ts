@@ -1,9 +1,9 @@
 import { getAllAppo } from "../services/Service_appointment";
 import { useEffect, useState } from "react";
-import Appo from "../types/appointments";
+import { Appointment } from "../types/appointments";
 
 function UseGetAllAppoiments() {
-    const [appoiments, setAppoiments] = useState<Appo[]>([]);
+    const [appoiments, setAppoiments] = useState<Appointment[]>([]);
   
     const getAppoiments = async () => {
       try {

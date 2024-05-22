@@ -2,8 +2,8 @@
 const Description = () => {
   return (
     <>
-      <div className='Descriptio-Container text-left pt-3 ml-8'>
-        <div className='Title text-2xl font-bold'>
+      <div className='text-left pt-3 ml-8 h-2/5'>
+        <div className='text-2xl font-bold'>
           <h1>Welcome to Clinic Three</h1>
           <h1> Duckling</h1>
         </div>

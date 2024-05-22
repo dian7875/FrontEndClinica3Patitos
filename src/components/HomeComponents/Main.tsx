@@ -5,7 +5,7 @@ const Main = () => {
   const { isDarkMode } = useContext(ThemeContext)
   return (
     <>
-      <main className="flex-auto pt-16 px-32">
+      <main className="flex-auto pt-16 px-32 ">
         <div className={`flex flex-col text-center p-3 ${isDarkMode ? `dark text-black invert` : `text-black`}`}>
           <span>Our Services</span>
           <div className="flex justify-between">
