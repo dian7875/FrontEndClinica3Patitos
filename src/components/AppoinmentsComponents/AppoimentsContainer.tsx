@@ -14,7 +14,7 @@ export default function AppoimentsContainer({ isExpanded, setIsExpanded }: { isE
           <span className='mt-2 text-xl text-white'>My Appoiments </span>
           <img onClick={expanded} title='Click For View More' className=' w-10 pt-1' src="https://cdn-icons-png.flaticon.com/128/9053/9053032.png" alt="" />
         </div>
-        <div className='flex flex-wrap justify-center pb-14'>
+        <div className='grid grid-cols-2 px-6 gap-8 pb-14 h-full w-full'>
           <Card />
         </div>
 
