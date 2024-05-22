@@ -5,7 +5,7 @@ const urlUser = 'https://662bb9d2de35f91de1594809.mockapi.io/api/test'
 
 const getTryLogin = async (email: string, password: string) => {
     try {
-        const response = await fetch(urlUser + '/Test', {
+        const response = await fetch(urlUser + '/Login', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -19,59 +19,31 @@ const getTryLogin = async (email: string, password: string) => {
             throw new Error('Login failed');
         }
     } catch (error) {
-        console.log("Error en getTryLogin:", error);
+        console.log("Error en Login:", error);
         throw error;
     }
 
 }
 
-/*nst getTryLogin = async (email: string, password: string) => {
-    try {
-        const response = await fetch(urlUser + '/Test', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                email,
-                password,
-            })
 
-        })
-            if(response.ok){
-
-            }
-    } catch (error) {
-
-    } */
-
-/*const url = new URL('https://662bb9d2de35f91de1594809.mockapi.io/api/test/Test');
-        url.searchParams.append('UserEmail', email)
-        url.searchParams.append('password', password)
-
-        
-    const response = await fetch(url);
-    if (!response.ok) {
-
-        throw new Error('Error en la solicitud de login');
-    }
-    const result = await response.json();
-    const token = result[0].token;
-    localStorage.setItem('authToken', token); */
 const createUser = async (data: User) => {
-    const response = await fetch(urlUser + '/NewUser', {
+    try{
+        const response = await fetch(urlUser + '/SingUp', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
     });
-
-    if (!response.ok) {
-        throw new Error('Error al crear Usuario');
+    
+    if (response.ok) {
+        console.log("User Create")
+        console.log(response)
     }
-    const result = await response.json();
-    return result;
+    }catch(error){
+        console.log("Fail into create new user")
+        throw error
+    }
 }
 
 
