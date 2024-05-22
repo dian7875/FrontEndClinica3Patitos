@@ -1,14 +1,25 @@
 import { useContext } from "react"
 import ThemeContext from "../Contexts/ThemeContext/ThemeContext"
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 import LogButtoms from "../components/LogButtoms"
+import AuthContext from "../Contexts/AutContext/AuthContext"
+import { useForm } from "react-hook-form"
+import { User } from "../types/User"
+import useRegister from "../Hooks/useRegister"
 
 const Register = () => {
+    const {isLogged} = useContext(AuthContext)
+    const {register, handleSubmit} = useForm<User>()
+    const onSubmit = useRegister();
+    if(isLogged){
+      return <Navigate to={"/"}/>
+    }
+  
     const { isDarkMode } = useContext(ThemeContext)
     return (
         <>
             <div className={`h-screen flex justify-center items-center ${isDarkMode ? 'dark bg-secondary text-white' : 'bg-white'} `}>
-                <form action="" className={`p-8 rounded-2xl flex flex-col w-2/5 items-center text-white 
+                <form onSubmit={handleSubmit(onSubmit)} action="" className={`p-8 rounded-2xl flex flex-col w-2/5 items-center text-white 
        ${isDarkMode ? 'dark bg-gray-600 text-white' : 'bg-primary text-black'}
        gap-5`}>
                     <div className="flex flex-col items-center text-xl">
@@ -26,27 +37,34 @@ const Register = () => {
                     <div className="w-full ">
                         <span>Full Name:</span>
                         <input className="text-secondary w-full h-10 rounded-sm pl-2"
-                            type="text"
-                            value={'Maria Paula Fernandez Marchena'}
-                            placeholder="Name and Last Name" />
+                           required
+                           type="text"
+                            placeholder="Name and Last Name"
+                            {...register("Name")} />
                     </div>
                     <div className="w-full ">
                         <span>Phone:</span>
                         <input className="text-secondary h-10 w-full rounded-sm pl-2"
-                            type="tel" name="phone" id=""
-                            placeholder="xxxx-xxxx" />
+                           required
+                           type="tel" id=""
+                            placeholder="xxxx-xxxx"
+                            {...register("Phone")} />
                     </div>
                     <div className="w-full ">
                         <span>Email:</span>
                         <input className="text-secondary h-10 w-full rounded-sm pl-2"
-                            type="email" name="" id=""
-                            placeholder="example@gmail.com" />
+                            required
+                            type="email" id=""
+                            placeholder="example@gmail.com" 
+                            {...register("Email")}/>
                     </div>
                     <div className="w-full">
                         <span>Password:</span>
                         <input className="text-secondary h-10 w-full rounded-sm pl-2"
-                            type="password" name="UserPaswow" id=""
-                            placeholder="xxx" />
+                            required
+                            type="password"
+                            placeholder="xxx" 
+                            {...register("Password")}/>
                     </div>
                     <LogButtoms/>
                 </form>

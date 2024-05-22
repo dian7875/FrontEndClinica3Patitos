@@ -1,12 +1,10 @@
 
 import { ButtonEdit, ButtonCancelar, ButtonEliminar } from "./ButtonCards";
-import UseGetAllAppoiments from "../hooks/UseGetAllAppoiments";
-import {useForm} from 'react-hook-form'; 
+import UseGetAllAppoiments from "../Hooks/UseGetAllAppoiments";
 
 function Card() {
   const { appoiments } = UseGetAllAppoiments();
-  
-  const {register, handleSubmit, formState: {errors}} = useForm();
+  const [, setInputValue] = useState<string>();
 
   return (
     <>
@@ -22,16 +20,17 @@ function Card() {
               <label className="text-xs">Status</label>
             </div>
             <div className="grid grid-cols-3 gap-2">
-              <input
+              <input title="a"
                 className="text-xs text-gray-500 border rounded-md border-gray-500"
                 type="date"
                 value="2021-09-01"
                 {...register("Date")}
               />
-              <select
+              <select title="a"
                 className="text-xs  text-gray-500 border rounded-md border-gray-500"
                 id=""
-               {...register("Branch_Name")}
+                value={appoiment.Branch_Name}
+                onChange={() => {}}
               >
                 <option value="">{appoiment.Branch_Name}</option>
                 <option value="">3 Patitos Nicoya</option>

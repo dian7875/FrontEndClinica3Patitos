@@ -1,19 +1,26 @@
 import { useContext } from "react"
 import ThemeContext from "../Contexts/ThemeContext/ThemeContext"
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import LogButtoms from "../components/LogButtoms";
 import { useForm } from "react-hook-form";
 import { LoginData } from "../types/User";
-import useLogin from "../hooks/useLogin";
+import useLogin from "../Hooks/useLogin";
+import AuthContext from "../Contexts/AutContext/AuthContext";
 
 const Login = () => {
   const { isDarkMode } = useContext(ThemeContext);
   const {register, handleSubmit } = useForm<LoginData>()
   const onSubmit = useLogin();
+  const {isLogged} = useContext(AuthContext)
+
+  if(isLogged){
+    return <Navigate to={"/"}/>
+  }
+
   return (
     <>
       <div className={`h-screen flex justify-center items-center ${isDarkMode ? 'dark bg-secondary text-white' : 'bg-white'} `}>
-        <form action="" className={`p-8 rounded-2xl flex flex-col w-2/5 items-center text-white 
+        <form className={`p-8 rounded-2xl flex flex-col w-2/5 items-center text-white 
        ${isDarkMode ? 'dark bg-gray-600 text-white' : 'bg-primary text-black'}
        gap-10`}
        onSubmit={handleSubmit(onSubmit)}>

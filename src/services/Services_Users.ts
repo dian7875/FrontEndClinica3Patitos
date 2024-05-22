@@ -4,34 +4,47 @@ const urlUser = 'https://662bb9d2de35f91de1594809.mockapi.io/api/test'
 
 
 const getTryLogin = async (email: string, password: string) => {
-    const url = new URL('https://662bb9d2de35f91de1594809.mockapi.io/api/test/Test');
-        url.searchParams.append('UserEmail', email)
-        url.searchParams.append('password', password)
-    const response = await fetch(url);
-    if (!response.ok) {
-
-        throw new Error('Error en la solicitud de login');
+    try {
+        const response = await fetch(urlUser + '/Login', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email,
+                password,
+            })
+        })
+        if (!response.ok) {
+            throw new Error('Login failed');
+        }
+    } catch (error) {
+        console.log("Error en Login:", error);
+        throw error;
     }
-    const result = await response.json();
-    const token = result[0].token;
-    localStorage.setItem('authToken', token);
+
 }
 
-const createUser = async (data:User) =>{
-    const response = await fetch(urlUser+'/NewUser', {
+
+const createUser = async (data: User) => {
+    try{
+        const response = await fetch(urlUser + '/SingUp', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
     });
-
-    if (!response.ok) {
-        throw new Error('Error al crear Usuario');
+    
+    if (response.ok) {
+        console.log("User Create")
+        console.log(response)
     }
-    const result = await response.json();
-    return result;
+    }catch(error){
+        console.log("Fail into create new user")
+        throw error
+    }
 }
 
 
-export {getTryLogin, createUser}
+export { getTryLogin, createUser }

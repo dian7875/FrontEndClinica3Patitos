@@ -1,5 +1,4 @@
 export type LoginData={
-    rol:string,
     Email:string,
     Password:string
 }
