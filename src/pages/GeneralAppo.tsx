@@ -1,9 +1,15 @@
 
+import AppoimentsContainer from "../components/AppoimentsContainer"
+import FormReservation from "../components/FormReservation"
+import HeaderHome from "../components/HomeComponents/HeaderHome"
+
 const GeneralAppo = () => {
   return (
-    <div>
-      citas de administracion
-    </div>
+    <>
+      <HeaderHome />
+      <FormReservation />
+      <AppoimentsContainer />
+    </>
   )
 }
 

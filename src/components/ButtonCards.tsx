@@ -23,8 +23,28 @@ export const ButtonCancelar = () => {
 export const ButtonEliminar = () => {
   return (
     <>
-      <button className=" bg-Buttons-Eliminar text-white rounded-md h-8 w-24 text-xs shadow-[100px_100px_100px_100pxpx_rgba(0,0,0,0.8)]">
+      <button className=" bg-Buttons-Eliminar text-white  rounded-md h-8 w-24 text-xs ">
         Delete
+      </button>
+    </>
+  );
+};
+
+export const ButtonReserve = () => {
+  return (
+    <>
+      <button className=" bg-white rounded-md h-8 w-24 text-xs border  border-gray-950">
+        Reserve
+      </button>
+    </>
+  );
+};
+
+export const ButtonClean = () => {
+  return (
+    <>
+      <button className=" bg-primary text-white rounded-md h-8 w-24 text-xs shadow-[100px_100px_100px_100pxpx_rgba(0,0,0,0.8)]">
+        Clean
       </button>
     </>
   );

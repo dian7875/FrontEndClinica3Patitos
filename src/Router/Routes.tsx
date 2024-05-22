@@ -6,6 +6,7 @@ import MyAppointments from "../pages/MyAppointments"
 import CurrentDayApo from "../pages/CurrentDayApo"
 import ProtectedRoutes from "./ProtectedRoutes"
 import NotFound from "../pages/NotFound"
+import GeneralAppo from "../pages/GeneralAppo"
 
 
 const Routes = createBrowserRouter([
@@ -41,7 +42,7 @@ const Routes = createBrowserRouter([
     children: [
       {
         path: "/GeneralAppo",
-        element: <CurrentDayApo/>
+        element: <GeneralAppo />
       }
     ]
   },
