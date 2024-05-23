@@ -37,14 +37,14 @@ const Login = () => {
             </Link>
           </div>
           <div className="w-full ">
-            <span>Email:</span>
+            <label>Email:</label>
             <input required className="text-secondary h-10 w-full rounded-sm pl-2"
               type="Email"
               placeholder="Email@example.com"
               {...register("Email")}/>
           </div>
           <div className="w-full">
-            <span>Password:</span>
+            <label>Password:</label>
             <input required className="text-secondary w-full h-10 rounded-sm pl-2"
               type="password"
               id="" placeholder="xxx" 

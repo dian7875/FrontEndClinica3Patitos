@@ -35,7 +35,7 @@ const Register = () => {
                             className="bg-secondary w-2/4 h-10 text-white rounded-r-lg">Sing Up</button>
                     </div>
                     <div className="w-full ">
-                        <span>Full Name:</span>
+                        <label>Full Name:</label>
                         <input className="text-secondary w-full h-10 rounded-sm pl-2"
                            required
                            type="text"
@@ -43,7 +43,7 @@ const Register = () => {
                             {...register("Name")} />
                     </div>
                     <div className="w-full ">
-                        <span>Phone:</span>
+                        <label>Phone:</label>
                         <input className="text-secondary h-10 w-full rounded-sm pl-2"
                            required
                            type="tel" id=""
@@ -51,7 +51,7 @@ const Register = () => {
                             {...register("Phone")} />
                     </div>
                     <div className="w-full ">
-                        <span>Email:</span>
+                        <label>Email:</label>
                         <input className="text-secondary h-10 w-full rounded-sm pl-2"
                             required
                             type="email" id=""
@@ -59,7 +59,7 @@ const Register = () => {
                             {...register("Email")}/>
                     </div>
                     <div className="w-full">
-                        <span>Password:</span>
+                        <label>Password:</label>
                         <input className="text-secondary h-10 w-full rounded-sm pl-2"
                             required
                             type="password"
