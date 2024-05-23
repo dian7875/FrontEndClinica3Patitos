@@ -1,5 +1,5 @@
 
-import UseGetAllAppoiments from "../../Hooks/UseGetAllAppoiments";
+import UseGetAllAppoiments from "../../hooks/UseGetAllAppoiments";
 import { Appointment } from "../../types/appointments";
 import {ButtonCards} from "./ButtonCards";
 
