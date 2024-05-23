@@ -6,12 +6,12 @@ import MyAppointments from "../pages/MyAppointments"
 import ProtectedRoutes from "./ProtectedRoutes"
 import NotFound from "../pages/NotFound"
 import GeneralAppo from "../pages/GeneralAppo"
-
+import Layout from "../pages/Layout/Layout"
 
 const Routes = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
+    element: <Home/>
   },
   {
     path: "/Login",
@@ -37,7 +37,7 @@ const Routes = createBrowserRouter([
   },
   {
     path: "/",
-    element: <ProtectedRoutes/>,
+    element: <ProtectedRoutes />,
     children: [
       {
         path: "/GeneralAppo",
@@ -45,6 +45,8 @@ const Routes = createBrowserRouter([
       }
     ]
   },
-])
+]
+)
+
 
 export default Routes
