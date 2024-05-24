@@ -1,51 +1,28 @@
-import { createBrowserRouter } from "react-router-dom"
-import Home from "../pages/Home"
-import Login from "../pages/Login"
-import Register from "../pages/Register"
-import MyAppointments from "../pages/MyAppointments"
-import ProtectedRoutes from "./ProtectedRoutes"
-import NotFound from "../pages/NotFound"
-import GeneralAppo from "../pages/GeneralAppo"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import NotFound from "../pages/NotFound";
+import Register from "../pages/Register";
+import ProtectedRoutes from "./ProtectedRoutes";
+import HeaderHome from "../Layout/HeaderHome";
+import MyAppointments from "../pages/MyAppointments";
 
-const Routes = createBrowserRouter([
-  {
-    path: "/",
-    element: [<Home/>]
-  },
-  {
-    path: "/Login",
-    element: <Login />
-  },
-  {
-    path: "/Register",
-    element: <Register />
-  },
-  {
-    path: "/NotFound",
-    element: <NotFound />
-  },
-  {
-    path: "/",
-    element: <ProtectedRoutes />,
-    children: [
-      {
-        path: "/MyAppointments",
-        element: <MyAppointments />
-      }
-    ]
-  },
-  {
-    path: "/",
-    element: <ProtectedRoutes />,
-    children: [
-      {
-        path: "/GeneralAppo",
-        element: <GeneralAppo />
-      }
-    ]
-  },
-]
-)
+export default function Rout() {
+    return (
+        <BrowserRouter>
+            <HeaderHome />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path='/NotFound' element={<NotFound />} />
+                <Route path="/Login" element={<Login />} />
+                <Route path='/Register' element={<Register />} />
+                <Route path='/GeneralAppo' element={
+            <ProtectedRoutes of=''>
+              <MyAppointments/>
+            </ProtectedRoutes>
+          } />
+            </Routes>
+        </BrowserRouter>
+    )
+}
 
-
-export default Routes
