@@ -5,6 +5,8 @@ import NotFound from "../Pages/NotFound";
 import Register from "../Pages/Register";
 import ProtectedRoutes from "./ProtectedRoutes";
 import HeaderHome from "../components/Layout/HeaderHome";
+import GeneralAppo from "../Pages/GeneralAppo";
+import CurrentDayApo from "../Pages/CurrentDayApo";
 
 
 export default function Router() {
@@ -16,11 +18,13 @@ export default function Router() {
                 <Route path='/NotFound' element={<NotFound />} />
                 <Route path="/Login" element={<Login />} />
                 <Route path='/Register' element={<Register />} />
-                <Route path='/GeneralAppo' element={<ProtectedRoutes />}
+                <Route path='/GeneralAppo' element={<ProtectedRoutes of="">
+                    <GeneralAppo/>
+                </ProtectedRoutes>}
                 />
-                <Route path='/CurrentDayApo' element={<ProtectedRoutes />
-                } />
-                <Route path='/GeneralAppo' element={<ProtectedRoutes />
+                <Route path='/CurrentDayApo' element={<ProtectedRoutes of="">
+                    <CurrentDayApo/>
+                </ProtectedRoutes>
                 } />
             </Routes>
         </BrowserRouter>
