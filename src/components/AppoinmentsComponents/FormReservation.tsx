@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { NewAppointment } from "../../types/Appointments";
-import { BtnFappoint } from "../microComponents/AccionBtn";
+import NewAppoBtn from "../microComponents/NewAppoBtn";
 function FormReservation() {
   const { register } = useForm<NewAppointment>();
   return (
@@ -39,7 +39,7 @@ function FormReservation() {
             </div>
           </form>
           <div className="flex h-fit justify-around py-2">
-            <BtnFappoint />
+            <NewAppoBtn/>
           </div>
         </div>
       </div>

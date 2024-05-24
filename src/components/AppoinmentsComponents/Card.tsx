@@ -1,9 +1,9 @@
 
 import UseGetAllAppoiments from "../../Hooks/Appointments/UseGetAllAppoiments";
 import { Appointment } from "../../types/Appointments";
-import { ButtonCards } from "../microComponents/AccionBtn";
 
 import { useForm } from "react-hook-form";
+import AccionBtn from "../microComponents/AccionBtn";
 
 function Card() {
   const { appoiments } = UseGetAllAppoiments();
@@ -47,7 +47,7 @@ function Card() {
                 </div>
               </div>
               <div className="flex justify-around h-8 pt-1">
-                <ButtonCards />
+                <AccionBtn/>
               </div>
             </form>
           );
