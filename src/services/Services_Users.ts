@@ -1,11 +1,11 @@
 import { User } from "../types/User";
 
-const urlUser = 'https://662bb9d2de35f91de1594809.mockapi.io/api/test'
+const urlUser = 'https://localhost:7066/api/Users'
 
 
 const getTryLogin = async (email: string, password: string) => {
     try {
-        const response = await fetch(urlUser + '/Login', {
+        const response = await fetch(urlUser + '/login', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
