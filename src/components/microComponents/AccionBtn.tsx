@@ -1,7 +1,7 @@
 
 
 
-export const ButtonCards = () => {
+const AccionBtn = () => {
   return (
     <>
       <button type="button" className=" bg-white rounded-md w-24 shadow-lg shadow-purple-500/50">
@@ -17,18 +17,4 @@ export const ButtonCards = () => {
   )
 }
 
-
-export const BtnFappoint = () => {
-  return (
-    <>
-      <button type="submit" className="  bg-white rounded-md w-24 shadow-lg shadow-purple-500/50 h-full">
-        Reserve
-      </button>
-      <button type="button" className=" bg-primary text-white rounded-md w-24 ">
-        Clean
-      </button>
-    </>
-  )
-}
-
-
+export default AccionBtn

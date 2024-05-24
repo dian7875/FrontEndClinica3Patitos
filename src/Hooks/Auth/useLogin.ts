@@ -1,9 +1,9 @@
 import { useCallback, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { LoginData } from "../types/User";
-import AuthContext from "../Contexts/AutContext/AuthContext";
-import { getTryLogin } from "../services/Services_Users";
+import { LoginData } from "../../types/User";
+import AuthContext from "../../Contexts/AutContext/AuthContext";
+import { getTryLogin } from "../../Services/Services_Users";
 
 const useLogin = () => {
   const navi = useNavigate()

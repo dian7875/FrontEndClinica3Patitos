@@ -1,51 +1,29 @@
-import { createBrowserRouter } from "react-router-dom"
-import Home from "../pages/Home"
-import Login from "../pages/Login"
-import Register from "../pages/Register"
-import MyAppointments from "../pages/MyAppointments"
-import ProtectedRoutes from "./ProtectedRoutes"
-import NotFound from "../pages/NotFound"
-import GeneralAppo from "../pages/GeneralAppo"
-
-const Routes = createBrowserRouter([
-  {
-    path: "/",
-    element: [<Home/>]
-  },
-  {
-    path: "/Login",
-    element: <Login />
-  },
-  {
-    path: "/Register",
-    element: <Register />
-  },
-  {
-    path: "/NotFound",
-    element: <NotFound />
-  },
-  {
-    path: "/",
-    element: <ProtectedRoutes />,
-    children: [
-      {
-        path: "/MyAppointments",
-        element: <MyAppointments />
-      }
-    ]
-  },
-  {
-    path: "/",
-    element: <ProtectedRoutes />,
-    children: [
-      {
-        path: "/GeneralAppo",
-        element: <GeneralAppo />
-      }
-    ]
-  },
-]
-)
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "../Pages/Home";
+import Login from "../Pages/Login";
+import NotFound from "../Pages/NotFound";
+import Register from "../Pages/Register";
+import ProtectedRoutes from "./ProtectedRoutes";
+import HeaderHome from "../components/Layout/HeaderHome";
 
 
-export default Routes
+export default function Router() {
+    return (
+        <BrowserRouter>
+            <HeaderHome/>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path='/NotFound' element={<NotFound />} />
+                <Route path="/Login" element={<Login />} />
+                <Route path='/Register' element={<Register />} />
+                <Route path='/GeneralAppo' element={<ProtectedRoutes />}
+                />
+                <Route path='/CurrentDayApo' element={<ProtectedRoutes />
+                } />
+                <Route path='/GeneralAppo' element={<ProtectedRoutes />
+                } />
+            </Routes>
+        </BrowserRouter>
+    )
+}
+
