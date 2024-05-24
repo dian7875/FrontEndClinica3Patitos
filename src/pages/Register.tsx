@@ -5,7 +5,7 @@ import LogButtoms from "../components/LogButtoms"
 import AuthContext from "../Contexts/AutContext/AuthContext"
 import { useForm } from "react-hook-form"
 import { User } from "../types/User"
-import useRegister from "../hooks/useRegister"
+import useRegister from "../Hooks/useRegister"
 
 const Register = () => {
     const {isLogged} = useContext(AuthContext)
