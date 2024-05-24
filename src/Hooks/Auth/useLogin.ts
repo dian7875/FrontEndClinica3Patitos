@@ -14,10 +14,10 @@ const useLogin = () => {
       toast.success("Usuario Autenticado");
       setIsLogged(true);
       navi("/")
-    } catch(error) {
+    } catch (error) {
       toast.error("Wrong Password or User, Try Again")
       setIsLogged(false)
-     }
+    }
   }, []);
   return Login
 }
