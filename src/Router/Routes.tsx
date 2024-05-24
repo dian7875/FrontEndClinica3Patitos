@@ -6,12 +6,11 @@ import MyAppointments from "../pages/MyAppointments"
 import ProtectedRoutes from "./ProtectedRoutes"
 import NotFound from "../pages/NotFound"
 import GeneralAppo from "../pages/GeneralAppo"
-import Layout from "../pages/Layout/Layout"
 
 const Routes = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>
+    element: [<Home/>]
   },
   {
     path: "/Login",

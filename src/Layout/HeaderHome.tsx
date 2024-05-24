@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import ThemeContext from "../../Contexts/ThemeContext/ThemeContext";
-import DarkModeToggle from "../../components/HomeComponents/DarkModeButton";
-import LoginAcces from "../../components/HomeComponents/LoginAcces";
-import UserData from "../../components/HomeComponents/UserData";
-import AuthContext from "../../Contexts/AutContext/AuthContext";
+import AuthContext from "../Contexts/AutContext/AuthContext";
+import ThemeContext from "../Contexts/ThemeContext/ThemeContext";
+import DarkModeToggle from "../components/HomeComponents/DarkModeButton";
+import LoginAcces from "../components/HomeComponents/LoginAcces";
+import UserData from "../components/HomeComponents/UserData";
 
 function HeaderHome() {
   const { isDarkMode } = useContext(ThemeContext);
