@@ -4,7 +4,6 @@ import NavBar from "../components/HomeComponents/NavBar";
 import Description from "../components/HomeComponents/Description";
 import Main from "../components/HomeComponents/Main";
 
-
 function Home() {
   const {isDarkMode}=useContext(ThemeContext)
   return (
