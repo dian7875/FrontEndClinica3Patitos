@@ -1,6 +1,6 @@
-import { getAllAppo } from "../services/Service_appointment";
+import { getAllAppo } from "../../Services/Service_appointment";
 import { useEffect, useState } from "react";
-import { Appointment } from "../types/appointments";
+import { Appointment } from "../../types/Appointments";
 
 function UseGetAllAppoiments() {
     const [appoiments, setAppoiments] = useState<Appointment[]>([]);

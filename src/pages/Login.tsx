@@ -1,11 +1,11 @@
 import { useContext } from "react"
 import ThemeContext from "../Contexts/ThemeContext/ThemeContext"
 import { Link, Navigate } from "react-router-dom";
-import LogButtoms from "../components/LogButtoms";
+import LogButtoms from "../components/microComponents/LoginBtn";
 import { useForm } from "react-hook-form";
 import { LoginData } from "../types/User";
 import AuthContext from "../Contexts/AutContext/AuthContext";
-import useLogin from "../Hooks/useLogin";
+import useLogin from "../Hooks/Auth/useLogin";
 
 const Login = () => {
   const { isDarkMode } = useContext(ThemeContext);

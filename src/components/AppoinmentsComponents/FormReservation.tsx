@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
-import { NewAppointment } from "../../types/appointments";
-import { BtnFappoint } from "./ButtonCards";
+import { NewAppointment } from "../../types/Appointments";
+import { BtnFappoint } from "../microComponents/AccionBtn";
 function FormReservation() {
   const { register } = useForm<NewAppointment>();
   return (

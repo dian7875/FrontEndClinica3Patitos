@@ -1,6 +1,6 @@
 import { jwtDecode } from "jwt-decode";
 import { useCallback,  useEffect, useState } from "react";
-import { User } from "../types/User";
+import { User } from "../../types/User";
 
 const useGetUserData = () => {
     const [user, setUser] = useState<User | null>(null);

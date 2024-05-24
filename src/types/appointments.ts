@@ -1,17 +1,17 @@
 
 export type Appointment = {
-    id:string;
+    id:number;
+    Name_Type: string;
     Branch_Name: string;
     Status: boolean;
     Date: Date;
-    Pat_Name: string;
-    Name_Type: string;
+    User_Name: string;
   }
  
 export type NewAppointment ={
+  id_Type:number;
+  id_Branch:number;
   Date: Date;
-  Branch_Name: string;
-  Name_Type: string;
-  //Status: boolean;
- // Pat_Name: string;
+  id_User:number
 }
+
