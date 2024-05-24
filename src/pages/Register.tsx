@@ -40,7 +40,16 @@ const Register = () => {
                            required
                            type="text"
                             placeholder="Name and Last Name"
-                            {...register("Name")} />
+                            {...register("user_Name")} />
+                    </div>
+                    
+                    <div className="w-full ">
+                        <label>Email:</label>
+                        <input className="text-secondary h-10 w-full rounded-sm pl-2"
+                            required
+                            type="email" id=""
+                            placeholder="example@gmail.com" 
+                            {...register("email")}/>
                     </div>
                     <div className="w-full ">
                         <label>Phone:</label>
@@ -48,15 +57,7 @@ const Register = () => {
                            required
                            type="tel" id=""
                             placeholder="xxxx-xxxx"
-                            {...register("Phone")} />
-                    </div>
-                    <div className="w-full ">
-                        <label>Email:</label>
-                        <input className="text-secondary h-10 w-full rounded-sm pl-2"
-                            required
-                            type="email" id=""
-                            placeholder="example@gmail.com" 
-                            {...register("Email")}/>
+                            {...register("phone")} />
                     </div>
                     <div className="w-full">
                         <label>Password:</label>
@@ -64,7 +65,7 @@ const Register = () => {
                             required
                             type="password"
                             placeholder="xxx" 
-                            {...register("Password")}/>
+                            {...register("password")}/>
                     </div>
                     <LogButtoms/>
                 </form>
