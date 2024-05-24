@@ -1,6 +1,6 @@
 import { User } from "../types/User";
 
-const urlUser = 'https://662bb9d2de35f91de1594809.mockapi.io/api/test'
+const urlUser = 'https://localhost:7066/api/Users'
 
 
 const getTryLogin = async (email: string, password: string) => {
@@ -15,8 +15,10 @@ const getTryLogin = async (email: string, password: string) => {
                 password,
             })
         })
+        
         if (!response.ok) {
             throw new Error('Login failed');
+            console.log(response)
         }
     } catch (error) {
         console.log("Error en Login:", error);
@@ -27,8 +29,9 @@ const getTryLogin = async (email: string, password: string) => {
 
 
 const createUser = async (data: User) => {
+    console.table(data)
     try{
-        const response = await fetch(urlUser + '/SingUp', {
+        const response = await fetch(urlUser + '/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -38,7 +41,7 @@ const createUser = async (data: User) => {
     
     if (response.ok) {
         console.log("User Create")
-        console.log(response)
+        
     }
     }catch(error){
         console.log("Fail into create new user")

@@ -4,10 +4,10 @@ export type LoginData={
 }
 
 export type User={
-    Name:string
-    Email:string
-    Phone:string
-    Password:string
+    user_Name:string
+    email:string
+    phone:string
+    password:string
 }
 
 
