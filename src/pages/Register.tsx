@@ -1,11 +1,11 @@
 import { useContext } from "react"
 import ThemeContext from "../Contexts/ThemeContext/ThemeContext"
 import { Link, Navigate } from "react-router-dom"
-import LogButtoms from "../components/LogButtoms"
+import LogButtoms from "../components/microComponents/LoginBtn"
 import AuthContext from "../Contexts/AutContext/AuthContext"
 import { useForm } from "react-hook-form"
 import { User } from "../types/User"
-import useRegister from "../Hooks/useRegister"
+import useRegister from "../Hooks/Auth/useRegister"
 
 const Register = () => {
     const {isLogged} = useContext(AuthContext)

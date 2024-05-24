@@ -1,7 +1,7 @@
 
-import UseGetAllAppoiments from "../../Hooks/UseGetAllAppoiments";
-import { Appointment } from "../../types/appointments";
-import { ButtonCards } from "./ButtonCards";
+import UseGetAllAppoiments from "../../Hooks/Appointments/UseGetAllAppoiments";
+import { Appointment } from "../../types/Appointments";
+import { ButtonCards } from "../microComponents/AccionBtn";
 
 import { useForm } from "react-hook-form";
 

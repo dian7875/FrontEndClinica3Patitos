@@ -1,9 +1,9 @@
 import { useCallback, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { User } from "../types/User";
-import AuthContext from "../Contexts/AutContext/AuthContext";
-import { createUser } from "../services/Services_Users";
+import { User } from "../../types/User";
+import AuthContext from "../../Contexts/AutContext/AuthContext";
+import { createUser } from "../../Services/Services_Users";
 
 const useRegister = () => {
   const navi = useNavigate()

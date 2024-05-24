@@ -1,26 +1,31 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
-import Login from "../pages/Login";
-import NotFound from "../pages/NotFound";
-import Register from "../pages/Register";
+import Home from "../Pages/Home";
+import Login from "../Pages/Login";
+import NotFound from "../Pages/NotFound";
+import Register from "../Pages/Register";
 import ProtectedRoutes from "./ProtectedRoutes";
-import HeaderHome from "../Layout/HeaderHome";
-import MyAppointments from "../pages/MyAppointments";
+import HeaderHome from "../components/Layout/HeaderHome";
+import GeneralAppo from "../Pages/GeneralAppo";
+import CurrentDayApo from "../Pages/CurrentDayApo";
 
-export default function Rout() {
+
+export default function Router() {
     return (
         <BrowserRouter>
-            <HeaderHome />
+            <HeaderHome/>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path='/NotFound' element={<NotFound />} />
                 <Route path="/Login" element={<Login />} />
                 <Route path='/Register' element={<Register />} />
-                <Route path='/GeneralAppo' element={
-            <ProtectedRoutes of=''>
-              <MyAppointments/>
-            </ProtectedRoutes>
-          } />
+                <Route path='/GeneralAppo' element={<ProtectedRoutes of="">
+                    <GeneralAppo/>
+                </ProtectedRoutes>}
+                />
+                <Route path='/CurrentDayApo' element={<ProtectedRoutes of="">
+                    <CurrentDayApo/>
+                </ProtectedRoutes>
+                } />
             </Routes>
         </BrowserRouter>
     )
