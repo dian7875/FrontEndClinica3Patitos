@@ -1,6 +1,5 @@
 import { useContext } from "react"
-import ThemeContext from "../../Contexts/ThemeContext/ThemeContext"
-
+import ThemeContext from "../Contexts/ThemeContext/ThemeContext"
 
 const Footer = () => {
 

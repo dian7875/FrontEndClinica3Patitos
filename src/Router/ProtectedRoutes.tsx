@@ -1,12 +1,17 @@
 import { useContext } from "react";
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import AuthContext from "../Contexts/AutContext/AuthContext";
 
-const ProtectedRoutes = () => {
+const ProtectedRoutes = ({ children, of }: { children: any, of: string }) => {
+
   const { isLogged } = useContext(AuthContext)
 
-  return isLogged? <Outlet /> : <Navigate to={"/Login"} />;
-
+  if (!isLogged) {
+    alert('Por favor, inicia sesión primero.');
+    return <Navigate to='/Login'/>;
+  }
+  
+  return children
 };
 
 export default ProtectedRoutes;

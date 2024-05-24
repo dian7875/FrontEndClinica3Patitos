@@ -1,58 +1,58 @@
 
 import UseGetAllAppoiments from "../../hooks/UseGetAllAppoiments";
 import { Appointment } from "../../types/appointments";
-import {ButtonCards} from "./ButtonCards";
+import { ButtonCards } from "./ButtonCards";
 
-import {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 function Card() {
   const { appoiments } = UseGetAllAppoiments();
-const {register} = useForm<Appointment>()
+  const { register } = useForm<Appointment>()
 
   return (
     <>
-      {appoiments.map((appoiment) => {
-        return (
-          <form
-            key={appoiment.id}
-            className=" mt-5 bg-white w-2/5 h-1/3 p-1 space-y-2 ml-5 mr-5 rounded-lg"
-          >
-            <div className="grid grid-cols-3 mt-4 gap-1">
-              <label className="text-xs">Fecha</label>
-              <label className="text-xs">Sucursal</label>
-              <label className="text-xs">Status</label>
-            </div>
-            <div className="grid grid-cols-3 gap-2">
-              <input title="a"
-                className="text-xs text-gray-500 border rounded-md border-gray-500"
-                type="datetime-local"
-                {...register("Date")}
-              />
-              <select title="a"
-                className="text-xs  text-gray-500 border rounded-md border-gray-500"
-                id=""
-                value={appoiment.Branch_Name}
-                onChange={() => {}}
-              >
-                <option value="">{appoiment.Branch_Name}</option>
-                <option value="">3 Patitos Nicoya</option>
-                <option value="">3 Patitos San Martin</option>
-                <option value="">3 Patitos Desamparados</option>
-              </select>
-              <label
-                className="text-xs  text-gray-500 border rounded-md border-gray-500"
-                htmlFor=""
-              >
-                {appoiment.Status ? "Activo" : "Cancelado"}
-              </label>
-            </div>
-            <div className="grid grid-cols-3  justify-items-center">
-              <ButtonCards/>
-            </div>
-              
-          </form>
-        );
-      })}
+
+      <div className={`grid grid-cols-2 gap-5 `}>
+        {appoiments.map((appoiment) => {
+          return (
+            <form
+              key={appoiment.id}
+              className="bg-white rounded-lg h-32 px-2 pt-5 relative shadow-xl">
+              <span className="absolute" style={{ top: '-5px' }}>Pacient Name: {appoiment.Past_Name}</span>
+              <div className="flex w-full h-3/5 gap-4">
+                <div className="flex flex-col w-full">
+                  <label className="">Date</label>
+                  <input title=""
+                    className="h-full text-gray-500 border rounded-md border-gray-500"
+                    type="datetime-local"
+                    {...register("Date")} />
+                </div>
+                <div className="flex flex-col w-full">
+                  <label className="">Branch</label>
+                  <select title="a"
+                    className=" text-gray-500 border h-full rounded-md border-gray-500"
+                    id=""
+                    value={appoiment.Branch_Name}>
+                    <option value="">{appoiment.Branch_Name}</option>
+                    <option value="">3 Patitos Nicoya</option>
+                    <option value="">3 Patitos San Martin</option>
+                    <option value="">3 Patitos Desamparados</option>
+                  </select>
+                </div>
+                <div className="flex flex-col w-full">
+                  <label className="">Status</label>
+                  {appoiment.Status ? <span className="border text-center pt-2 h-full rounded-md font-serif bg-white ">Pendiente</span> 
+                  :
+                   <span className="border text-center pt-2 h-full rounded-md bg-primary text-white ">Cancelada</span>}
+                </div>
+              </div>
+              <div className="flex justify-around h-8 pt-1">
+                <ButtonCards />
+              </div>
+            </form>
+          );
+        })}
+      </div>
     </>
   );
 }
