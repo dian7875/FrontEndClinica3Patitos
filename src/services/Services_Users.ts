@@ -19,11 +19,8 @@ const getTryLogin = async (email: string, password: string) => {
         if (!response.ok) {
             throw new Error(`Login failed: ${response.status} ${response.statusText}`);
         }
-
         const authToken = await response.text();
-        console.log('Response Text:', authToken);
         localStorage.setItem('UserToken', authToken)
-
     } catch (error) {
         console.error("Error en Login:", error);
         throw error;

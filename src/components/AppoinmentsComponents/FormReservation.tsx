@@ -5,7 +5,7 @@ function FormReservation() {
   const { register } = useForm<NewAppointment>();
   return (
     <>
-      <div className="px-40 py-14">
+      <div className="px-40 pt-20 pb-12">
         <div className="bg-white px-3 rounded-2xl text-lg shadow-2xl">
           <form className="flex justify-between gap-3">
             <div className="flex flex-col w-full">
@@ -21,7 +21,7 @@ function FormReservation() {
               <label className="">Sucursal</label>
               <select
                 className="text-gray-500 border rounded-md h-full border-gray-500"
-                {...register("Branch_Name")}>
+                {...register("id_Branch")}>
                 <option value="">Nicoya</option>
                 <option value="">San Martin</option>
                 <option value="">Desamparados</option>
@@ -31,7 +31,7 @@ function FormReservation() {
               <label className="">Tipo</label>
               <select
                 className="text-gray-500 border rounded-md h-full border-gray-500"
-                {...register("Name_Type")}>
+                {...register("id_Type")}>
                 <option value=""> Odontologia</option>
                 <option value=""> Medicina general</option>
                 <option value=""> Pediatria</option>
