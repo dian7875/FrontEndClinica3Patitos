@@ -1,8 +1,11 @@
+import { useContext } from "react";
+import AuthContext from "../../Contexts/AutContext/AuthContext";
 
 const LogOut = () => {
-    
+    const {setIsLogged} = useContext(AuthContext)
     const onLogOut=()=>{
-        localStorage.removeItem('authToken');
+        localStorage.removeItem('UserToken');
+        setIsLogged(false)
     }
   return (
     <>

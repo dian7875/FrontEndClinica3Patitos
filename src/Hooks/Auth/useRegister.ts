@@ -9,6 +9,7 @@ const useRegister = () => {
   const navi = useNavigate()
   const { setIsLogged } = useContext(AuthContext)
   const Register = useCallback(async (data: User) => {
+    
     try {
       await createUser(data);
       toast.success("Usuario Creado, now Login");

@@ -9,7 +9,7 @@ import GeneralAppo from "../Pages/GeneralAppo";
 import CurrentDayApo from "../Pages/CurrentDayApo";
 
 
-export default function Router() {
+ const Router =() =>{
     return (
         <BrowserRouter>
             <HeaderHome/>
@@ -31,3 +31,4 @@ export default function Router() {
     )
 }
 
+export default Router

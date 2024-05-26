@@ -5,7 +5,7 @@ import FormReservation from "../components/AppoinmentsComponents/FormReservation
 const GeneralAppo = () => {
   return (
     <>
-      <main className="h-screen flex flex-col pt-12 pb-16">
+      <main className="h-screen flex flex-col pb-12">
           <FormReservation />
           <AppoimentsContainer />
       </main>
