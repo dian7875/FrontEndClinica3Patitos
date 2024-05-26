@@ -9,7 +9,10 @@ function Home() {
   const {isDarkMode}=useContext(ThemeContext)
   return (
     <>
-      <div className={`h-screen flex flex-col pt-12 pb-16 ${isDarkMode ? 'dark bg-[url(./src/assets/BGDARK.jpg)] text-white' : 'bg-[url(./src/assets/Backgorund.jpg)]'} `}>
+      <div className={`h-screen flex flex-col pt-12 pb-16 
+      ${isDarkMode ? 'dark bg-[url(./src/assets/BGDARK.jpg)] text-white' 
+      :
+       'bg-[url(./src/assets/Backgorund.jpg)]'} `}>
        <LogOut/>
        <NavBar/>
        <Description/>
