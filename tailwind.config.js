@@ -28,8 +28,13 @@ Mode: 'media',
           DEFAULT: '#000000', //Negro
           dark: '#543792', //Boton de elimiar cita
         },
+        Pop:{
+          background: '#845496',
+          bordes: '#4a2956',
+        },
         shadow: {
-          'custom-dark': '100px 100px 100px 100px rgba(0, 0, 0, 0.8)'
+          'custom-dark': '100px 100px 100px 100px rgba(0, 0, 0, 0.8)',
+          'inner': 'inset 0 2px 4px 0 rgba(132, 84, 150, 0.06)',
         },
         customColor: '#3490dc',
       },
