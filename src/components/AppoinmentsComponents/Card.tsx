@@ -11,14 +11,12 @@ function Card() {
 
   return (
     <>
-
       <div className={`grid grid-cols-2 gap-5`}>
         {appoiments.map((appoiment) => {
           return (
             <form
               key={appoiment.id}
-              className="bg-white rounded-lg h-32 px-2 pt-5 relative shadow-xl">
-              <span className="absolute" style={{ top: '-5px' }}>Pacient Name: {appoiment.Past_Name}</span>
+              className="bg-white rounded-lg h-32 px-3 pt-2 shadow-xl">
               <div className="flex w-full h-3/5 gap-4">
                 <div className="flex flex-col w-full">
                   <label className="">Date</label>

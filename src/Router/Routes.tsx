@@ -5,8 +5,8 @@ import NotFound from "../Pages/NotFound";
 import Register from "../Pages/Register";
 import ProtectedRoutes from "./ProtectedRoutes";
 import HeaderHome from "../components/Layout/HeaderHome";
-import GeneralAppo from "../Pages/GeneralAppo";
 import CurrentDayApo from "../Pages/CurrentDayApo";
+import MyAppointments from "../Pages/MyAppointments";
 
 
  const Router =() =>{
@@ -18,11 +18,11 @@ import CurrentDayApo from "../Pages/CurrentDayApo";
                 <Route path='/NotFound' element={<NotFound />} />
                 <Route path="/Login" element={<Login />} />
                 <Route path='/Register' element={<Register />} />
-                <Route path='/GeneralAppo' element={<ProtectedRoutes of="">
-                    <GeneralAppo/>
+                <Route path='/MyAppointments' element={<ProtectedRoutes of="USER">
+                    <MyAppointments/>
                 </ProtectedRoutes>}
                 />
-                <Route path='/CurrentDayApo' element={<ProtectedRoutes of="">
+                <Route path='/CurrentDay' element={<ProtectedRoutes of="ADMIN">
                     <CurrentDayApo/>
                 </ProtectedRoutes>
                 } />

@@ -13,7 +13,6 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     if (Token) {
       const decoded: { [key: string]: any } = jwtDecode(Token);
-      console.log('Test', decoded);
       const userData: currenUser = {
         user_Name: decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
         user_Email: decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'],
@@ -21,11 +20,10 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         user_Id: decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'],
         user_Rol: decoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']
       };
-      console.table(userData)
       setCurrentUser(userData)
       setIsLogged(true)
     } else {
-      console.log('No hay token')
+      setCurrentUser(null)
       setIsLogged(false)
     }
   }, [Token]);

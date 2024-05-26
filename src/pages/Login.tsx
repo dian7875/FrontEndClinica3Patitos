@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { LoginData } from "../types/User";
 import AuthContext from "../Contexts/AutContext/AuthContext";
 import useLogin from "../Hooks/Auth/useLogin";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const { isDarkMode } = useContext(ThemeContext);
@@ -15,7 +16,11 @@ const Login = () => {
 
   
   if(isLogged){
+    toast('Your Are Ready Logged', {
+      icon: '🐔',
+    });
     return <Navigate to={"/"}/>
+    
   }
 
   return (

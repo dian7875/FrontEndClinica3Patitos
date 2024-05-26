@@ -14,16 +14,13 @@ const NavBar = () => {
           <Link to={"/NotFound"}>
             Medical Services
           </Link>
-          <Link to={"/MyAppointments"}>
-            Apointments
-          </Link>
           <Link to={"/NotFound"}>
             Contac Us
           </Link>
           <Link to={"MyAppointments"}>
             My Apointtments
           </Link>
-          <Link to={"/GeneralAppo"}>
+          <Link to={"/CurrentDay"}>
             Aministration
           </Link>
         </div>

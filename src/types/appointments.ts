@@ -1,6 +1,6 @@
 
 export type Appointment = {
-    id:number;
+    id:string;
     Name_Type: string;
     Branch_Name: string;
     Status: boolean;

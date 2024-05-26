@@ -1,8 +1,14 @@
 
+import AppoimentsContainer from "../components/AppoinmentsComponents/AppoimentsContainer"
+import FormReservation from "../components/AppoinmentsComponents/FormReservation"
+
 const MyAppointments = () => {
   return (
     <>
-      Pagina con las citas del paciente
+      <main className="h-screen flex flex-col pb-12">
+          <FormReservation />
+          <AppoimentsContainer />
+      </main>
     </>
   )
 }
