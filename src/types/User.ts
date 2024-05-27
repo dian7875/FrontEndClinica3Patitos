@@ -15,8 +15,7 @@ export type currenUser = {
     user_Email: string
     user_Phone: string
     user_Rol: string
-    user_Id: string
-
+    user_Id: number
 }
 
 

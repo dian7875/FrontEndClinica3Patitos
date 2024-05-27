@@ -7,7 +7,7 @@ function Card() {
   return (
     <div className="grid grid-cols-2 gap-5">
       {appoiments.map((appoiment) => (
-        <div key={appoiment.id} className="pb-8 w-full h-full">
+        <div key={appoiment.id_Appointment} className="pb-8 w-full h-full">
         <CardFlipp appoiment={appoiment}/>
         </div>
       ))}

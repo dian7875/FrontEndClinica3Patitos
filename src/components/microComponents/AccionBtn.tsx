@@ -1,9 +1,12 @@
+import useCancelAppoiments from "../../Hooks/Appointments/UseCancelAppoiments"
 
 
 
-const AccionBtn = ({onFlip}:any) => {
+const AccionBtn = ({onFlip, id_Appointment}:{onFlip:any,id_Appointment:number}) => {
 
-
+  const onCancel = () =>{
+    useCancelAppoiments(id_Appointment)
+  } 
 
   return (
     <>
@@ -13,7 +16,7 @@ const AccionBtn = ({onFlip}:any) => {
       <button type="button" className=" bg-Buttons-Eliminar text-white rounded-md w-24">
         Delete
       </button>
-      <button type="button" className="sendButton text-white bg-Buttons-Cancel rounded-md w-24 shadow-lg">
+      <button onClick={onCancel} type="button" className="sendButton text-white bg-Buttons-Cancel rounded-md w-24 shadow-lg">
         Cancel
       </button>
       <button onClick={onFlip} type="button" className="sendButton text-white bg-violet-300 rounded-md w-24 shadow-lg">

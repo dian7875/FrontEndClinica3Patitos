@@ -1,16 +1,20 @@
-import { getAllAppo } from "../../Services/Service_appointment";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Appointment } from "../../types/Appointments";
+import AuthContext from "../../Contexts/AutContext/AuthContext";
+import { getAppointments } from "../../Services/Service_appointment";
 
 function UseGetAllAppoiments() {
     const [appoiments, setAppoiments] = useState<Appointment[]>([]);
-  
+    const {currentUser} = useContext(AuthContext);
+
     const getAppoiments = async () => {
       try {
-        const appoimentsServices = await getAllAppo();
-        setAppoiments(appoimentsServices);
+        if(currentUser){
+          const appoimentsServices = await getAppointments(currentUser.user_Id);
+          setAppoiments(appoimentsServices);
+        }
       } catch (error) {
-        console.error("Error al cargar datos:", Error);
+        console.error(error);
       }
     };
   
@@ -19,9 +23,7 @@ function UseGetAllAppoiments() {
     }, []);
   
     return {
-      appoiments,
-      getAppoiments,
-      setAppoiments,
+      appoiments, getAppoiments
     };
   }
   

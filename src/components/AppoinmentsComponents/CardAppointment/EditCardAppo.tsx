@@ -1,23 +1,23 @@
 import { useForm } from "react-hook-form";
 import AccionBtn from "../../microComponents/AccionBtn"
-import { Appointment } from "../../../types/Appointments";
+import { NewAppointment } from "../../../types/Appointments";
+import { useContext } from "react";
+import AuthContext from "../../../Contexts/AutContext/AuthContext";
+import useUpdateAppoiment from "../../../Hooks/Appointments/UseUpdateAppoiment";
 
 const EditCardAppo = ({ appoiment, onFlip }: any) => {
-
-  const { register, handleSubmit } = useForm<Appointment>({
+  const {currentUser} = useContext(AuthContext)
+  const { register, handleSubmit } = useForm<NewAppointment>({
     defaultValues: {
-      Date: appoiment.Date,
-      Branch_Name: appoiment.Branch_Name,
-      Status: appoiment.Status
+      id_Appointment: appoiment.id_Appointment,
+      status: appoiment.status,
+      date: appoiment.date,
+      id_ClinicBranch: appoiment.id_ClinicBranch,
+      id_Appoitment_Type: appoiment.id_Appoitment_Type,
+      id_User: currentUser?.user_Id
     }
   });
-
- 
-
-  const onSubmit = (data: any) => {
-    console.log(data);
-  };
-
+  const {onSubmit} = useUpdateAppoiment()
   return (
     <>
       <form
@@ -31,29 +31,28 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
               type="datetime-local"
               placeholder="Fecha"
               required
-              {...register('Date', { required: true })}/>
+              {...register('date', { required: true })}/>
           </div>
           <div className="flex flex-col w-full">
             <label className="">Branch</label>
             <select   title=""
               className="text-gray-500 border h-full rounded-md border-gray-500"
-              {...register('Branch_Name', { required: true })}
-              defaultValue={appoiment.Branch_Name} 
+              {...register('id_ClinicBranch', { required: true })}
             >
-              <option value="1">Nicoya</option>
-              <option value="2">San Martin</option>
-              <option value="3">Perez Zeledon</option>
+              <option value="2">Nicoya</option>
+              <option value="3">San Martin</option>
+              <option value="4">Perez Zeledon</option>
             </select>
           </div>
           <div className="flex flex-col w-full">
             <label className="">Status</label>
-            {appoiment.Status ? <span className="border text-center pt-2 h-full rounded-md font-serif bg-white ">Pendiente</span>
+            {appoiment.status ? <span className="border text-center pt-2 h-full rounded-md font-serif bg-white ">Pendiente</span>
               :
               <span className="border text-center pt-2 h-full rounded-md bg-primary text-white ">Cancelada</span>}
           </div>
         </div>
         <div className="flex justify-around h-8 pt-1">
-          <AccionBtn onFlip={onFlip} />
+          <AccionBtn onFlip={onFlip} id_Appointment={appoiment.id_Appointment} />
         </div>
       </form>
     </>

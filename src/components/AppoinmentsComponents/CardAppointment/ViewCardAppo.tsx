@@ -1,7 +1,5 @@
 const ViewCardAppo = ({appoiment, onFlip}:any) => {
-
-      const appoDate = new Date(appoiment.Date);
-    
+      const appoDate = new Date(appoiment.date);
       const day = String(appoDate.getDate()).padStart(2, '0');
       const month = String(appoDate.getMonth() + 1).padStart(2, '0');
       const year = appoDate.getFullYear();
@@ -21,11 +19,11 @@ const ViewCardAppo = ({appoiment, onFlip}:any) => {
                 </div>
                 <div className="flex flex-col w-full">
                   <label className="">Branch:</label>
-                  <span>{appoiment.Branch_Name}</span>
+                  <span>{appoiment.branch_Name}</span>
                 </div>
                 <div className="flex flex-col w-full">
                   <label className="">Status:</label>
-                  {appoiment.Status ? <span>Pendiente</span> 
+                  {appoiment.status ? <span>Pendiente</span> 
                   :
                   <span>Cancelada</span>}
                 </div>
