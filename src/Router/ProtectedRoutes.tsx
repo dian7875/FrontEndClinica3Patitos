@@ -1,17 +1,25 @@
 import { useContext } from "react";
-import { Navigate } from "react-router-dom";
 import AuthContext from "../Contexts/AutContext/AuthContext";
 
-const ProtectedRoutes = ({ children, of }: { children: any, of: string }) => {
+const ProtectedRoutes = ({ children }: { children: any, of: string }) => {
 
-  const { isLogged } = useContext(AuthContext)
+  useContext(AuthContext)
+/*
+  useEffect(() => {
+    if (!isLogged) {
+      toast.error('Please Register Or Login With your user First');
+      navigate('/Login');
+    } else if (currentUser?.user_Rol !== of) {
+      toast.error('No tienes permisos para acceder a esta página.');
+      navigate('/');
+    }
+  }, [isLogged, currentUser, of, navigate]);
 
-  if (!isLogged) {
-    alert('Por favor, inicia sesión primero.');
-    return <Navigate to='/Login'/>;
+  if (!isLogged || (isLogged && currentUser?.user_Rol !== of)) {
+    return null;
   }
-  
-  return children
+*/
+  return children;
 };
 
 export default ProtectedRoutes;

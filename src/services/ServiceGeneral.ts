@@ -1,17 +1,22 @@
 
-const urlType = `https://66456d5ab8925626f891d5c2.mockapi.io/Pacientes/test/Type_Appointment`;
+const urlBase = `https://localhost:7066/api`;
 
 
-const gettAllypeAppo = async () =>{
-    const response = await fetch(urlType);
+const getListType = async () =>{
+    const response = await fetch(`${urlBase}/AppoitmentType`,);
+    const result = await response.json();
+    return result;
+    
+}
+
+const getListBranch = async () =>{
+    const response = await fetch(`${urlBase}/Clinic_Branches`,);
     const result = await response.json();
     return result;
 }
 
-const getAllBranch = async () =>{
-    const response = await fetch(urlBranch);
-    const result = await response.json();
-    return result;
-}
+export {
+    getListBranch,
+    getListType
 
-//Lista De usuario
+}

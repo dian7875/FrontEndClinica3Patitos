@@ -5,7 +5,7 @@ const urlUser = 'https://localhost:7066/api/Users'
 
 const getTryLogin = async (email: string, password: string) => {
     try {
-        const response = await fetch(urlUser + '/login', {
+        const response = await fetch(`${urlUser}/Login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -31,7 +31,7 @@ const getTryLogin = async (email: string, password: string) => {
 const createUser = async (data: User) => {
     console.table(data)
     try {
-        const response = await fetch(urlUser + '/register', {
+        const response = await fetch(`${urlUser}/Register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

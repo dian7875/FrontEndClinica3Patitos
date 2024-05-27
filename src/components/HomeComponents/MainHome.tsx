@@ -11,19 +11,19 @@ const Main = () => {
           <div className="flex justify-between">
             <div className="flex flex-col items-center">
               <img width={50} src="https://cdn-icons-png.flaticon.com/128/620/620399.png" alt="" />
-              <span>Medicina General</span>
+              <span>General Medicine</span>
             </div>
             <div className="flex flex-col items-center">
               <img width={50} src="https://cdn-icons-png.flaticon.com/128/3906/3906769.png" alt="" />
-              <span>Odontologia</span>
+              <span>Odontology</span>
             </div>
             <div className="flex flex-col items-center">
               <img width={50} src="https://cdn-icons-png.flaticon.com/128/10154/10154457.png" alt="" />
-              <span>Pediatria</span>
+              <span>Pediatrics</span>
             </div>
             <div className="flex flex-col items-center">
               <img width={50} src="https://cdn-icons-png.flaticon.com/128/15192/15192811.png" alt="" />
-              <span>Neurologia</span>
+              <span>Neurology</span>
             </div>
           </div>
         </div>

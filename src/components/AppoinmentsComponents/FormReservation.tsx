@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
 import { NewAppointment } from "../../types/Appointments";
 import NewAppoBtn from "../microComponents/NewAppoBtn";
+import ListBranches from "../microComponents/ListBranches";
+import ListTypes from "../microComponents/ListTypes";
 function FormReservation() {
   const { register } = useForm<NewAppointment>();
   return (
@@ -17,26 +19,8 @@ function FormReservation() {
                 {...register("Date")}
               />
             </div>
-            <div className="flex flex-col w-full">
-              <label className="">Sucursal</label>
-              <select
-                className="text-gray-500 border rounded-md h-full border-gray-500"
-                {...register("id_Branch")}>
-                <option value="">Nicoya</option>
-                <option value="">San Martin</option>
-                <option value="">Desamparados</option>
-              </select>
-            </div>
-            <div className="flex flex-col w-full">
-              <label className="">Tipo</label>
-              <select
-                className="text-gray-500 border rounded-md h-full border-gray-500"
-                {...register("id_Type")}>
-                <option value=""> Odontologia</option>
-                <option value=""> Medicina general</option>
-                <option value=""> Pediatria</option>
-              </select>
-            </div>
+            <ListBranches/>
+            <ListTypes/>
           </form>
           <div className="flex h-fit justify-around py-2">
             <NewAppoBtn/>

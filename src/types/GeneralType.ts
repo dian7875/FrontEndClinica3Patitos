@@ -1,11 +1,11 @@
 export type Type_Appointment = {
-    id_Type: number;
-    Type_Name: string;
-  }
- 
+
+  id_Appoitment_Type: number;
+  name_type: string;
+}
+
 export type Branch = {
-    id_Branch: number;
-    name: string;
+  id_ClinicBranch: number;
+  branch_Name: string;
 
 }
- //Sucursal

@@ -11,7 +11,7 @@ function HeaderHome() {
   return (
     <>
       <header
-        className={` flex justify-between z-50 fixed top-0 w-full ${isDarkMode ? `dark bg-Dark-light` : `bg-primary`
+        className={`flex justify-between z-50 fixed top-0 w-full ${isDarkMode ? `dark bg-Dark-light` : `bg-primary`
           }`}
       >
         <div className="flex gap-3 pl-2 mt-2 ">
