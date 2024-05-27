@@ -1,13 +1,10 @@
-import { useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import AuthContext from "../Contexts/AutContext/AuthContext";
-import toast from "react-hot-toast";
 
-const ProtectedRoutes = ({ children, of }: { children: any, of: string }) => {
+const ProtectedRoutes = ({ children }: { children: any, of: string }) => {
 
-  const { isLogged, currentUser } = useContext(AuthContext)
-  const navigate = useNavigate();
-
+  useContext(AuthContext)
+/*
   useEffect(() => {
     if (!isLogged) {
       toast.error('Please Register Or Login With your user First');
@@ -21,7 +18,7 @@ const ProtectedRoutes = ({ children, of }: { children: any, of: string }) => {
   if (!isLogged || (isLogged && currentUser?.user_Rol !== of)) {
     return null;
   }
-
+*/
   return children;
 };
 

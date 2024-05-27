@@ -14,4 +14,3 @@ export type NewAppointment ={
   Date: Date;
   id_User:number
 }
-

@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import ThemeProvider from './Contexts/ThemeContext/ThemeProvider.tsx'
@@ -9,7 +8,7 @@ import Router from './Router/Routes.tsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+  <>
     <Toaster />
     <ThemeProvider>
       <AuthProvider>
@@ -17,5 +16,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Footer/>
       </AuthProvider>
     </ThemeProvider>
-  </React.StrictMode>,
+  </>,
 )

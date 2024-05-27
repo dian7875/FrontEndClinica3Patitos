@@ -20,6 +20,7 @@
     "react-hook-form": "^7.51.4",
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.23.1",
+    "reactjs-flip-card": "^2.0.3",
     "sweetalert2": "^11.11.0",
     "tailwind-scrollbar-hide": "^1.1.7"
   },

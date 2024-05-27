@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import Card from './Card'
+import Card from './CardAppointment/Card'
 import toast from 'react-hot-toast'
 
 export default function AppoimentsContainer() {
