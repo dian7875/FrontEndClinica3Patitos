@@ -7,23 +7,24 @@ import ProtectedRoutes from "./ProtectedRoutes";
 import HeaderHome from "../components/Layout/HeaderHome";
 import CurrentDayApo from "../Pages/CurrentDayApo";
 import MyAppointments from "../Pages/MyAppointments";
+import Recharged from "./Recharged";
 
-
- const Router =() =>{
+const Router = () => {
     return (
         <BrowserRouter>
-            <HeaderHome/>
+            <Recharged />
+            <HeaderHome />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path='/NotFound' element={<NotFound />} />
                 <Route path="/Login" element={<Login />} />
                 <Route path='/Register' element={<Register />} />
                 <Route path='/MyAppointments' element={<ProtectedRoutes of="USER">
-                    <MyAppointments/>
+                    <MyAppointments />
                 </ProtectedRoutes>}
                 />
                 <Route path='/CurrentDay' element={<ProtectedRoutes of="ADMIN">
-                    <CurrentDayApo/>
+                    <CurrentDayApo />
                 </ProtectedRoutes>
                 } />
             </Routes>
