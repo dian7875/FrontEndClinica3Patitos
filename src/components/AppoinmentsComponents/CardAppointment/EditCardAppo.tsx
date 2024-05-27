@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import AccionBtn from "../../microComponents/AccionBtn"
 import { NewAppointment } from "../../../types/Appointments";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AuthContext from "../../../Contexts/AutContext/AuthContext";
 import useUpdateAppoiment from "../../../Hooks/Appointments/UseUpdateAppoiment";
 
@@ -17,11 +17,27 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
       id_User: currentUser?.user_Id
     }
   });
-  const {onSubmit} = useUpdateAppoiment()
+  
+  const [changes, setChanges] = useState<Partial<NewAppointment>>({});
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setChanges(prevChanges => ({
+      ...prevChanges,
+      [name]: value
+    }));
+  };
+
+  const { onSubmit } = useUpdateAppoiment();
+
+  const handleFormSubmit = () => {
+    onSubmit(changes as NewAppointment);
+  };
+
   return (
     <>
       <form
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(handleFormSubmit)}
         className="bg-white rounded-lg h-32 px-3 pt-2 shadow-xl">
         <div className="flex w-full h-3/5 pb-2 gap-4">
           <div className="flex flex-col w-full">
@@ -31,13 +47,13 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
               type="datetime-local"
               placeholder="Fecha"
               required
-              {...register('date', { required: true })}/>
+              {...register('date', { required: true , onChange: handleChange  })}/>
           </div>
           <div className="flex flex-col w-full">
             <label className="">Branch</label>
             <select   title=""
               className="text-gray-500 border h-full rounded-md border-gray-500"
-              {...register('id_ClinicBranch', { required: true })}
+              {...register('id_ClinicBranch', { required: true, onChange: handleChange })}
             >
               <option value="2">Nicoya</option>
               <option value="3">San Martin</option>
@@ -52,7 +68,7 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
           </div>
         </div>
         <div className="flex justify-around h-8 pt-1">
-          <AccionBtn onFlip={onFlip} id_Appointment={appoiment.id_Appointment} />
+          <AccionBtn onFlip={onFlip} id_Appointment={appoiment.id} />
         </div>
       </form>
     </>
