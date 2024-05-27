@@ -29,8 +29,11 @@ Mode: 'media',
           dark: '#543792', //Boton de elimiar cita
         },
         Pop:{
-          background: '#845496',
-          bordes: '#4a2956',
+          background: '#dbdbdb',
+          bordes: '#c4c4c4',
+          darkbg : '#3a3a3a',
+          darkborder: '#666464',
+          darkbord: '#3a3939'
         },
         shadow: {
           'custom-dark': '100px 100px 100px 100px rgba(0, 0, 0, 0.8)',
