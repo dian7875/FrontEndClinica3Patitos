@@ -1,12 +1,15 @@
 import { useForm } from "react-hook-form";
-import AccionBtn from "../../microComponents/AccionBtn"
-import { NewAppointment } from "../../../types/Appointments";
+import AccionBtn from "../../microComponents/AccionBtn";
+import { NewAppointment } from "../../../types/appointments";
 import { useContext, useState } from "react";
 import AuthContext from "../../../Contexts/AutContext/AuthContext";
 import useUpdateAppoiment from "../../../Hooks/Appointments/UseUpdateAppoiment";
+import ListBranches from "../../microComponents/ListBranches";
+import ListTypes from "../../microComponents/ListTypes";
+import { Datepicker } from "flowbite-react";
 
 const EditCardAppo = ({ appoiment, onFlip }: any) => {
-  const {currentUser} = useContext(AuthContext)
+  const { currentUser } = useContext(AuthContext);
   const { register, handleSubmit } = useForm<NewAppointment>({
     defaultValues: {
       id_Appointment: appoiment.id_Appointment,
@@ -14,17 +17,19 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
       date: appoiment.date,
       id_ClinicBranch: appoiment.id_ClinicBranch,
       id_Appoitment_Type: appoiment.id_Appoitment_Type,
-      id_User: currentUser?.user_Id
-    }
+      id_User: currentUser?.user_Id,
+    },
   });
-  
+
   const [changes, setChanges] = useState<Partial<NewAppointment>>({});
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setChanges(prevChanges => ({
+    setChanges((prevChanges) => ({
       ...prevChanges,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -38,41 +43,35 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
     <>
       <form
         onSubmit={handleSubmit(handleFormSubmit)}
-        className="bg-white rounded-lg h-32 px-3 pt-2 shadow-xl">
+        className="bg-white rounded-lg h-32 px-3 pt-2 shadow-xl"
+      >
         <div className="flex w-full h-3/5 pb-2 gap-4">
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-40">
             <label className="">Date</label>
-            <input title=""
-              className="h-full  text-gray-500 border rounded-md border-gray-500"
-              type="datetime-local"
-              placeholder="Fecha"
+            <Datepicker
+              className="h-full text-sm text-gray-500 border rounded-md w-36 border-gray-500 "
+              
               required
-              {...register('date', { required: true , onChange: handleChange  })}/>
+              {...register("date", { required: true })}
+              
+            />
           </div>
           <div className="flex flex-col w-full">
-            <label className="">Branch</label>
-            <select   title=""
-              className="text-gray-500 border h-full rounded-md border-gray-500"
-              {...register('id_ClinicBranch', { required: true, onChange: handleChange })}
-            >
-              <option value="2">Nicoya</option>
-              <option value="3">San Martin</option>
-              <option value="4">Perez Zeledon</option>
-            </select>
+            <ListBranches register={register} />
           </div>
           <div className="flex flex-col w-full">
-            <label className="">Status</label>
-            {appoiment.status ? <span className="border text-center pt-2 h-full rounded-md font-serif bg-white ">Pendiente</span>
-              :
-              <span className="border text-center pt-2 h-full rounded-md bg-primary text-white ">Cancelada</span>}
+            <ListTypes register={register} />
           </div>
         </div>
         <div className="flex justify-around h-8 pt-1">
-          <AccionBtn onFlip={onFlip} id_Appointment={appoiment.id_Appointment} />
+          <AccionBtn
+            onFlip={onFlip}
+            id_Appointment={appoiment.id_Appointment}
+          />
         </div>
       </form>
     </>
-  )
-}
+  );
+};
 
-export default EditCardAppo
+export default EditCardAppo;
