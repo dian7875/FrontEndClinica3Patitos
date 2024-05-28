@@ -49,15 +49,15 @@ const createAppointment = async (Data: NewAppointment) => {
 };
 
 // Patch a citas
-const updateAppointment = async (updatedData: Partial<NewAppointment>) => {
+const updateAppointment = async (updatedData: Partial<NewAppointment>, id_Appointment:number) => {
   const token = localStorage.getItem('UserToken');
-
+console.log(updatedData)
   if (!token) {
     throw new Error('No token found. Please log in.');
   }
 
-  const response = await fetch(`${UrlBaseAppo}/${updatedData.id_Appointment}`, {
-    method: 'PUT',
+  const response = await fetch(`${UrlBaseAppo}/${id_Appointment}`, {
+    method: 'PATCH',
     headers: {
       'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json',

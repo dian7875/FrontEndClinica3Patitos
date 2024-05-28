@@ -3,9 +3,9 @@ import { NewAppointment } from "../../types/Appointments";
 
 const useUpdateAppoiment = () => {
 
-  const onSubmit = async (data: NewAppointment) => {
+  const onSubmit = async (data: NewAppointment, id_Appointment:number) => {
     try {
-      await updateAppointment (data)
+      await updateAppointment (data, id_Appointment)
     } catch (error) {
       console.log(error)
     }
