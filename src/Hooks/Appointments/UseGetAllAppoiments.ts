@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Appointment } from "../../types/Appointments";
+import { Appointment } from "../../types/appointments";
 import AuthContext from "../../Contexts/AutContext/AuthContext";
 import { getAppointments } from "../../Services/Service_appointment";
 
