@@ -6,7 +6,11 @@ import AuthContext from "../../../Contexts/AutContext/AuthContext";
 import useUpdateAppoiment from "../../../Hooks/Appointments/UseUpdateAppoiment";
 import ListBranches from "../../microComponents/ListBranches";
 import ListTypes from "../../microComponents/ListTypes";
-import { Datepicker } from "flowbite-react";
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import dayjs from "dayjs";
+
 
 const EditCardAppo = ({ appoiment, onFlip }: any) => {
   const { currentUser } = useContext(AuthContext);
@@ -48,13 +52,18 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
         <div className="flex w-full h-3/5 pb-2 gap-4">
           <div className="flex flex-col w-40">
             <label className="">Date</label>
-            <Datepicker
-              className="h-full text-sm text-gray-500 border rounded-md w-36 border-gray-500 "
-              
+           {/*
               required
               {...register("date", { required: true })}
-              
-            />
+  */}
+<LocalizationProvider dateAdapter={AdapterDayjs}>
+  <DateTimePicker 
+    className="h-full text-sm text-gray-500 border rounded-md w-36 border-gray-500"
+    views={['year', 'day', 'hours']}
+  />
+</LocalizationProvider>
+ 
+  
           </div>
           <div className="flex flex-col w-full">
             <ListBranches register={register} />
