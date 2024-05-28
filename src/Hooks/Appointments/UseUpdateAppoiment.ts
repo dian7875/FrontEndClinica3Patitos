@@ -6,7 +6,9 @@ const useUpdateAppoiment = () => {
 
   const onSubmit = async (data: NewAppointment, id_Appointment:number) => {
     try {
-      await updateAppointment (data, id_Appointment)
+      console.table(data)
+      console.log(id_Appointment)
+     await updateAppointment (data, id_Appointment)
       toast.success('La Cita se actualizo con exito')
     } catch (error) {
       console.log(error)

@@ -1,22 +1,19 @@
+import dayjs from "dayjs";
+
 const ViewCardAppo = ({appoiment, onFlip}:any) => {
-      const appoDate = new Date(appoiment.date);
-      const day = String(appoDate.getDate()).padStart(2, '0');
-      const month = String(appoDate.getMonth() + 1).padStart(2, '0');
-      const year = appoDate.getFullYear();
-      const hours = String(appoDate.getHours()).padStart(2, '0');
-      const minutes = String(appoDate.getMinutes()).padStart(2, '0');
-      const AppoDate = `${day}/${month}/${year}`;
-      const AppoTime = `${hours}:${minutes}`;
-      
+  
+  const fecha = dayjs(appoiment.date)
+  const fechaLegible = fecha.format('MM/DD/YYYY hh:mm A');
+
   return (
     <>
        <div
-              className="bg-white rounded-lg h-36 px-3 pt-2 text-xl shadow-xl">
+       style={{padding:'1% 2% 0 2%', fontSize:'110%'}}
+              className="bg-white h-full rounded-lg shadow-xl">
               <div className="flex w-full h-3/5 gap-4">
                 <div className="flex flex-col w-full">
                   <label className="">Date:</label>
-                  <span>{AppoDate}</span>
-                  <span>{AppoTime} </span>
+                  <span>{fechaLegible}</span>
                 </div>
                 <div className="flex flex-col w-full">
                   <label className="">Branch:</label>
@@ -33,7 +30,9 @@ const ViewCardAppo = ({appoiment, onFlip}:any) => {
                   <span>Cancelada</span>}
                 </div>
               </div>
-              <div className="flex justify-around mt-2 h-8 pt-1">
+              <div
+              style={{padding:'1% 0% 0 0%', fontSize:'110%'}}
+              className="flex justify-around">
                 <button onClick={onFlip} type="button" className="sendButton text-white bg-violet-300 rounded-md w-24 shadow-lg ">Edit</button>
               </div>
             </div>

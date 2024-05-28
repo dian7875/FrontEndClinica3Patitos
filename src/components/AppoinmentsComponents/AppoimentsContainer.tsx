@@ -19,7 +19,7 @@ export default function AppoimentsContainer() {
         src={isExpanded? "https://cdn-icons-png.flaticon.com/128/9053/9053032.png" : "https://cdn-icons-png.flaticon.com/128/3838/3838683.png" }
         alt="" />
       </div>
-      <div className={`${isExpanded ? `overflow-auto h-4/5`:`overflow-hidden h-4/5`} px-4 pt-4 pb-3 no-scrollbar`}>
+      <div className={`${isExpanded ? `overflow-auto h-4/5`:`overflow-hidden h-4/5`} px-4 no-scrollbar`}>
         <Card/>
       </div>
     </>

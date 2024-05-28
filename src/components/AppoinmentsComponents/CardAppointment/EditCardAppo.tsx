@@ -1,13 +1,17 @@
 import { useForm } from "react-hook-form";
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 import AccionBtn from "../../microComponents/AccionBtn";
 import { NewAppointment } from "../../../types/appointments";
 import { useContext, useState } from "react";
 import AuthContext from "../../../Contexts/AutContext/AuthContext";
 import useUpdateAppoiment from "../../../Hooks/Appointments/UseUpdateAppoiment";
-
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import dayjs from 'dayjs';
+import './text.css'
 const EditCardAppo = ({ appoiment, onFlip }: any) => {
   const { currentUser } = useContext(AuthContext);
-  const { register, handleSubmit} = useForm<NewAppointment>({
+  const { register, handleSubmit } = useForm<NewAppointment>({
     defaultValues: {
       id_Appointment: appoiment.id_Appointment,
       status: appoiment.status,
@@ -17,9 +21,25 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
       id_User: currentUser?.user_Id,
     },
   });
- 
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
+
   const [changes, setChanges] = useState<Partial<NewAppointment>>({});
 
+  const handleDateChange = (date: any) => {
+    const currentUtcDate = dayjs().utc();
+    const timezoneOffset = currentUtcDate.diff(dayjs(), 'minute');
+    const adjustedDate = dayjs(date).subtract(timezoneOffset, 'minute');
+    const formattedDate = adjustedDate.format('YYYY-MM-DDTHH:mm:ss[Z]');
+  
+  console.log(formattedDate)
+  const dateObject = new Date(formattedDate);
+    setChanges((prevChanges) => ({
+      ...prevChanges,
+      date: dateObject,
+    }));
+  };
+  
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -35,49 +55,56 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
   const handleFormSubmit = () => {
     onSubmit(changes as NewAppointment, appoiment.id_Appointment);
   };
-
   return (
     <>
       <form
+       style={{padding:'0% 2% 0 2%', fontSize:'110%'}}
         onSubmit={handleSubmit(handleFormSubmit)}
-        className="bg-white rounded-lg h-32 pt-2 shadow-xl"
+        className="bg-white h-full rounded-lg shadow-xl"
       >
-        <div className="flex w-full h-3/5 justify-evenly pb-2 gap-2">
-          <div className="flex flex-col">
-            <label className="">Date</label>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-  <DateTimePicker 
-    className="h-full text-sm text-gray-500 border rounded-md w-36 border-gray-500"
-    views={['year', 'day', 'hours']}
-  />
-</LocalizationProvider>
+        <div className="flex justify-evenly gap-2"
+        style={{height:'60%'}}
+        >
+          <div className="flex w-full flex-col"
+           
+          >
+            <label>Date</label>
+            <DateTimePicker
+              className="text-gray-500 border rounded-md border-gray-500"
+              views={['hours','day','year', 'month']}
+              defaultValue={dayjs(appoiment.date)}
+              {...register('date')}
+              onChange={handleDateChange}
+            />
           </div>
-          <div className="flex flex-col">
-          <label className="">Branch</label>
-            <select   title=""
-              className="text-gray-500 border h-full rounded-md border-gray-500"
+          <div className="flex flex-col w-full">
+            <label className="">Branch</label>
+            <select
+              className="text-gray-500 border  rounded-md border-gray-500"
               {...register('id_ClinicBranch', { required: true, onChange: handleChange })}
             >
-              <option value="2">Under Loch Ness</option>
-              <option value="3">San Martin</option>
-              <option value="4">Bracilito</option>
+              <option value="1">Under Loch Ness</option>
+              <option value="2">San Martin</option>
+              <option value="3">Bracilito</option>
             </select>
           </div>
-          <div className="flex flex-col">
-          <label className="">Type</label>
-            <select   title=""
-              className="text-gray-500 border h-full rounded-md border-gray-500"
+          <div className="flex flex-col w-full">
+            <label className="">Type</label>
+            <select
+              className="text-gray-500 border  rounded-md border-gray-500"
               {...register('id_Appoitment_Type', { required: true, onChange: handleChange })}
             >
-              <option value="2">General Medicine</option>
-              <option value="3">Dentistry</option>
-              <option value="4">Pediatrics</option>
-              <option value="5">Neurology</option>
+              <option value="1">General Medicine</option>
+              <option value="2">Dentistry</option>
+              <option value="3">Pediatrics</option>
+              <option value="4">Neurology</option>
             </select>
           </div>
-          
+
         </div>
-        <div className="flex justify-around h-8 pt-1">
+        <div className="flex justify-around"
+         style={{padding:'1% 0% 0 0%', fontSize:'110%'}}
+        >
           <AccionBtn
             onFlip={onFlip}
             id_Appointment={appoiment.id_Appointment}

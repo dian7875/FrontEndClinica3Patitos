@@ -1,0 +1,22 @@
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+    font-size: small;
+    height: 100%;
+}
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input{
+    padding: 0 0 0 0;
+}
+.MuiFormControl-root.MuiTextField-root.text-gray-500.border.rounded-md.border-gray-500.css-z3c6am-MuiFormControl-root-MuiTextField-root{
+    height: 58%;
+}
+.css-1roo1oa-MuiList-root-MuiMultiSectionDigitalClockSection-root::after{
+    height: 0;
+}
+
+.css-1roo1oa-MuiList-root-MuiMultiSectionDigitalClockSection-root{
+    overflow: auto;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
+    &::-webkit-scrollbar {
+      display: none; 
+    }
+  }
