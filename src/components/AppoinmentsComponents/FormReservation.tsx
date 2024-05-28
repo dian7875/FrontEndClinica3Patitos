@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { NewAppointment } from "../../types/Appointments";
+import { NewAppointment } from "../../types/appointments";
 import NewAppoBtn from "../microComponents/NewAppoBtn";
 import ListBranches from "../microComponents/ListBranches";
 import ListTypes from "../microComponents/ListTypes";
