@@ -68,7 +68,7 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
           </div>
         </div>
         <div className="flex justify-around h-8 pt-1">
-          <AccionBtn onFlip={onFlip} id_Appointment={appoiment.id} />
+          <AccionBtn onFlip={onFlip} id_Appointment={appoiment.id_Appointment} />
         </div>
       </form>
     </>
