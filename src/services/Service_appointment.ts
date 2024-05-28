@@ -31,7 +31,6 @@ const createAppointment = async (Data: NewAppointment) => {
   if (!token) {
     throw new Error('No token found. Please log in.');
   }
-  console.table(Data)
   const response = await fetch(`${UrlBaseAppo}`, {
     method: 'POST',
     headers: {
@@ -45,13 +44,11 @@ const createAppointment = async (Data: NewAppointment) => {
     const errorMessage = await response.text();
     throw new Error(`Failed to create appointment: ${errorMessage}`);
   }
-
 };
 
 // Patch a citas
 const updateAppointment = async (updatedData: Partial<NewAppointment>, id_Appointment:number) => {
   const token = localStorage.getItem('UserToken');
-console.log(updatedData)
   if (!token) {
     throw new Error('No token found. Please log in.');
   }
@@ -69,6 +66,7 @@ console.log(updatedData)
     const errorMessage = await response.text();
     throw new Error(`Failed to update appointment: ${errorMessage}`);
   }
+  return response.status
 };
 //Cancelar cita Patch
 const cancelAppoiment = async (id_Appointment: number) => {
@@ -90,17 +88,18 @@ const cancelAppoiment = async (id_Appointment: number) => {
     const errorMessage = await response.text();
     throw new Error(`Failed to update appointment: ${errorMessage}`);
   }
+  return response.ok
 };
 //Admin
 //delete to appoinment
-const deleteAppointment = async (appointmentId: number) => {
+const deleteAppointment = async (id_Appointment: number) => {
   const token = localStorage.getItem('UserToken');
 
   if (!token) {
     throw new Error('No token found. Please log in.');
   }
 
-  const response = await fetch(`${UrlBaseAppo}/${appointmentId}`, {
+  const response = await fetch(`${UrlBaseAppo}/${id_Appointment}`, {
     method: 'DELETE',
     headers: {
       'Authorization': `Bearer ${token}`,
@@ -111,6 +110,7 @@ const deleteAppointment = async (appointmentId: number) => {
     const errorMessage = await response.text();
     throw new Error(`Failed to delete appointment: ${errorMessage}`);
   }
+  return response.ok
 };
 
 const getDayAppoiments = async () => {

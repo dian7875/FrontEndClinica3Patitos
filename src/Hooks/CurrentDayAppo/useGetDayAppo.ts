@@ -10,7 +10,7 @@ function UseGetDayAppo() {
        
           const dayAppoiments = await getDayAppoiments()
           setAppoiments(dayAppoiments);
-        
+          
       } catch (error) {
         console.error(error);
       }

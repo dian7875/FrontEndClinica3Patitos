@@ -1,5 +1,6 @@
 import { Table, TableBody } from "flowbite-react";
 import UseGetDayAppo from "../../Hooks/CurrentDayAppo/useGetDayAppo"
+import Deletebtn from "./DeleteBtn";
 
 const TableAppoiments = () => {
 const {appoiments}=UseGetDayAppo()
@@ -26,9 +27,7 @@ const {appoiments}=UseGetDayAppo()
                   :
           <Table.Cell>Cancelada</Table.Cell>}
           <Table.Cell>
-          <button type="button" className="font-medium text-primary dark:text-cyan-500">
-                Delete
-              </button>
+          <Deletebtn id_Appointment={appoiment.id_Appointment}/>
           </Table.Cell>
           </Table.Row>
         ))}
