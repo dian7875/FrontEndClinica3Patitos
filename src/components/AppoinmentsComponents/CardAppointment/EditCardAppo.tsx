@@ -65,17 +65,19 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
               <option value="4">Bracilito</option>
             </select>
           </div>
-          <div className="flex flex-col h-1/3">
-          <select   title=""
+          <div className="flex flex-col">
+          <label className="">Type</label>
+            <select   title=""
               className="text-gray-500 border h-full rounded-md border-gray-500"
-              {...register('id_ClinicBranch', { required: true, onChange: handleChange })}
+              {...register('id_Appoitment_Type', { required: true, onChange: handleChange })}
             >
               <option value="2">General Medicine</option>
               <option value="3">Dentistry</option>
               <option value="4">Pediatrics</option>
-              <option value="4">Neurology</option>
+              <option value="5">Neurology</option>
             </select>
           </div>
+          
         </div>
         <div className="flex justify-around h-8 pt-1">
           <AccionBtn
