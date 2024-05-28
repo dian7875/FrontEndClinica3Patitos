@@ -1,12 +1,9 @@
-import { useContext } from "react"
-import ThemeContext from "../../Contexts/ThemeContext/ThemeContext"
-
 const Main = () => {
-  const { isDarkMode } = useContext(ThemeContext)
   return (
     <>
       <main className="flex-auto pt-16 px-32 ">
-        <div className={`flex flex-col text-center p-3 ${isDarkMode ? `dark text-black invert` : `text-black`}`}>
+        <div className={`flex flex-col text-center p-3 text-black
+        dark:text-black dark:invert`}>
           <span>Our Services</span>
           <div className="flex justify-between">
             <div className="flex flex-col items-center">
@@ -27,7 +24,7 @@ const Main = () => {
             </div>
           </div>
         </div>
-        <div className={`w-full flex p-2 justify-between rounded-2xl text-white ${isDarkMode ? `dark bg-Dark-light` : `bg-primary`} `}>
+        <div className={`w-full flex p-2 justify-between rounded-2xl text-white bg-primary dark:bg-Dark-light`}>
           <div className="flex gap-4">
             <div>
               <img width={70} className="h-full invert" src="https://cdn-icons-png.flaticon.com/128/12764/12764862.png" alt="" />

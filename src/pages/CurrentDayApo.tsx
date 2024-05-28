@@ -1,8 +1,12 @@
+import TableAppoiments from "../components/CurrentDayComponents/TableAppoiments"
+
 const CurrentDayApo = () => {
   return (
-    <div>
-      citas de hoy
-    </div>
+    <>
+      <div className="h-screen w-full flex justify-center items-center">
+        <TableAppoiments/>
+      </div>
+    </>
   )
 }
 

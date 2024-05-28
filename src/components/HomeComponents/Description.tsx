@@ -11,7 +11,9 @@ const Description = () => {
           <p >By far the place to recieve fast and professional medical services </p>
         </div>
         <div className='View-More '>
-          <button type="button" className='w-32 mt-2 bg-primary text-white rounded-xl'>View more</button>
+          <button type="button" className='w-32 mt-2 bg-primary text-white rounded-xl
+          dark:bg-Dark-light
+          '>View more</button>
         </div>
       </div>
     </>

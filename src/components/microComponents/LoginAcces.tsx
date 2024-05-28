@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const LoginAcces = () => {
     return (
-        <Link className="flex gap-3 mt-1 mr-2 text-white" to={"/Login"}>
+        <Link className="flex gap-3 mt-1 mr-2 text-white" to={"/Auth"}>
             <h1 className="mt-2">Login</h1>
             <img
                 title="ig"

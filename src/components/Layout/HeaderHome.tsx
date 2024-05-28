@@ -1,19 +1,15 @@
 import { useContext } from "react";
 import AuthContext from "../../Contexts/AutContext/AuthContext";
-import ThemeContext from "../../Contexts/ThemeContext/ThemeContext";
 import DarkModeToggle from "../microComponents/DarkModeButton";
 import LoginAcces from "../microComponents/LoginAcces";
 import UserData from "../HomeComponents/UserData";
 
 function HeaderHome() {
-  const { isDarkMode } = useContext(ThemeContext);
   const {isLogged} = useContext(AuthContext)
   return (
     <>
       <header
-        className={`flex justify-between z-50 fixed top-0 w-full ${isDarkMode ? `dark bg-Dark-light` : `bg-primary`
-          }`}
-      >
+        className={`flex justify-between z-50 fixed top-0 w-full bg-primary dark:bg-Dark-light`}>
         <div className="flex gap-3 pl-2 mt-2 ">
           <a className="Instagram" href="">
             <img

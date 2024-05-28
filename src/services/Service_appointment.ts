@@ -1,14 +1,9 @@
 import { NewAppointment } from "../types/Appointments";
 
-const urlCoursesBase = `https://66456d5ab8925626f891d5c2.mockapi.io/Pacientes/test/Appointment`;
-const UrlBaseAppo ='https://localhost:7066/api/Appoitment';
-const getAllAppo = async () => {
-  const response = await fetch(urlCoursesBase);
-  const result = await response.json();
-  return result;
-}
+const UrlBaseAppo = 'https://localhost:7066/api/Appoitment';
+
 //Get appointment of user
-const getAppointments = async (user_Id:number) => {
+const getAppointments = async (user_Id: number) => {
   const token = localStorage.getItem('UserToken');
   if (!token) {
     throw new Error('No token found. Please log in.');
@@ -53,27 +48,6 @@ const createAppointment = async (Data: NewAppointment) => {
 
 };
 
-//delete to appoinment
-const deleteAppointment = async (appointmentId: number) => {
-  const token = localStorage.getItem('authToken');
-
-  if (!token) {
-    throw new Error('No token found. Please log in.');
-  }
-
-  const response = await fetch(`${UrlBaseAppo}/${appointmentId}`, {
-    method: 'DELETE',
-    headers: {
-      'Authorization': `Bearer ${token}`,
-    },
-  });
-
-  if (!response.ok) {
-    const errorMessage = await response.text();
-    throw new Error(`Failed to delete appointment: ${errorMessage}`);
-  }
-};
-
 // Patch a citas
 const updateAppointment = async (updatedData: Partial<NewAppointment>) => {
   const token = localStorage.getItem('UserToken');
@@ -96,8 +70,8 @@ const updateAppointment = async (updatedData: Partial<NewAppointment>) => {
     throw new Error(`Failed to update appointment: ${errorMessage}`);
   }
 };
-
-const cancelAppoiment = async (id_Appointment:number) => {
+//Cancelar cita Patch
+const cancelAppoiment = async (id_Appointment: number) => {
   const token = localStorage.getItem('UserToken');
 
   if (!token) {
@@ -117,7 +91,54 @@ const cancelAppoiment = async (id_Appointment:number) => {
     throw new Error(`Failed to update appointment: ${errorMessage}`);
   }
 };
+//Admin
+//delete to appoinment
+const deleteAppointment = async (appointmentId: number) => {
+  const token = localStorage.getItem('UserToken');
+
+  if (!token) {
+    throw new Error('No token found. Please log in.');
+  }
+
+  const response = await fetch(`${UrlBaseAppo}/${appointmentId}`, {
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+    },
+  });
+
+  if (!response.ok) {
+    const errorMessage = await response.text();
+    throw new Error(`Failed to delete appointment: ${errorMessage}`);
+  }
+};
+
+const getDayAppoiments = async () => {
+  const token = localStorage.getItem('UserToken');
+  if (!token) {
+    throw new Error('No token found. Please log in.');
+  }
+
+  const response = await fetch(`${UrlBaseAppo}/today`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+    },
+  });
+
+  if (!response.ok) {
+    const errorMessage = await response.text();
+    throw new Error(`Failed to fetch appointments: ${errorMessage}`);
+  }
+
+  return response.json();
+};
 
 export {
-  getAllAppo, getAppointments, deleteAppointment, createAppointment, updateAppointment, cancelAppoiment
+  getAppointments,
+  cancelAppoiment,
+  createAppointment,
+  updateAppointment,
+  deleteAppointment,
+  getDayAppoiments
 }
