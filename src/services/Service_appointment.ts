@@ -1,4 +1,4 @@
-import { NewAppointment } from "../types/appointments";
+import { NewAppointment } from "../types/Appointments";
 
 const UrlBaseAppo = 'https://localhost:7066/api/Appoitment';
 
