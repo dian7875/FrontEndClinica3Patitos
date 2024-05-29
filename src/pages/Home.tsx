@@ -6,7 +6,8 @@ function Home() {
   return (
     <>
       <div
-        className={`h-screen flex flex-col pt-12 pb-16 
+        style={{ padding: ' 3% 0% 4% 0%' }}
+        className={`h-screen flex flex-col
         bg-[url(./src/assets/Backgorund.jpg)] 
         dark:bg-[url(./src/assets/BGDARK.jpg)]
       dark:text-white`}

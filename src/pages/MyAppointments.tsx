@@ -1,7 +1,6 @@
 
 import AppoimentsContainer from "../components/AppoinmentsComponents/AppoimentsContainer"
 import FormReservation from "../components/AppoinmentsComponents/FormReservation"
-
 const MyAppointments = () => {
   return (
     <>
