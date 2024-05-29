@@ -6,6 +6,8 @@ import ListTypes from "../microComponents/ListTypes";
 import { useContext, useEffect } from "react";
 import AuthContext from "../../Contexts/AutContext/AuthContext";
 import useNewAppointment from "../../Hooks/Appointments/UseNewAppointment";
+import ThemeContext from "../../Contexts/ThemeContext/ThemeContext";
+
 function FormReservation() {
   const {currentUser} = useContext(AuthContext)
   const { register, handleSubmit, setValue } = useForm<NewAppointment>();
@@ -17,11 +19,13 @@ function FormReservation() {
   }, [setValue, currentUser]);
 
   const{onSubmit}= useNewAppointment()
-
+  const { isDarkMode } = useContext(ThemeContext);
   return (
     <>
       <div className="px-40 pt-20 pb-12">
-        <div className="bg-white px-3 rounded-2xl text-lg shadow-2xl">
+        <div className={`px-3 rounded-2xl text-lg shadow-2xl  ${
+          isDarkMode ? `bg-Dark-light` : `bg-white`
+        }`}>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex gap-5">
               <div className="flex flex-col h-full w-full">
