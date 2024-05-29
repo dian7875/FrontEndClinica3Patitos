@@ -60,7 +60,7 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
       <form
        style={{padding:'0% 2% 0 2%', fontSize:'110%'}}
         onSubmit={handleSubmit(handleFormSubmit)}
-        className="bg-white h-full rounded-lg shadow-xl"
+        className={`bg-white h-full rounded-lg shadow-xl dark:bg-Dark-light dark:text-white`}
       >
         <div className="flex justify-evenly gap-2"
         style={{height:'60%'}}
@@ -70,7 +70,7 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
           >
             <label>Date</label>
             <DateTimePicker
-              className="text-gray-500 border rounded-md border-gray-500"
+              className="text-gray-500 border rounded-md bg-white border-gray-500"
               views={['hours','day','year', 'month']}
               defaultValue={dayjs(appoiment.date)}
               {...register('date')}
