@@ -18,7 +18,11 @@ Mode: 'media',
         },
         Buttons:{
           Cancel: '#876DA1',
-          Eliminar: '#543792'
+          Eliminar: '#543792',
+          DarkCancel: '#1f2328',
+          DarkEliminar: '#1a212b',
+          DarkEdit: '#3d3e3f',
+
         },
         Dark:{
           light: '#4B5563', //Principal
