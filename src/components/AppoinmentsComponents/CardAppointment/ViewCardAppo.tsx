@@ -9,7 +9,7 @@ const ViewCardAppo = ({appoiment, onFlip}:any) => {
     <>
        <div
        style={{padding:'1% 2% 0 2%', fontSize:'110%'}}
-              className="bg-white h-full rounded-lg shadow-xl">
+              className={`bg-white h-full rounded-lg shadow-xl dark:bg-Dark-light dark:text-white`}>
               <div className="flex w-full h-3/5 gap-4">
                 <div className="flex flex-col w-full">
                   <label className="">Date:</label>
@@ -33,7 +33,7 @@ const ViewCardAppo = ({appoiment, onFlip}:any) => {
               <div
               style={{padding:'1% 0% 0 0%', fontSize:'110%'}}
               className="flex justify-around">
-                <button onClick={onFlip} type="button" className="sendButton text-white bg-violet-300 rounded-md w-24 shadow-lg ">Edit</button>
+                <button onClick={onFlip} type="button" className={`sendButton text-white bg-violet-300 rounded-md w-24 shadow-lg dark:bg-gray-400 `}>Edit</button>
               </div>
             </div>
     </>
