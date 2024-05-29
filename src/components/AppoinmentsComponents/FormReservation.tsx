@@ -3,7 +3,7 @@ import { NewAppointment } from "../../types/Appointments";
 import NewAppoBtn from "../microComponents/NewAppoBtn";
 import ListBranches from "../microComponents/ListBranches";
 import ListTypes from "../microComponents/ListTypes";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import AuthContext from "../../Contexts/AutContext/AuthContext";
 import useNewAppointment from "../../Hooks/Appointments/UseNewAppointment";
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
@@ -20,20 +20,14 @@ function FormReservation() {
 
   const{onSubmit}= useNewAppointment()
   
-  const [changes, setChanges] = useState<Partial<NewAppointment>>({});
 
   const handleDateChange = (date: any) => {
     const currentUtcDate = dayjs().utc();
     const timezoneOffset = currentUtcDate.diff(dayjs(), 'minute');
     const adjustedDate = dayjs(date).subtract(timezoneOffset, 'minute');
     const formattedDate = adjustedDate.format('YYYY-MM-DDTHH:mm:ss[Z]');
-  
-  console.log(formattedDate)
-  const dateObject = new Date(formattedDate);
-    setChanges((prevChanges) => ({
-      ...prevChanges,
-      date: dateObject,
-    }));
+    const dateObject = new Date(formattedDate);
+    setValue('date', dateObject)
   };
 
 
@@ -46,6 +40,7 @@ function FormReservation() {
               <div className="flex flex-col h-full w-full">
                 <label className="">Fecha</label>
                 <DateTimePicker
+                required
               className="text-gray-500 border rounded-md bg-white border-gray-500"
               views={['hours','day','year', 'month']}
               {...register('date')}

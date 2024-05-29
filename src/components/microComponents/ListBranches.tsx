@@ -9,6 +9,7 @@ const ListBranches = ({ register}:any) => {
             <div className="flex flex-col w-full ">
                 <label className="">Branch</label>
                 <select
+                required
                     className=" text-gray-500 border h-full rounded-md border-gray-500"
                     {...register('id_ClinicBranch')}>
                     <option >Please Select a Branch</option>
