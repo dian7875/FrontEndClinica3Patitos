@@ -9,12 +9,15 @@ const CardFlipp = ({appoiment}:any) => {
     const handleFlip = () => {
         setIsFlipped(!isFlipped);
     };
-  
+    const flipCardStyle = {
+        height: '13%'
+      };
     return (
         <ReactFlipCard
             flipByProp={isFlipped}
             flipTrigger="disabled"
-            containerCss="w-full h-full"
+            containerStyle={flipCardStyle}
+            containerCss="w-full"
             frontComponent={<ViewCardAppo appoiment={appoiment} onFlip={handleFlip} />}
             backComponent={<EditCardAppo appoiment={appoiment} onFlip={handleFlip} />}
         />

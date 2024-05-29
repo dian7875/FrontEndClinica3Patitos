@@ -44,10 +44,11 @@ const createAppointment = async (Data: NewAppointment) => {
     const errorMessage = await response.text();
     throw new Error(`Failed to create appointment: ${errorMessage}`);
   }
+  return response.status
 };
 
 // Patch a citas
-const updateAppointment = async (updatedData: Partial<NewAppointment>, id_Appointment:number) => {
+const updateAppointment = async (updatedData: Partial<NewAppointment>, id_Appointment: number) => {
   const token = localStorage.getItem('UserToken');
   if (!token) {
     throw new Error('No token found. Please log in.');
@@ -88,7 +89,7 @@ const cancelAppoiment = async (id_Appointment: number) => {
     const errorMessage = await response.text();
     throw new Error(`Failed to update appointment: ${errorMessage}`);
   }
-  return response.ok
+  return response.status
 };
 //Admin
 //delete to appoinment
@@ -110,7 +111,7 @@ const deleteAppointment = async (id_Appointment: number) => {
     const errorMessage = await response.text();
     throw new Error(`Failed to delete appointment: ${errorMessage}`);
   }
-  return response.ok
+  return response.status
 };
 
 const getDayAppoiments = async () => {

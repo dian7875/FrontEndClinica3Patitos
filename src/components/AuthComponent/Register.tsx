@@ -9,7 +9,7 @@ import useRegister from "../../Hooks/Auth/useRegister"
 const Register = ({onFlip}:any) => {
 const { isLogged } = useContext(AuthContext)
 const { register, handleSubmit } = useForm<User>()
-const onSubmit = useRegister();
+const onSubmit = useRegister(onFlip);
 
 if (isLogged) {return <Navigate to={"/"} />}
 

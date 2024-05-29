@@ -9,19 +9,17 @@ const Auth = () => {
     const handleFlip = () => {
         setIsFlipped(!isFlipped);
     };
-    const flipCardStyle = {
-        width: '100%',
-        heith: '100%'
-      };
   return (
     <>
+        <div className="w-full h-full bg-white dark:bg-black">
         <ReactFlipCard
             flipByProp={isFlipped}
             flipTrigger="disabled"
-            containerStyle={flipCardStyle}
+            containerCss="h-full w-full"
             frontComponent={<Login onFlip={handleFlip} />}
             backComponent={<Register onFlip={handleFlip} />}
-        />
+            />
+        </div>
     </>
   )
 }

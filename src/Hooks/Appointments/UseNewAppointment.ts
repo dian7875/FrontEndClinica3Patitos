@@ -3,33 +3,21 @@ import { createAppointment } from "../../Services/Service_appointment";
 import { NewAppointment } from "../../types/appointments";
 
 const useNewAppointment = () => {
-    
-  const extractErrorMessage = (errorString: string): string => {
-    const match = errorString.match(/The selected date and time are not available\./);
-    if (match) {
-        return match[0];
-    } else {
-        return "Unknown error occurred";
-    }
-  };
 
   const onSubmit = async (data: NewAppointment) => {
     try {
         await createAppointment(data)
         toast.success('Cita Creada Con éxito')
-    } catch (error) {
-      let errorMessage: string;
+    } catch (error:any) {
+      const errorMessage = error.message || "Fail to Create Appoiment";
+      const only1DateMessage = "You cannot create another appointment for the same user on the same day.";
 
-      if (typeof error === 'string') {
-          errorMessage = extractErrorMessage(error);
-      } else if (error instanceof Error) {
-          errorMessage = extractErrorMessage(error.message);
+      if (errorMessage.includes(only1DateMessage)) {
+        toast.error(only1DateMessage);
       } else {
-          errorMessage = "Unknown error occurred";
+        toast.error(errorMessage);
       }
-
-      console.error("Error:", errorMessage);
-      toast.error(errorMessage)
+      
     }
   };
   return {
