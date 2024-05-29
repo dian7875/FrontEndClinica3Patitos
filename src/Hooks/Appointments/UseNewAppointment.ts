@@ -6,6 +6,7 @@ const useNewAppointment = () => {
 
   const onSubmit = async (data: NewAppointment) => { 
     try {
+      console.table(data)
         await createAppointment(data)
         toast.success('Cita Creada Con éxito')
     } catch (error:any) {
@@ -15,7 +16,7 @@ const useNewAppointment = () => {
       if (errorMessage.includes(only1DateMessage)) {
         toast.error(only1DateMessage);
       } else {
-        toast.error(errorMessage);
+        toast.error('Please Fill the information');
       }
       
     }

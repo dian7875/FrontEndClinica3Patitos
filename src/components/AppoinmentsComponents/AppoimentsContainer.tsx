@@ -20,7 +20,7 @@ export default function AppoimentsContainer() {
   return (
     <>
       <div className={`flex justify-center bg-primary dark:bg-Dark-light`}>
-        <span className={'mt-2 text-xl dark:text-white'}>My Appoiments </span>
+        <span className={'mt-2 text-xl text-white'}>My Appoiments </span>
         <img onClick={expanded} title='Click For View More'
         className={'w-10 pt-1 dark:invert'}
         src={isExpanded? "https://cdn-icons-png.flaticon.com/128/9053/9053032.png" : "https://cdn-icons-png.flaticon.com/128/3838/3838683.png" }

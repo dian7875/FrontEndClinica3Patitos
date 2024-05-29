@@ -8,7 +8,7 @@ import AuthContext from "../../../Contexts/AutContext/AuthContext";
 import useUpdateAppoiment from "../../../Hooks/Appointments/UseUpdateAppoiment";
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import dayjs from 'dayjs';
-import './text.css'
+import './datePiker.css'
 const EditCardAppo = ({ appoiment, onFlip }: any) => {
   const { currentUser } = useContext(AuthContext);
   const { register, handleSubmit } = useForm<NewAppointment>({
