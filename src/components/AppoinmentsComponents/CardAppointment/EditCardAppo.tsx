@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import AccionBtn from "../../microComponents/AccionBtn";
-import { NewAppointment } from "../../../types/appointments";
+import { NewAppointment } from "../../../types/Appointments";
 import { useContext, useState } from "react";
 import AuthContext from "../../../Contexts/AutContext/AuthContext";
 import useUpdateAppoiment from "../../../Hooks/Appointments/UseUpdateAppoiment";

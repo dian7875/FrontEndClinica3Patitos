@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Appointment } from "../../types/appointments";
+import { Appointment } from "../../types/Appointments";
 import AuthContext from "../../Contexts/AutContext/AuthContext";
 import { getAppointments } from "../../Services/Service_appointment";
 
@@ -23,7 +23,7 @@ function UseGetAllAppoiments() {
     }, []);
   
     return {
-      appoiments, getAppoiments
+      appoiments, getAppoiments, refreshAppoiments: getAppoiments, setAppoiments
     };
   }
   

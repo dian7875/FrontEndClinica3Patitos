@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getDayAppoiments } from "../../Services/Service_appointment";
-import { Appointment } from "../../types/appointments";
+import { Appointment } from "../../types/Appointments";
 
 function UseGetDayAppo() {
     const [appoiments, setAppoiments] = useState<Appointment[]>([]);

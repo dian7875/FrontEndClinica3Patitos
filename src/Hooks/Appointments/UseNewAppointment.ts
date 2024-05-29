@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 import { createAppointment } from "../../Services/Service_appointment";
-import { NewAppointment } from "../../types/appointments";
+import { NewAppointment } from "../../types/Appointments";
 
 const useNewAppointment = () => {
 
