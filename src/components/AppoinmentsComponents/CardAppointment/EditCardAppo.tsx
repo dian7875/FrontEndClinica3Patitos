@@ -11,14 +11,8 @@ import dayjs from 'dayjs';
 import './text.css'
 import ListBranches from "../../microComponents/ListBranches";
 import ListTypes from "../../microComponents/ListTypes";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
-import ThemeContext from "../../../Contexts/ThemeContext/ThemeContext";
-
 const EditCardAppo = ({ appoiment, onFlip }: any) => {
   const { currentUser } = useContext(AuthContext);
-  const { register, handleSubmit } = useForm<NewAppointment>({
   const { register, handleSubmit } = useForm<NewAppointment>({
     defaultValues: {
       id_Appointment: appoiment.id_Appointment,
@@ -31,7 +25,6 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
   });
   dayjs.extend(utc);
   dayjs.extend(timezone);
-
 
   const [changes, setChanges] = useState<Partial<NewAppointment>>({});
 
@@ -64,17 +57,12 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
   const handleFormSubmit = () => {
     onSubmit(changes as NewAppointment, appoiment.id_Appointment);
   };
-  const { isDarkMode } = useContext(ThemeContext);
-
   return (
     <>
       <form
        style={{padding:'0% 2% 0 2%', fontSize:'110%'}}
         onSubmit={handleSubmit(handleFormSubmit)}
         className="bg-white h-full rounded-lg shadow-xl"
-        className={`rounded-lg h-32 px-3 pt-2 shadow-xl  ${
-          isDarkMode ? `bg-Dark-light` : `bg-white`
-        }`}
       >
         <div className="flex justify-evenly gap-2"
         style={{height:'60%'}}
@@ -90,16 +78,6 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
               {...register('date')}
               onChange={handleDateChange}
             />
-        <div className="flex w-full h-3/5 pb-2 gap-4">
-          <div className="flex flex-col w-40">
-            <label className="">Date</label>
-
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DateTimePicker
-                className="h-full text-sm text-gray-500 border rounded-md w-36  border-gray-500"
-                views={["year", "day", "hours"]}
-              />
-            </LocalizationProvider>
           </div>
           <div className="flex flex-col w-full">
             <label className="">Branch</label>
@@ -137,6 +115,8 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
             onFlip={onFlip}
             id_Appointment={appoiment.id_Appointment}
           />
+        </div>
+        </div>
         </div>
       </form>
     </>
