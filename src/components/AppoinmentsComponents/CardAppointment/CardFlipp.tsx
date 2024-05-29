@@ -10,7 +10,7 @@ const CardFlipp = ({appoiment}:any) => {
         setIsFlipped(!isFlipped);
     };
     const flipCardStyle = {
-        height: '13%'
+        height: '100%'
       };
     return (
         <ReactFlipCard

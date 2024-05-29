@@ -7,10 +7,11 @@ function Card() {
   return (
     
     <div className="grid grid-cols-2"
-    style={{ padding: ' 1% 0% 1% 0%', gap: '1%', height:'180%' }}
+    style={{ padding: ' 0% 0% 1% 0%', gap: '1%' }}
     >
       {appoiments.map((appoiment) => (
         <div key={appoiment.id_Appointment} 
+        style={{ padding: ' 1% 0% 0% 0%'}}
         className="w-full h-full">
         <CardFlipp appoiment={appoiment}/>
         </div>
