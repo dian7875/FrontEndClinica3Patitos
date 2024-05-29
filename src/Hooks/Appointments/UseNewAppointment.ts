@@ -4,7 +4,7 @@ import { NewAppointment } from "../../types/appointments";
 
 const useNewAppointment = () => {
 
-  const onSubmit = async (data: NewAppointment) => {
+  const onSubmit = async (data: NewAppointment) => { 
     try {
         await createAppointment(data)
         toast.success('Cita Creada Con éxito')
