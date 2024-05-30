@@ -1,8 +1,19 @@
 import NavBar from "../components/HomeComponents/NavBar";
 import Description from "../components/HomeComponents/Description";
 import Main from "../components/HomeComponents/MainHome";
+import { useContext } from "react";
+import ListContext from "../Contexts/ListContext/ListContext";
+import image from "../assets/Loanding_Gif.gif"
 
 function Home() {
+  const {loading} = useContext(ListContext);
+  if (loading) {
+    return (
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+            <img src={image} alt="Loading" />
+        </div>
+    );
+} else {
   return (
     <>
       <div
@@ -18,6 +29,7 @@ function Home() {
       </div>
     </>
   );
+}
 }
 
 export default Home;
