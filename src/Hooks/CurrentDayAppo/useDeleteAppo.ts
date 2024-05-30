@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import { deleteAppointment } from "../../Services/Service_appointment";
+import { deleteAppointment } from "../../services/Service_appointment";
 
 const useDeleteAppoiment = async (id_Appointment:number) => {
  
