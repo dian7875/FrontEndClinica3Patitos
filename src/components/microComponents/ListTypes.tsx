@@ -8,9 +8,8 @@ const ListTypes = ({register}:any) => {
               <label className="">Tipo</label>
               <select
                 className=" w-full text-gray-500 border rounded-md h-full border-gray-500"
-                required
                 {...register("id_Appoitment_Type")}>
-                <option>Please Select a Especial</option>
+                <option value={0}>Please Select a Especial</option>
                 {TypesAp?.map((types, index) => (
                         <option key={index} value={types.id_Appoitment_Type.toString()}>
                             {types.name_type}

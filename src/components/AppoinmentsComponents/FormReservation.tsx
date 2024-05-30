@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import { NewAppointment } from "../../types/appointments";
-import NewAppoBtn from "../microComponents/NewAppoBtn";
 import ListBranches from "../microComponents/ListBranches";
 import ListTypes from "../microComponents/ListTypes";
 import { useContext, useEffect } from "react";
@@ -8,8 +7,8 @@ import AuthContext from "../../Contexts/AutContext/AuthContext";
 import useNewAppointment from "../../Hooks/Appointments/UseNewAppointment";
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import dayjs from 'dayjs';
-function FormReservation() {
-  const {currentUser} = useContext(AuthContext)
+const FormReservation = () => {
+  const { currentUser } = useContext(AuthContext)
   const { register, handleSubmit, setValue } = useForm<NewAppointment>();
 
   useEffect(() => {
@@ -18,8 +17,7 @@ function FormReservation() {
     }
   }, [setValue, currentUser]);
 
-  const{onSubmit}= useNewAppointment()
-  
+  const { onSubmit } = useNewAppointment()
 
   const handleDateChange = (date: any) => {
     const currentUtcDate = dayjs().utc();
@@ -30,6 +28,10 @@ function FormReservation() {
     setValue('date', dateObject)
   };
 
+  const clearField = () => {
+    setValue('id_ClinicBranch', 0)
+    setValue('id_Appoitment_Type',0)
+  }
 
   return (
     <>
@@ -40,18 +42,22 @@ function FormReservation() {
               <div className="flex flex-col h-full w-full">
                 <label className="">Fecha</label>
                 <DateTimePicker
-                required
-              className="text-gray-500 border rounded-md bg-white border-gray-500"
-              views={['hours','day','year', 'month']}
-              {...register('date')}
-              onChange={handleDateChange}
-            />
+                  className="text-gray-500 border rounded-md bg-white border-gray-500"
+                  views={['hours', 'day', 'month']}
+                  {...register('date')}
+                  onChange={handleDateChange}
+                />
               </div>
               <ListBranches register={register} />
               <ListTypes register={register} />
             </div>
             <div className="flex h-fit justify-around py-2">
-              <NewAppoBtn />
+              <button type="submit" className={`bg-white rounded-md w-24 shadow-lg shadow-purple-500/50 h-full dark:bg-gray-900 dark:shadow-gray-900/50 dark:text-white`}>
+                Reserve
+              </button>
+              <button onClick={clearField} type="button" className={` bg-primary text-white rounded-md w-24 dark:bg-gray-800`}>
+                Clean
+              </button>
             </div>
           </form>
         </div>

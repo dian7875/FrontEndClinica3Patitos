@@ -4,7 +4,7 @@ import Card from './CardAppointment/Card'
 import toast from 'react-hot-toast'
 import UseGetAllAppoiments from '../../Hooks/Appointments/UseGetAllAppoiments';
 
-export default function AppoimentsContainer() {
+const AppoimentsContainer=()=> {
   const [isExpanded, setIsExpanded] = useState<boolean>(false)
   const {appoiments, refreshAppoiments, setAppoiments} = UseGetAllAppoiments();
 
@@ -26,9 +26,13 @@ export default function AppoimentsContainer() {
         src={isExpanded? "https://cdn-icons-png.flaticon.com/128/9053/9053032.png" : "https://cdn-icons-png.flaticon.com/128/3838/3838683.png" }
         alt="" />
       </div>
-      <div className={`${isExpanded ? `overflow-auto h-4/5`:`overflow-hidden h-4/5`} px-4 no-scrollbar`}>
+      <div 
+      style={{padding:'0 1% 4% 1%'}}
+      className={`${isExpanded ? `overflow-auto h-4/5`:`overflow-hidden h-4/5`} no-scrollbar`}>
         <Card/>
       </div>
     </>
   )
 }
+
+export default AppoimentsContainer
