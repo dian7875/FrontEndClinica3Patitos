@@ -1,10 +1,14 @@
 import toast from "react-hot-toast";
-import { updateAppointment } from "../../Services/Service_appointment";
+import { updateAppointment } from "../../services/Service_appointment";
 import { NewAppointment } from "../../types/appointments";
 import UseGetAllAppoiments from "./UseGetAllAppoiments";
+import ListContext from "../../Contexts/ListContext/ListContext";
+import { useContext } from "react";
 
 const useUpdateAppoiment = () => {
-  const {getAppoiments}=UseGetAllAppoiments()
+  const {getAppoiments}=UseGetAllAppoiments()  
+  const {setloading} = useContext(ListContext);
+
   const onSubmit = async (data: NewAppointment, id_Appointment:number, onFlip:any) => {
     try {
      await updateAppointment (data, id_Appointment)
@@ -19,6 +23,7 @@ const useUpdateAppoiment = () => {
       } else {
         toast.error(errorMessage);
       }
+      setloading(false); 
     }
   };
 

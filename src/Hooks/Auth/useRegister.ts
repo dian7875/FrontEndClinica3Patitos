@@ -2,7 +2,7 @@ import { useCallback, useContext } from "react";
 import toast from "react-hot-toast";
 import { User } from "../../types/User";
 import AuthContext from "../../Contexts/AutContext/AuthContext";
-import { createUser } from "../../Services/Services_Users";
+import { createUser } from "../../services/Services_Users";
 
 const useRegister = (onFlip:any) => {
   const { setIsLogged } = useContext(AuthContext)

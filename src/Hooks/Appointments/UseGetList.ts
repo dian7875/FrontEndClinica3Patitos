@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Branch, Type_Appointment } from "../../types/GeneralType";
-import { getListBranch, getListType } from "../../Services/ServiceGeneral";
+import { getListBranch, getListType } from "../../services/ServiceGeneral";
 
 
 const UseGetList = () => {
