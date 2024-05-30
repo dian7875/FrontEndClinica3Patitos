@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getDayAppoiments } from "../../Services/Service_appointment";
+import { getDayAppoiments } from "../../services/Service_appointment";
 import { Appointment } from "../../types/appointments";
 
 function UseGetDayAppo() {

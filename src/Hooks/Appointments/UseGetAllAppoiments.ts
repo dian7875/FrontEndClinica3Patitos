@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Appointment } from "../../types/appointments";
 import AuthContext from "../../Contexts/AutContext/AuthContext";
-import { getAppointments } from "../../Services/Service_appointment";
+import { getAppointments } from "../../services/Service_appointment";
 import ListContext from "../../Contexts/ListContext/ListContext";
 
 function UseGetAllAppoiments() {
