@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from "react";
-import { Appointment } from "../../types/appointments";
+import { useContext, useEffect} from "react";
 import AuthContext from "../../Contexts/AutContext/AuthContext";
 import { getAppointments } from "../../Services/Service_appointment";
+import AppointmentsContext from "../../Contexts/Appoiments/AppoimentsContext";
 
 function UseGetAllAppoiments() {
-    const [appoiments, setAppoiments] = useState<Appointment[]>([]);
+    const {appoiments,setAppoiments} = useContext(AppointmentsContext)
     const {currentUser} = useContext(AuthContext);
 
     const getAppoiments = async () => {
@@ -20,7 +20,7 @@ function UseGetAllAppoiments() {
   
     useEffect(() => {
       getAppoiments();
-    }, []);
+    }, [currentUser]);
   
     return {
       appoiments, getAppoiments

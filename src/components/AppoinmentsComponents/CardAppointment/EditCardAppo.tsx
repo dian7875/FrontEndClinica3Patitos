@@ -53,7 +53,7 @@ const EditCardAppo = ({ appoiment, onFlip }: any) => {
   const { onSubmit } = useUpdateAppoiment();
 
   const handleFormSubmit = () => {
-    onSubmit(changes as NewAppointment, appoiment.id_Appointment);
+    onSubmit(changes as NewAppointment, appoiment.id_Appointment, onFlip);
   };
   return (
     <>

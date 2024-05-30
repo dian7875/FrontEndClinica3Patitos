@@ -1,10 +1,12 @@
 import toast from "react-hot-toast";
 import { cancelAppoiment } from "../../Services/Service_appointment";
 
-const useCancelAppoiments = async (id_Appointment:number) => {
+const useCancelAppoiments = async (id_Appointment:number, getAppoiments:any) => {
+
     try {
         await cancelAppoiment(id_Appointment)
         toast.success('Cita Cancelada')
+        getAppoiments()
     } catch (error:any) {
         console.log(error)
         const errorMessage = extractErrorMessage(error.message);

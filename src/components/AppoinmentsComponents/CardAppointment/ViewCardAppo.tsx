@@ -1,7 +1,11 @@
 import dayjs from "dayjs";
+import toast from "react-hot-toast";
 
-const ViewCardAppo = ({appoiment, onFlip}:any) => {
-  
+const ViewCardAppo = ({ appoiment, onFlip }: any) => {
+
+  const editflip = () =>{
+    appoiment.status?  onFlip() : toast.error('Canot edit cancel Appoiment')
+  }
   const fecha = dayjs(appoiment.date)
   const fechaLegible = fecha.format('MM/DD/YYYY hh:mm A');
 
@@ -31,9 +35,10 @@ const ViewCardAppo = ({appoiment, onFlip}:any) => {
                 </div>
               </div>
               <div
-              style={{padding:'1% 0% 0 0%', fontSize:'110%'}}
-              className="flex justify-around">
-                <button onClick={onFlip} type="button" className={`sendButton text-white bg-violet-300 rounded-md w-24 shadow-lg dark:bg-gray-400 `}>Edit</button>
+                style={{ padding: '1% 0% 0 0%', fontSize: '110%' }}
+                className="flex justify-around">
+                <button onClick={editflip} type="button"
+                  className={`text-white bg-violet-300 rounded-md w-24 shadow-lg dark:bg-gray-400 `}>Edit</button>
               </div>
             </div>
     </>
