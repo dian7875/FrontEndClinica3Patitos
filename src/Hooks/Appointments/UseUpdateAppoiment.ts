@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 import { updateAppointment } from "../../services/Service_appointment";
 import { NewAppointment } from "../../types/appointments";
 import UseGetAllAppoiments from "./UseGetAllAppoiments";
-import ListContext from "../../Contexts/ListContext/ListContext";
+import ListContext from "../../Contexts/LoadingContext/LoadingtContext";
 import { useContext } from "react";
 
 const useUpdateAppoiment = () => {

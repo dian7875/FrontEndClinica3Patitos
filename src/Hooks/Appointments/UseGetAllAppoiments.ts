@@ -1,25 +1,25 @@
 import { useContext, useEffect} from "react";
 import AuthContext from "../../Contexts/AutContext/AuthContext";
 import { getAppointments } from "../../services/Service_appointment";
-import AppointmentsContext from "../../Contexts/Appoiments/AppoimentsContext";
-import ListContext from "../../Contexts/ListContext/ListContext";
+import AppointmentsContext from "../../Contexts/AppoimentsContext/AppoimentsContext";
+import ListContext from "../../Contexts/LoadingContext/LoadingtContext";
 
 function UseGetAllAppoiments() {
     const {appoiments,setAppoiments} = useContext(AppointmentsContext)
     const {currentUser} = useContext(AuthContext);
-    const {setloading} = useContext(ListContext)
+    const {setLoading} = useContext(ListContext)
 
     const getAppoiments = async () => {
+      setLoading(true); 
       try {
-        setloading(true); 
         if(currentUser){
           const appoimentsServices = await getAppointments(currentUser.user_Id);
           setAppoiments(appoimentsServices);
         }
-        setloading(true);
+        setLoading(false);
       } catch (error) {
         console.error(error);
-        setloading(false);
+        setLoading(false);
       }
     };
   
