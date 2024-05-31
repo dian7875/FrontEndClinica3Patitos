@@ -1,7 +1,8 @@
 import dayjs from "dayjs";
 import toast from "react-hot-toast";
+import { Appointment } from "../../../types/appointments";
 
-const ViewCardAppo = ({ appoiment, onFlip }: any) => {
+const ViewCardAppo = ({ appoiment, onFlip }:{ appoiment:Appointment, onFlip:()=>void }) => {
 
   const editflip = () =>{
     appoiment.status?  onFlip() : toast.error('Canot edit cancel Appoiment')

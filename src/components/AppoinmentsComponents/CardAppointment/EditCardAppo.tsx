@@ -2,14 +2,14 @@ import { useForm } from "react-hook-form";
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import AccionBtn from "../../microComponents/AccionBtn";
-import { NewAppointment } from "../../../types/appointments";
+import { Appointment, NewAppointment } from "../../../types/appointments";
 import { useContext, useState } from "react";
 import AuthContext from "../../../Contexts/AutContext/AuthContext";
 import useUpdateAppoiment from "../../../Hooks/Appointments/UseUpdateAppoiment";
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import dayjs from 'dayjs';
 import './datePiker.css'
-const EditCardAppo = ({ appoiment, onFlip }: any) => {
+const EditCardAppo = ({ appoiment, onFlip }: {appoiment:Appointment, onFlip:()=>void}) => {
   const { currentUser } = useContext(AuthContext);
   const { register, handleSubmit } = useForm<NewAppointment>({
     defaultValues: {

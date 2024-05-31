@@ -1,6 +1,8 @@
+import { UseFormRegister } from "react-hook-form"
 import UseGetList from "../../Hooks/Appointments/UseGetList"
+import { NewAppointment } from "../../types/appointments"
 
-const ListTypes = ({register}:any) => {
+const ListTypes = ({ register }: { register: UseFormRegister<NewAppointment> }) => {
     const {TypesAp} = UseGetList()
   return (
     <>

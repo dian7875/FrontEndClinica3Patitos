@@ -1,19 +1,8 @@
-import { useContext } from "react";
 import UseGetAllAppoiments from "../../../Hooks/Appointments/UseGetAllAppoiments";
 import CardFlipp from "./CardFlipp";
-import loadingContext from "../../../Contexts/LoadingContext/LoadingtContext";
-import image from "../../../assets/Loanding_Gif.gif"
 
 const Card=()=> {  
-  const { appoiments } = UseGetAllAppoiments();
-  const {loading}=useContext(loadingContext)
-  if (loading) {
-    return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <img src={image} alt="Loading" />
-  </div>
-    )
-  }else{
+  const { appoiments} = UseGetAllAppoiments();
     return (
       <div className="grid grid-cols-2"
       style={{ padding: ' 0% 0% 1% 0%', gap: '1%' }}
@@ -28,6 +17,6 @@ const Card=()=> {
       </div>
     );
   }
-}
+
 
 export default Card;

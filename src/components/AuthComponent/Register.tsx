@@ -1,17 +1,14 @@
-import { useContext } from "react"
-import {Navigate } from "react-router-dom"
 import LogButtoms from "../microComponents/LoginBtn"
-import AuthContext from "../../Contexts/AutContext/AuthContext"
 import { useForm } from "react-hook-form"
 import { User } from "../../types/User"
 import useRegister from "../../Hooks/Auth/useRegister"
 
-const Register = ({onFlip}:any) => {
-const { isLogged } = useContext(AuthContext)
+const Register = (onFlip:()=>void) => {
+
 const { register, handleSubmit } = useForm<User>()
 const onSubmit = useRegister(onFlip);
 
-if (isLogged) {return <Navigate to={"/"} />}
+
 
 return (
     <>
