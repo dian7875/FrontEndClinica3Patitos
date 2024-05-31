@@ -1,7 +1,7 @@
 import toast from "react-hot-toast";
 import { cancelAppoiment } from "../../services/Service_appointment";
 
-const useCancelAppoiments = async (id_Appointment:number, getAppoiments:any) => {
+const useCancelAppoiments = async (id_Appointment:number, getAppoiments:()=>void) => {
 
     try {
         await cancelAppoiment(id_Appointment)

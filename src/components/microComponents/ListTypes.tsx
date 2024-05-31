@@ -1,9 +1,15 @@
 import { UseFormRegister } from "react-hook-form"
 import UseGetList from "../../Hooks/Appointments/UseGetList"
 import { NewAppointment } from "../../types/appointments"
+import { useEffect } from "react";
 
 const ListTypes = ({ register }: { register: UseFormRegister<NewAppointment> }) => {
-    const {TypesAp} = UseGetList()
+  const { getListTypes, TypesAp } = UseGetList(); 
+
+  useEffect(() => {
+      getListTypes(); 
+  }, [getListTypes]);
+  
   return (
     <>
       <div className="flex flex-col w-full">

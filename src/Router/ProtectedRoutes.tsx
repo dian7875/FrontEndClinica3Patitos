@@ -1,25 +1,28 @@
-import { useContext } from "react";
-import AuthContext from "../Contexts/AutContext/AuthContext";
+import { useEffect } from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
-const ProtectedRoutes = ({ children }: { children: any, of: string }) => {
+const ProtectedRoutes = ({ children, of }: { children: any, of: string }) => {
 
-  useContext(AuthContext)
-/*
+  const storedUser = localStorage.getItem('currentUser');
+  const currentUser = storedUser ? JSON.parse(storedUser) : null;
+  const navigate = useNavigate()
+  
   useEffect(() => {
-    if (!isLogged) {
-      toast.error('Please Register Or Login With your user First');
-      navigate('/Login');
-    } else if (currentUser?.user_Rol !== of) {
-      toast.error('No tienes permisos para acceder a esta página.');
+    if (!currentUser) {
+      navigate('/Auth');
+    } else if (currentUser.user_Rol !== of) {
+      toast.error('only for admin')
       navigate('/');
     }
-  }, [isLogged, currentUser, of, navigate]);
+  }, [currentUser, navigate, of]);
 
-  if (!isLogged || (isLogged && currentUser?.user_Rol !== of)) {
-    return null;
-  }
-*/
-  return children;
+  return currentUser && currentUser.user_Rol === of ? children : null;
 };
 
 export default ProtectedRoutes;
+
+//! 3 opciones
+//! 1 no logeado go to login
+//!2 logeado pero no tiene el rol necesario redirija a home
+//! Logeado y con rol necesario, redirije a ruta deseada

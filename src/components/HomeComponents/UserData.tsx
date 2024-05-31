@@ -7,9 +7,7 @@ import ThemeContext from "../../Contexts/ThemeContext/ThemeContext";
 function UserData() {
   const { currentUser } = useContext(AuthContext);
   const { isDarkMode } = useContext(ThemeContext);
-
-  //${isDarkMode ? `dark bg-Dark-light` : `bg-primary`}
-
+  
   return (
     <Popover>
       <div className="mt-1 mr-2">

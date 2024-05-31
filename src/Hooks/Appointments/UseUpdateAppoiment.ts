@@ -4,12 +4,11 @@ import { NewAppointment } from "../../types/appointments";
 import UseGetAllAppoiments from "./UseGetAllAppoiments";
 
 const useUpdateAppoiment = () => {
-  const {getAppoiments}=UseGetAllAppoiments()  
-
+  const {getAppoiments} =UseGetAllAppoiments()
   const onSubmit = async (data: NewAppointment, id_Appointment:number, onFlip:()=>void) => {
     try {
      await updateAppointment (data, id_Appointment)
-     getAppoiments();
+     getAppoiments()
       toast.success('La Cita se actualizo con exito')
       onFlip()
     } catch (error:any) {
@@ -22,7 +21,6 @@ const useUpdateAppoiment = () => {
       }
     }
   };
-
   return {
     onSubmit
   };

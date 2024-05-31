@@ -5,6 +5,7 @@ const LogOut = () => {
   const { setIsLogged } = useContext(AuthContext);
   const onLogOut = () => {
     localStorage.removeItem("UserToken");
+    localStorage.removeItem('currentUser')
     setIsLogged(false);
   };
 

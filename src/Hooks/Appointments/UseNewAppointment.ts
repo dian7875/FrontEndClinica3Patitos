@@ -4,11 +4,11 @@ import { NewAppointment } from "../../types/appointments";
 import UseGetAllAppoiments from "./UseGetAllAppoiments";
 
 const useNewAppointment = () => {
-  const { getAppoiments } = UseGetAllAppoiments();
+  const {getAppoiments} =UseGetAllAppoiments()
   const onSubmit = async (data: NewAppointment) => { 
     try {
         await createAppointment(data);
-        await getAppoiments()
+        getAppoiments()
         toast.success('Cita Creada Con éxito');
     } catch (error:any) {
       const errorMessage = error.message || "Fail to Create Appointment";

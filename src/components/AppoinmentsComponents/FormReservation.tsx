@@ -2,13 +2,13 @@ import { useForm } from "react-hook-form";
 import { NewAppointment } from "../../types/appointments";
 import ListBranches from "../microComponents/ListBranches";
 import ListTypes from "../microComponents/ListTypes";
-import { useContext, useEffect } from "react";
-import AuthContext from "../../Contexts/AutContext/AuthContext";
 import useNewAppointment from "../../Hooks/Appointments/UseNewAppointment";
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import dayjs from 'dayjs';
+import { useEffect } from "react";
 const FormReservation = () => {
-  const { currentUser } = useContext(AuthContext)
+  const storedUser = localStorage.getItem('currentUser');
+    const currentUser = storedUser ? JSON.parse(storedUser) : null;
   const { register, handleSubmit, setValue } = useForm<NewAppointment>();
 
   useEffect(() => {
@@ -17,8 +17,7 @@ const FormReservation = () => {
     }
   }, [setValue, currentUser]);
 
-  const { onSubmit } = useNewAppointment()
-
+  
   const handleDateChange = (date: any) => {
     const currentUtcDate = dayjs().utc();
     const timezoneOffset = currentUtcDate.diff(dayjs(), 'minute');
@@ -32,7 +31,8 @@ const FormReservation = () => {
     setValue('id_ClinicBranch', 0)
     setValue('id_Appoitment_Type',0)
   }
-
+  const { onSubmit } = useNewAppointment()
+  
   return (
     <>
       <div className="px-40 pt-20 pb-12">

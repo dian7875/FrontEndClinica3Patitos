@@ -5,14 +5,11 @@ const useDeleteAppoiment = async (id_Appointment:number) => {
  
     try {
        await deleteAppointment(id_Appointment)
-        toast.success('削除成功')
+        toast.success('Appoiment Delete')
     } catch (error) {
         console.log(error)
-        toast.error('削除失敗')
+        toast.error('Appoiment Delete')
     }
-    return {
-      
-    };
   }
   
   export default useDeleteAppoiment;

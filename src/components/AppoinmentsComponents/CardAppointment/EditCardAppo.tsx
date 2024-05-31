@@ -3,14 +3,15 @@ import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import AccionBtn from "../../microComponents/AccionBtn";
 import { Appointment, NewAppointment } from "../../../types/appointments";
-import { useContext, useState } from "react";
-import AuthContext from "../../../Contexts/AutContext/AuthContext";
+import { useState } from "react";
+
 import useUpdateAppoiment from "../../../Hooks/Appointments/UseUpdateAppoiment";
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import dayjs from 'dayjs';
 import './datePiker.css'
 const EditCardAppo = ({ appoiment, onFlip }: {appoiment:Appointment, onFlip:()=>void}) => {
-  const { currentUser } = useContext(AuthContext);
+  const storedUser = localStorage.getItem('currentUser');
+    const currentUser = storedUser ? JSON.parse(storedUser) : null;
   const { register, handleSubmit } = useForm<NewAppointment>({
     defaultValues: {
       id_Appointment: appoiment.id_Appointment,

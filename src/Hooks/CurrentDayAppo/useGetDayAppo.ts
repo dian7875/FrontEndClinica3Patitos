@@ -1,27 +1,22 @@
-import { useState, useEffect } from "react";
+import { useCallback, useContext } from "react";
 import { getDayAppoiments } from "../../services/Service_appointment";
-import { Appointment } from "../../types/appointments";
+import AppointmentsContext from "../../Contexts/AppoimentsContext/AppoimentsContext";
 
 function UseGetDayAppo() {
-    const [appoiments, setAppoiments] = useState<Appointment[]>([]);
+  const {appoiments,setAppoiments} = useContext(AppointmentsContext)
 
-    const getAppoiments = async () => {
-      try {
-       
-          const dayAppoiments = await getDayAppoiments()
+      const getAppoiments = useCallback (async () => {
+    try {
+      const dayAppoiments = await getDayAppoiments()
           setAppoiments(dayAppoiments);
           
-      } catch (error) {
-        console.error(error);
-      }
-    };
-  
-    useEffect(() => {
-      getAppoiments();
-    }, []);
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
   
     return {
-      appoiments
+      appoiments, getAppoiments
     };
   }
   

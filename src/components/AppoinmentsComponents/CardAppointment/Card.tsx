@@ -1,8 +1,15 @@
+import { useEffect } from "react";
 import UseGetAllAppoiments from "../../../Hooks/Appointments/UseGetAllAppoiments";
 import CardFlipp from "./CardFlipp";
 
 const Card=()=> {  
-  const { appoiments} = UseGetAllAppoiments();
+  const { appoiments, getAppoiments} = UseGetAllAppoiments();
+
+  
+  useEffect(() => {
+    getAppoiments(); 
+}, [getAppoiments]);
+
     return (
       <div className="grid grid-cols-2"
       style={{ padding: ' 0% 0% 1% 0%', gap: '1%' }}
