@@ -12,7 +12,7 @@ const ProtectedRoutes = ({ children, of }: { children: any, of: string }) => {
     if (!currentUser) {
       navigate('/Auth');
     } else if (currentUser.user_Rol !== of) {
-      toast.error('only for admin')
+      toast.error(`only for ${of}`)
       navigate('/');
     }
   }, [currentUser, navigate, of]);

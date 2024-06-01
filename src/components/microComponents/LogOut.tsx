@@ -2,18 +2,19 @@ import { useContext } from "react";
 import AuthContext from "../../Contexts/AutContext/AuthContext";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import AppointmentsContext from "../../Contexts/AppoimentContext/appoimentContext";
 
 const LogOut = () => {
   const { setIsLogged } = useContext(AuthContext);
+  const {setAppoiments} = useContext(AppointmentsContext)
   const navigate = useNavigate()
   const onLogOut = () => {
     navigate('/')
         localStorage.removeItem('authToken');
-        console.log(localStorage.getItem('authToken'))
         localStorage.removeItem('currentUser');
-        console.log(localStorage.getItem('currentUser'))
         toast.success('Closed Session')
         setIsLogged(false)
+        setAppoiments(null)
   };
 
   return (

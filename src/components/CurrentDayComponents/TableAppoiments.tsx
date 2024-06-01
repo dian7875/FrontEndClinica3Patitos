@@ -1,18 +1,27 @@
 import { Table, TableBody } from "flowbite-react";
 import UseGetDayAppo from "../../Hooks/CurrentDayAppo/useGetDayAppo"
 import Deletebtn from "./DeleteBtn";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import image from "../../assets/Loanding_Gif.gif"
+import loadingContext from "../../Contexts/LoadingContext/LoadingtContext";
 
 const TableAppoiments = () => {
-  const { dayAppoiments, getToDayAppoiments } = UseGetDayAppo()
-  
+  const { appoiments, getToDayAppoiments } = UseGetDayAppo()
+  const { loading } = useContext(loadingContext)
   useEffect(() => {
     getToDayAppoiments();
-    console.table(dayAppoiments)
   }, [getToDayAppoiments]);
-
-  return (
-    <div className="w-2/3">
+  
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center w-full">
+        <img src={image} alt="Loading" />
+      </div>
+    )
+  }
+  if(appoiments && appoiments.length > 0){
+    return (
+      <div className="w-2/3">
       <Table>
         <Table.Head className="bg-black">
           <Table.HeadCell className="bg-primary text-white">Pacient Name</Table.HeadCell>
@@ -24,7 +33,7 @@ const TableAppoiments = () => {
           </Table.HeadCell>
         </Table.Head>
         <TableBody>
-          {dayAppoiments.map((appoiment) => (
+          {appoiments.map((appoiment) => (
             <Table.Row key={appoiment.id_Appointment}>
               <Table.Cell>{appoiment.user_Name}</Table.Cell>
               <Table.Cell>{appoiment.branch_Name}</Table.Cell>
@@ -42,6 +51,12 @@ const TableAppoiments = () => {
       </Table>
     </div>
   )
+}
+return (
+  <span className="flex w-full h-full items-center justify-center
+  dark:text-white text-3xl
+  "> No appointments found For today</span>
+);
 }
 
 export default TableAppoiments

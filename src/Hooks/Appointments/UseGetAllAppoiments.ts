@@ -1,13 +1,14 @@
-import { useCallback, useContext, useState} from "react";
+import { useCallback, useContext} from "react";
 import { getAppointments } from "../../services/Service_appointment";
 import loadingContext from "../../Contexts/LoadingContext/LoadingtContext";
-import { Appointment } from "../../types/appointments";
+import AppointmentsContext from "../../Contexts/AppoimentContext/appoimentContext";
 
 function UseGetAllAppoiments() {
-    const [appoiments, setAppoiments] = useState<Appointment[]>([]);
+   const {appoiments,setAppoiments} = useContext(AppointmentsContext)
     const storedUser = localStorage.getItem('currentUser');
     const{setLoading}= useContext(loadingContext)
     const currentUser = storedUser ? JSON.parse(storedUser) : null;
+
     const getAppoiments = useCallback (async () => {
       try {
         if(currentUser){
