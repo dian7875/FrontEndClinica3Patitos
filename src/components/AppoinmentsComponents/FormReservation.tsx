@@ -35,9 +35,12 @@ const FormReservation = () => {
   
   return (
     <>
-      <div className="px-40 pt-20 pb-12">
+      <div className="px-40 pt-6 pb-12">
+        <span className="pl-2 dark:text-white text-xl">Create New Appoiment</span>
         <div className={`bg-white px-3 rounded-2xl text-lg shadow-2xl dark:bg-Dark-light `}>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form 
+          className="dark:text-white"
+          onSubmit={handleSubmit(onSubmit)}>
             <div className="flex gap-5">
               <div className="flex flex-col h-full w-full">
                 <label className="">Fecha</label>

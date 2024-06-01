@@ -7,21 +7,27 @@ import ThemeContext from "../../Contexts/ThemeContext/ThemeContext";
 function UserData() {
   const { currentUser } = useContext(AuthContext);
   const { isDarkMode } = useContext(ThemeContext);
-  
+
   return (
     <Popover>
-      <div className="mt-1 mr-2">
+      <div className="mt-2 mb-2 mr-2">
         <PopoverTrigger>
           <div className="cursor-pointer flex gap-3 text-white">
-            <span className="  mt-2">{currentUser?.user_Name}</span>
+            <span className="mt-2">{currentUser?.user_Name}</span>
             <img
-              className="w-10 h-10 invert"
+              className="invert dark:invert-0"
+              width={40}
               src="https://cdn-icons-png.flaticon.com/128/3033/3033143.png"
               alt=""
             />
           </div>
         </PopoverTrigger>
-        <PopoverContent className={` border-2 shadow-lg  rounded-md  border-solid  w-80 h- shadow-in ${isDarkMode ? `dark bg-Pop-darkbg shadow-Pop-darkborder border-Pop-darkborder text-white` : `bg-Pop-background shadow-Pop-bordes border-Pop-bordes`}
+        <PopoverContent className={` border-2 shadow-lg
+        mt-1 
+         rounded-md  border-solid  w-80 h- shadow-in 
+         ${isDarkMode ? `dark bg-Pop-darkbg shadow-Pop-darkborder
+          border-Pop-darkborder text-white` : `bg-Pop-background
+          shadow-Pop-bordes border-Pop-bordes`}
  `}>
           <header className="flex flex-col items-center gap-1 justify-center">
             <span className="">{currentUser?.user_Email}</span>

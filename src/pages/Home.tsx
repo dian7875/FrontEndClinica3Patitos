@@ -4,7 +4,13 @@ import Main from "../components/HomeComponents/MainHome";
 import { useContext, useEffect } from "react";
 import ListContext from "../Contexts/LoadingContext/LoadingtContext";
 import image from "../assets/Loanding_Gif.gif"
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+import dayjs from "dayjs";
 function Home() {
+
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
   const {loading,setLoading} = useContext(ListContext);
 
   useEffect(() => {
@@ -23,7 +29,7 @@ function Home() {
     return (
       <>
       <div
-        style={{ padding: ' 3% 0% 4% 0%' }}
+        style={{ padding: '53px 0% 48px 0%' }}
         className={`h-screen flex flex-col
         bg-[url(./src/assets/Backgorund.jpg)] 
         dark:bg-[url(./src/assets/BGDARK.jpg)]
