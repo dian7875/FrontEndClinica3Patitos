@@ -10,25 +10,28 @@ function HeaderHome() {
     <>
       <header
         className={`flex justify-between z-50 fixed top-0 w-full bg-primary dark:bg-Dark-light`}>
-        <div className="flex gap-3 pl-2 mt-2 ">
-          <a className="Instagram" href="">
+        <div className="flex gap-3 pl-2 mt-2 mb-2 ">
+          <a href="">
             <img
-              title="Ig"
-              className="w-8 h-8 invert"
+              title="IG"
+              className="invert"
+              width={40}
               src="https://cdn-icons-png.flaticon.com/128/15081/15081235.png"
             />
           </a>
           <a className="WhathsApp" href="">
             <img
-              title="ig"
-              className="w-8 h-8 invert"
+              title="WH"
+              className="invert"
+              width={40}
               src="https://cdn-icons-png.flaticon.com/128/1384/1384007.png"
             />
           </a>
           <a className="Facebook" href="">
             <img
-              title="ig"
-              className="w-8 h-8 invert"
+              title="FB"
+              className="invert"
+              width={40}
               src="https://cdn-icons-png.flaticon.com/128/2175/2175193.png"
             />
           </a>

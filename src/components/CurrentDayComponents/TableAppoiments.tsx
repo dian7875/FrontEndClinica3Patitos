@@ -4,10 +4,12 @@ import Deletebtn from "./DeleteBtn";
 import { useEffect } from "react";
 
 const TableAppoiments = () => {
-  const { appoiments, getAppoiments } = UseGetDayAppo()
+  const { dayAppoiments, getToDayAppoiments } = UseGetDayAppo()
+  
   useEffect(() => {
-    getAppoiments();
-  }, [getAppoiments]);
+    getToDayAppoiments();
+    console.table(dayAppoiments)
+  }, [getToDayAppoiments]);
 
   return (
     <div className="w-2/3">
@@ -22,7 +24,7 @@ const TableAppoiments = () => {
           </Table.HeadCell>
         </Table.Head>
         <TableBody>
-          {appoiments.map((appoiment) => (
+          {dayAppoiments.map((appoiment) => (
             <Table.Row key={appoiment.id_Appointment}>
               <Table.Cell>{appoiment.user_Name}</Table.Cell>
               <Table.Cell>{appoiment.branch_Name}</Table.Cell>

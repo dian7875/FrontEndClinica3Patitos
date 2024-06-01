@@ -1,7 +1,7 @@
 const Main = () => {
   return (
     <>
-      <main className="flex-auto pt-16 px-32 ">
+      <main className="flex-auto px-28 ">
         <div className={`flex flex-col text-center p-3 text-black
         dark:text-black dark:invert`}>
           <span>Our Services</span>

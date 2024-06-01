@@ -1,10 +1,13 @@
 import useDeleteAppoiment from "../../Hooks/CurrentDayAppo/useDeleteAppo"
+import UseGetDayAppo from "../../Hooks/CurrentDayAppo/useGetDayAppo"
 
 
 const Deletebtn = ({id_Appointment}:{id_Appointment:number}) => {
 
+  const {getToDayAppoiments} = UseGetDayAppo()
+
     const DeleteAppo=()=>{
-        useDeleteAppoiment(id_Appointment)
+        useDeleteAppoiment(id_Appointment, getToDayAppoiments)
     }
 
   return (

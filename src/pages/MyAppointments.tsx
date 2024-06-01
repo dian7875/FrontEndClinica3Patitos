@@ -6,7 +6,10 @@ const MyAppointments = () => {
   
   return (
     <>
-      <main className={`bg-white h-screen flex flex-col pb-12 dark:bg-secondary`}>
+      <main className={`bg-white h-screen 
+      flex flex-col 
+      pt-14
+      pb-12 dark:bg-secondary`}>
           <FormReservation />
           <AppoimentsContainer />
       </main>
