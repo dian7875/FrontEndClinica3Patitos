@@ -8,9 +8,6 @@ const NavBar = () => {
           <img className="w-28 h-28 ml-5" src={Logo} alt="" />
         </div>
         <div className="flex gap-6 pt-4 pr-2 h-fit">
-          <Link className="" to={"/"}>
-            Home
-          </Link>
           <Link to={"/NotFound"}>
             Medical Services
           </Link>

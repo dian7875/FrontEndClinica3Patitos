@@ -1,11 +1,9 @@
-import { useCallback, useContext } from "react";
+import { useCallback} from "react";
 import toast from "react-hot-toast";
 import { User } from "../../types/User";
-import AuthContext from "../../Contexts/AutContext/AuthContext";
 import { createUser } from "../../services/Services_Users";
 
 const useRegister = (onFlip:any) => {
-  const { setIsLogged } = useContext(AuthContext)
   const Register = useCallback(async (data: User) => {
     
     try {
@@ -21,7 +19,6 @@ const useRegister = (onFlip:any) => {
       } else {
         toast.error(errorMessage);
       }
-      setIsLogged(false)
      }
   }, []);
   return Register

@@ -1,28 +1,27 @@
-import { useState, useEffect } from "react";
+import { useCallback, useContext } from "react";
 import { getDayAppoiments } from "../../services/Service_appointment";
-import { Appointment } from "../../types/appointments";
+import AppointmentsContext from "../../Contexts/AppoimentContext/appoimentContext";
+import loadingContext from "../../Contexts/LoadingContext/LoadingtContext";
 
 function UseGetDayAppo() {
-    const [appoiments, setAppoiments] = useState<Appointment[]>([]);
+  const { setLoading} = useContext(loadingContext)
+  
+  const {appoiments,setAppoiments} = useContext(AppointmentsContext)
+  const getToDayAppoiments = useCallback(async () => {
+    try {
+      setLoading(true)
+      const toDayAppo = await getDayAppoiments()
+      setAppoiments(toDayAppo);
+      setLoading(false)
+    } catch (error) {
+      console.error(error);
+      setLoading(false)
+    }
+  }, []);
 
-    const getAppoiments = async () => {
-      try {
-       
-          const dayAppoiments = await getDayAppoiments()
-          setAppoiments(dayAppoiments);
-          
-      } catch (error) {
-        console.error(error);
-      }
-    };
-  
-    useEffect(() => {
-      getAppoiments();
-    }, []);
-  
-    return {
-      appoiments
-    };
-  }
-  
-  export default UseGetDayAppo;
+  return {
+    appoiments, getToDayAppoiments
+  };
+}
+
+export default UseGetDayAppo;

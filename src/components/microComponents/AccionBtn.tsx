@@ -1,14 +1,16 @@
 import useCancelAppoiments from "../../Hooks/Appointments/UseCancelAppoiments"
 import UseGetAllAppoiments from "../../Hooks/Appointments/UseGetAllAppoiments"
 
-
-
 const AccionBtn = ({onFlip, id_Appointment}:{onFlip:any,id_Appointment:number}) => {
 
-  const {getAppoiments}=UseGetAllAppoiments()
+  const {getAppoiments} =UseGetAllAppoiments()
 
   const onCancel = () =>{
-    useCancelAppoiments(id_Appointment, getAppoiments)
+    try {
+      useCancelAppoiments(id_Appointment, getAppoiments)
+    } finally{
+      onFlip()   
+    }
   } 
 
   return (

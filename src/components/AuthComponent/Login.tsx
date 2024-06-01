@@ -1,25 +1,15 @@
-import { useContext } from "react"
-import { Navigate } from "react-router-dom";
 import LogButtoms from "../microComponents/LoginBtn";
 import { useForm } from "react-hook-form";
 import { LoginData } from "../../types/User";
-import AuthContext from "../../Contexts/AutContext/AuthContext";
+
 import useLogin from "../../Hooks/Auth/useLogin";
-import toast from "react-hot-toast";
+
 
 const Login = ({onFlip}:any) => {
   const { register, handleSubmit } = useForm<LoginData>()
   const onSubmit = useLogin();
-  const { isLogged } = useContext(AuthContext)
+ 
 
-
-  if (isLogged) {
-    toast('Your Are Ready Logged', {
-      icon: '🐔',
-    });
-    return <Navigate to={"/"} />
-
-  }
 
   return (
     <>

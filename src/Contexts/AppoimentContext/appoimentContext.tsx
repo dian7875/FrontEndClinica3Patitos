@@ -2,12 +2,12 @@ import React, { Dispatch, SetStateAction } from "react";
 import { Appointment } from "../../types/appointments";
 
 interface AppointmentsContextType {
-    appoiments: Appointment[];
-    setAppoiments: Dispatch<SetStateAction<Appointment[]>>;
+    appoiments: Appointment[] | null;
+    setAppoiments: Dispatch<SetStateAction<Appointment[] | null>>;
   }
 
 const AppointmentsContext = React.createContext<AppointmentsContextType>({
-    appoiments:[],
+    appoiments:null,
     setAppoiments:()=>{},
 });
 export default AppointmentsContext

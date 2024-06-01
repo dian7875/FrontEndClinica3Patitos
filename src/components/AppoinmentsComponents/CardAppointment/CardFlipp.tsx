@@ -2,8 +2,9 @@ import ReactFlipCard from "reactjs-flip-card"
 import EditCardAppo from "./EditCardAppo"
 import ViewCardAppo from "./ViewCardAppo"
 import { useState } from "react";
+import { Appointment } from "../../../types/appointments";
 
-const CardFlipp = ({appoiment}:any) => {
+const CardFlipp = ({appoiment}:{appoiment:Appointment}) => {
     const [isFlipped, setIsFlipped] = useState(false);
 
     const handleFlip = () => {
