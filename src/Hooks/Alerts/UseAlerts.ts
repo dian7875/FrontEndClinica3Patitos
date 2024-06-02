@@ -1,18 +1,31 @@
 import Swal from 'sweetalert2'
 import './AlertStyle.css';
 
-const confirmActionEdit = async ( )=> {
+
+const warningIcon = "https://cdn-icons-png.flaticon.com/128/3922/3922179.png"
+
+const confirmActionEdit = async ()=> {
+
     const result = await Swal.fire({
-       icon: "info",
+      
+      iconHtml: `<img src="${warningIcon}" class="custom-icon-image" />`,
+      
        title: `Are you sure to save changes?`,
        showCancelButton: true,
        confirmButtonText: "Yes",
        cancelButtonText: "No",
-       width:"20%",
+       width:"250px",
+       heightAuto: false,
+       position: "center",
        customClass: {
+        
+        container: "custom-container",
          cancelButton: "custom-cancel-button",
          confirmButton: "custom-confirm-button",
          popup: "custom-popup",
+         icon: "custom-icon",
+         title: "custom-title",
+         
        },
      });
    
@@ -23,15 +36,23 @@ const confirmActionEdit = async ( )=> {
    
 const confirmActionReserve = async ( )=> {
     const result = await Swal.fire({
-       icon: "info",
-       title: `Are you sure to do this reservation?`,
+      iconHtml: `<img src="${warningIcon}" class="custom-icon-image" />`,
+      
+       title: `Are you sure to save changes?`,
        showCancelButton: true,
        confirmButtonText: "Yes",
        cancelButtonText: "No",
+       width:"250px",
+       heightAuto: false,
+       position: "center",
        customClass: {
-        popup: "custom-popup",
+        
+        container: "custom-container",
          cancelButton: "custom-cancel-button",
          confirmButton: "custom-confirm-button",
+         popup: "custom-popup",
+         icon: "custom-icon",
+         title: "custom-title",
        },
      });
    
@@ -41,8 +62,8 @@ const confirmActionReserve = async ( )=> {
 
    const DeleteAction = async ( )=> {
     const result = await Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
+        title: "Are you sure delete this appoiment?",
+        text: "You wont be able to revert this!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",

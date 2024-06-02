@@ -1,13 +1,13 @@
 .custom-cancel-button {
     background-color: white !important;
-    border: 1px solid #063BF7 !important;
+    border: 1px solid #77458e !important;
     border-radius: 20px !important;  
-    color: #063BF7 !important;
+    color: #77458e !important;
     
   }
 
   .custom-confirm-button {
-    background-color: #063BF7 !important;
+    background-color: #77458e !important;
     border: 1px solid  !important;
     border-radius: 20px !important;  
     color: #ffffff !important;
@@ -17,7 +17,22 @@
    gap: 30px !important;
   } 
 .custom-popup{
-    border: 1px solid #bfbfbf !important;
+    border: 3px solid  #4c2e56 !important;
     border-radius: 3% !important;
-    background-color: #bfbfbf !important;
+    background-color:  #5E3A6B  !important;
+    max-height: 500px;
+    box-shadow: 0px 0px 30px 15px #452051 !important;
 }
+
+.swal2-icon {
+  width: 70px; 
+  height: 70px; 
+  background: none !important; 
+  border: none !important;
+  
+}
+.custom-title{
+  font-size: 15px;
+  color: #ffffff;
+}
+
