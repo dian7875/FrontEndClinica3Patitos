@@ -32,7 +32,27 @@
   
 }
 .custom-title{
-  font-size: 15px;
-  color: #ffffff;
+  font-size: 15px !important;
+  color: #ffffff !important;
 }
 
+.custom-cancel-delete-button {
+  background-color: #ffffff !important;
+  border: 1px solid #828282 !important;
+  border-radius: 20px !important;  
+  color: #b10909 !important;
+  
+}
+
+.custom-confirm-delete-button {
+  background-color: #b10909 !important;
+  border: 1px solid  !important;
+  border-radius: 20px !important;  
+  color: #ffffff !important;
+  
+}
+.custom-container{
+  background-color: rgba(120, 114, 121, 0.45) !important; 
+  backdrop-filter: blur(2px);
+  color: #ffffff !important;
+}
