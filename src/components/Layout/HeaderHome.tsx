@@ -15,7 +15,7 @@ function HeaderHome() {
             <img
               title="IG"
               className="invert"
-              width={40}
+              width={30}
               src="https://cdn-icons-png.flaticon.com/128/15081/15081235.png"
             />
           </a>
@@ -23,7 +23,7 @@ function HeaderHome() {
             <img
               title="WH"
               className="invert"
-              width={40}
+              width={30}
               src="https://cdn-icons-png.flaticon.com/128/1384/1384007.png"
             />
           </a>
@@ -31,7 +31,7 @@ function HeaderHome() {
             <img
               title="FB"
               className="invert"
-              width={40}
+              width={30}
               src="https://cdn-icons-png.flaticon.com/128/2175/2175193.png"
             />
           </a>

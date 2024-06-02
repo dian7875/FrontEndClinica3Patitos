@@ -13,11 +13,11 @@ const ListTypes = ({ register }: { register: UseFormRegister<NewAppointment> }) 
   return (
     <>
       <div className="flex flex-col w-full">
-              <label className="">Tipo</label>
+              <label className="">Medical speciality</label>
               <select
                 className=" w-full text-gray-500 border rounded-md h-full border-gray-500"
                 {...register("id_Appoitment_Type")}>
-                <option value={0}>Please Select a Especial</option>
+                <option value={0}>Please Select a speciality</option>
                 {TypesAp?.map((types, index) => (
                         <option key={index} value={types.id_Appoitment_Type.toString()}>
                             {types.name_type}

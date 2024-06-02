@@ -9,7 +9,7 @@ const useUpdateAppoiment = () => {
     try {
      await updateAppointment (data, id_Appointment)
      getAppoiments()
-      toast.success('La Cita se actualizo con exito')
+      toast.success('The appointment was edited successfully')
       onFlip()
     } catch (error:any) {
       const errorMessage = error.message || "Fail to Update Appoiment";

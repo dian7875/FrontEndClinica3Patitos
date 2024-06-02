@@ -37,7 +37,7 @@ const Card = () => {
   return (
     <span className="flex w-full h-full items-center justify-center
     dark:text-white text-3xl
-    "> No appointments found for the your user</span>
+    ">No appointments found for your user</span>
   );
 }
 

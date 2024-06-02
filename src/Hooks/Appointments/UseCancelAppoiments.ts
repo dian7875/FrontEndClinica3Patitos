@@ -5,7 +5,7 @@ const useCancelAppoiments = async (id_Appointment:number, getAppoiments:()=>void
 
     try {
         await cancelAppoiment(id_Appointment)
-        toast.success('Cita Cancelada')
+        toast.success('Success, appointment canceled')
         getAppoiments()
     } catch (error:any) {
         console.log(error)

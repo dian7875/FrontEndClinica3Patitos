@@ -10,9 +10,12 @@ const ProtectedRoutes = ({ children, of }: { children: any, of: string }) => {
   
   useEffect(() => {
     if (!currentUser) {
+      toast('Please first login with your account!', {
+        icon: '🔏',
+      });
       navigate('/Auth');
     } else if (currentUser.user_Rol !== of) {
-      toast.error(`only for ${of}`)
+      toast.error(`THIS PAGE IS ONLY FOR ${of}S`)
       navigate('/');
     }
   }, [currentUser, navigate, of]);

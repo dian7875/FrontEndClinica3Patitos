@@ -3,10 +3,10 @@ import { useForm } from "react-hook-form"
 import { User } from "../../types/User"
 import useRegister from "../../Hooks/Auth/useRegister"
 
-const Register = (onFlip:()=>void) => {
+const Register = ({onFlip}:{onFlip:()=>void}) => {
 
 const { register, handleSubmit } = useForm<User>()
-const onSubmit = useRegister(onFlip);
+const onSubmit = useRegister({onFlip});
 
 
 

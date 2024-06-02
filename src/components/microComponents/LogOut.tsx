@@ -12,7 +12,7 @@ const LogOut = () => {
     navigate('/')
         localStorage.removeItem('authToken');
         localStorage.removeItem('currentUser');
-        toast.success('Closed Session')
+        toast.success('Closed section')
         setIsLogged(false)
         setAppoiments(null)
   };

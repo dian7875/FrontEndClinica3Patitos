@@ -24,7 +24,7 @@ const useLogin = () => {
         };
         localStorage.setItem('currentUser', JSON.stringify(userData));
       }
-      toast.success("Usuario Autenticado");
+      toast.success("login successful, redirecting to home");
       setIsLogged(true)
       navi("/")
     } catch (error) {

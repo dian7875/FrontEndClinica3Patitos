@@ -3,13 +3,13 @@ import toast from "react-hot-toast";
 import { User } from "../../types/User";
 import { createUser } from "../../services/Services_Users";
 
-const useRegister = (onFlip:any) => {
+const useRegister = ({onFlip}:{onFlip:()=>void}) => {
   const Register = useCallback(async (data: User) => {
     
     try {
       await createUser(data);
-      if(onFlip) onFlip()
-      toast.success("Usuario Creado, now Login");
+      onFlip()
+      toast.success("User created successfully now login");
     } catch(error:any) {
       const errorMessage = error.message || "Fail in register, please check fields";
       const userExistsMessage = "The user already exists!";

@@ -9,14 +9,14 @@ const useNewAppointment = () => {
     try {
         await createAppointment(data);
         getAppoiments()
-        toast.success('Cita Creada Con éxito');
+        toast.success('Appointment created successfully');
     } catch (error:any) {
       const errorMessage = error.message || "Fail to Create Appointment";
       const only1DateMessage = "You cannot create another appointment for the same user on the same day.";
       if (errorMessage.includes(only1DateMessage)) {
         toast.error(only1DateMessage);
       } else {
-        toast.error('Please Fill the information');
+        toast.error('Please fill all fields');
       }
     }
   };

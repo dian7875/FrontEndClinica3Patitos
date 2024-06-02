@@ -18,7 +18,7 @@ const NavBar = () => {
             My Apointtments
           </Link>
           <Link to={"/CurrentDay"}>
-            Aministration
+            Administration
           </Link>
         </div>
       </nav>

@@ -5,7 +5,7 @@ import { Appointment } from "../../../types/appointments";
 const ViewCardAppo = ({ appoiment, onFlip }:{ appoiment:Appointment, onFlip:()=>void }) => {
 
   const editflip = () =>{
-    appoiment.status?  onFlip() : toast.error('Canot edit cancel Appoiment')
+    appoiment.status?  onFlip() : toast.error('Canot edit cancel appointment')
   }
   const fecha = dayjs(appoiment.date)
   const fechaLegible = fecha.format('MM/DD/YYYY hh:mm A');
@@ -25,14 +25,14 @@ const ViewCardAppo = ({ appoiment, onFlip }:{ appoiment:Appointment, onFlip:()=>
                   <span>{appoiment.branch_Name}</span>
                 </div>
                 <div className="flex flex-col w-full">
-                  <label className="">Type:</label>
+                  <label className="">Medical speciality:</label>
                   <span>{appoiment.name_type}</span>
                 </div>
                 <div className="flex flex-col w-full">
                   <label className="">Status:</label>
-                  {appoiment.status ? <span>Pendiente</span> 
+                  {appoiment.status ? <span>Pending</span> 
                   :
-                  <span>Cancelada</span>}
+                  <span>Cancelled</span>}
                 </div>
               </div>
               <div
