@@ -24,7 +24,7 @@ function UseGetAllAppoiments() {
     }, []);
 
     return {
-      appoiments, getAppoiments
+      appoiments, getAppoiments, refreshAppoiments: getAppoiments, setAppoiments
     };
   }
   

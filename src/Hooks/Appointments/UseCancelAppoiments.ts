@@ -1,8 +1,10 @@
 import toast from "react-hot-toast";
 import { cancelAppoiment } from "../../services/Service_appointment";
+import { CancelAction } from "../Alerts/UseAlerts";
 
 const useCancelAppoiments = async (id_Appointment:number, getAppoiments:()=>void) => {
-
+    const confirmed = await CancelAction();
+    if (confirmed) {
     try {
         await cancelAppoiment(id_Appointment)
         toast.success('Cita Cancelada')
@@ -22,6 +24,7 @@ const useCancelAppoiments = async (id_Appointment:number, getAppoiments:()=>void
             return "Unknown error occurred";
         }
     }
+}
 
   return {
     

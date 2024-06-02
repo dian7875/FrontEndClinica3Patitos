@@ -1,14 +1,21 @@
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Card from './CardAppointment/Card'
 import toast from 'react-hot-toast'
+import UseGetAllAppoiments from '../../Hooks/Appointments/UseGetAllAppoiments';
 
 const AppoimentsContainer=()=> {
   const [isExpanded, setIsExpanded] = useState<boolean>(false)
+  const {appoiments, refreshAppoiments, setAppoiments} = UseGetAllAppoiments();
+
   const expanded = () => {
     setIsExpanded(!isExpanded)
     isExpanded?  toast('Retracted',{duration: 500}) : toast("Show All Appointment",{duration: 500}) ;
   }
+  
+  useEffect(() => {
+    setAppoiments(appoiments);
+  }, [  appoiments]);
 
   return (
     <>
