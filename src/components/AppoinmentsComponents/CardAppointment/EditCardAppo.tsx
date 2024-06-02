@@ -60,7 +60,7 @@ const EditCardAppo = ({ appoiment, onFlip }: { appoiment: Appointment, onFlip: (
       <form
         style={{ padding: '0% 2% 0 2%', fontSize: '110%' }}
         onSubmit={handleSubmit(handleFormSubmit)}
-        className={`bg-white h-full rounded-lg shadow-xl dark:bg-Dark-light dark:text-white`}
+        className={`bg-white h-full rounded-lg shadow-xl dark:bg-Dark-card dark:text-white`}
       >
         <div className="flex justify-evenly gap-2"
           style={{ height: '60%' }}

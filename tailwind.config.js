@@ -14,7 +14,7 @@ Mode: 'media',
           light: '#207a5a', //verde de las imagenes
           DEFAULT: '#5E3A6B', //El color moradito del header
           dark: '#95c5c3', //Los elementos del informacion
-        
+          
         },
         Buttons:{
           Cancel: '#876DA1',
@@ -28,6 +28,7 @@ Mode: 'media',
           light: '#4B5563', //Principal
           DEFAULT: '#000000', //Negro Del fondo
           dark: '#0F2C72', //Azul de componentes
+          card:"#5d697a"
         },
         secondary: {
           light: '#876DA1', //boton cancelar cita

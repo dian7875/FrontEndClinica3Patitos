@@ -14,7 +14,7 @@ const ViewCardAppo = ({ appoiment, onFlip }:{ appoiment:Appointment, onFlip:()=>
     <>
        <div
        style={{padding:'1% 2% 0 2%', fontSize:'110%'}}
-              className={`bg-white h-full rounded-lg shadow-xl dark:bg-Dark-light dark:text-white`}>
+              className={`bg-white h-full rounded-lg shadow-xl dark:bg-Dark-card dark:text-white`}>
               <div className="flex w-full h-3/5 gap-4">
                 <div className="flex flex-col w-full">
                   <label className="">Date:</label>
