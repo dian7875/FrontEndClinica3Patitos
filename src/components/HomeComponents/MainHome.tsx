@@ -1,86 +1,58 @@
 const Main = () => {
   return (
     <>
-      <main className="flex-auto px-28 pb-48 ">
-        <div className={`w-full flex p-2 justify-between rounded-2xl text-white bg-primary dark:bg-Dark-light`}>
-          <div className="flex gap-4">
-            <div>
-              <img width={70} className="h-full invert" 
-              src="https://cdn-icons-png.flaticon.com/128/12764/12764862.png" alt="" />
-            </div>
-            <div className="flex flex-col">
-              <span>
-                Schedules:
-              </span>
-              <span>
-                Monday to Friday
-              </span>
-              <span>9:00 AM - 6:00 PM</span>
-            </div>
-          </div>
-          <div className="flex gap-4">
-            <div>
-              <img width={70} className="h-full invert" 
-              src="https://cdn-icons-png.flaticon.com/128/4375/4375671.png" alt="" />
-            </div>
-            <div className="flex flex-col">
-              <span>
-                Contact Us:
-              </span>
-              <span>
-                Email: trespatitoscompany@gmail.com
-              </span>
-              <span>
-                Phone:+506 8354 1298
-              </span>
-            </div>
-          </div>
-          <div className="flex gap-4">
-            <div>
-              <img width={70} className="h-full invert" 
-              src="https://cdn-icons-png.flaticon.com/128/15737/15737599.png" alt="" />
-            </div>
-            <div className="flex flex-col">
-              <span>
-                Our Branches for you:
-              </span>
-              <a href="https://maps.app.goo.gl/MquVSESU1BcA3hfG8" target="_blank" rel="noopener" className="text-xs">
-                Under Loch Ness
-              </a>
-              <span>
-                <a target="_blank" rel="noopener" className="text-xs" 
-                href="https://maps.app.goo.gl/BW4cGD6N7smjprv47">
-                San Martin
-                </a>
-              </span>
-              <span>
-                <a target="_blank" rel="noopener" className="text-xs"  
-                href="https://maps.app.goo.gl/18qWJJSzxJp4aQLcA">
-                Brasilito
-                </a>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className={`flex flex-col text-center p-3 text-black
+      <main className="flex-auto">
+        <div className={`flex flex-col gap-5 text-center text-black
         dark:text-black dark:invert`}>
-          <span className="text-2xl">Our Services</span>
-          <div className="flex justify-between">
-            <div className="flex flex-col items-center">
-              <img width={50} src="https://cdn-icons-png.flaticon.com/128/620/620399.png" alt="" />
-              <span>General Medicine</span>
+          <span className="text-3xl">
+            <u className=" underline-offset-4 decoration-primary">Our Services </u>
+            </span>
+          <div className="grid grid-cols-4 w-full px-4 gap-3">
+            <div className="grid"
+              style={{ gridTemplateColumns: '35% 65%' }}>
+              <img src="https://cdn-icons-png.flaticon.com/128/8885/8885141.png" alt="" />
+              <span className="text-left font-bold">General Medicine
+                <p className=" font-normal">
+                  Our general practitioners
+                  provide comprehensive care,
+                  from routine check-ups
+                  to chronic
+                  disease management.
+                </p>
+              </span>
             </div>
-            <div className="flex flex-col items-center">
-              <img width={50} src="https://cdn-icons-png.flaticon.com/128/3906/3906769.png" alt="" />
-              <span>Odontology</span>
+            <div className="grid"
+              style={{ gridTemplateColumns: '35% 65%' }}>
+              <img src="https://cdn-icons-png.flaticon.com/128/3906/3906769.png" alt="" />
+              <span className="text-left font-bold">Odontology
+                <p className=" font-normal">
+                  We provide comprehensive dental care,
+                  from cleanings to advanced treatments,
+                  ensuring a healthy,
+                  radiant smile.
+                </p>
+              </span>
             </div>
-            <div className="flex flex-col items-center">
-              <img width={50} src="https://cdn-icons-png.flaticon.com/128/10154/10154457.png" alt="" />
-              <span>Pediatrics</span>
+            <div className="grid"
+              style={{ gridTemplateColumns: '35% 65%' }}>
+              <img src="https://cdn-icons-png.flaticon.com/128/10154/10154457.png" alt="" />
+              <span className="text-left font-bold">Pediatrics
+                <p className=" font-normal">
+                Our pediatricians offer preventive
+                 consultations, vaccinations, 
+                 and illness treatment.</p>
+              </span>
             </div>
-            <div className="flex flex-col items-center">
-              <img width={50} src="https://cdn-icons-png.flaticon.com/128/15192/15192811.png" alt="" />
-              <span>Neurology</span>
+            <div className="grid"
+              style={{ gridTemplateColumns: '35% 65%' }}>
+              <img src="https://cdn-icons-png.flaticon.com/128/15192/15192811.png" alt="" />
+              <span className="text-left font-bold">Neurology
+                <p className=" font-normal">
+                  Our neurologists diagnose and treat
+                  neurological disorders with personalized,
+                  cutting-edge care.
+                </p>
+              </span>
             </div>
           </div>
         </div>

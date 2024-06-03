@@ -4,20 +4,18 @@ const NavBar = () => {
   return (
     <>
       <nav className="flex justify-between w-full h-1/6 ">
-        <div className="IcoPage">
-          <img className="w-28 h-28 ml-5" src={Logo} alt="" />
-        </div>
+          <img className="ml-7" src={Logo} alt="" />
         <div className="flex gap-6 pt-4 pr-2 h-fit">
-          <Link to={"/NotFound"}>
+          <Link className="hover:text-cyan-500" to={"/NotFound"}>
             Medical Services
           </Link>
-          <Link to={"/NotFound"}>
+          <Link className="hover:text-cyan-500" to={"/NotFound"}>
             Contac Us
           </Link>
-          <Link to={"MyAppointments"}>
+          <Link className="hover:text-cyan-500" to={"MyAppointments"}>
             My Apointtments
           </Link>
-          <Link to={"/CurrentDay"}>
+          <Link className="hover:text-cyan-500" to={"/CurrentDay"}>
             Administration
           </Link>
         </div>
