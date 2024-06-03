@@ -10,7 +10,7 @@ const LogOut = () => {
   const navigate = useNavigate()
   const onLogOut = () => {
     navigate('/')
-        localStorage.removeItem('authToken');
+        localStorage.removeItem('UserToken');
         localStorage.removeItem('currentUser');
         toast.success('Closed section')
         setIsLogged(false)

@@ -60,7 +60,7 @@ const EditCardAppo = ({ appoiment, onFlip }: { appoiment: Appointment, onFlip: (
       <form
         style={{ padding: '0% 2% 0 2%', fontSize: '110%' }}
         onSubmit={handleSubmit(handleFormSubmit)}
-        className={`bg-white h-full rounded-lg shadow-xl dark:bg-Dark-card dark:text-white`}
+        className={`bg-white h-full hover:bg-neutral-100 dark:hover:bg-slate-600 rounded-lg shadow-xl dark:bg-Dark-card dark:text-white`}
       >
         <div className="flex justify-evenly gap-2"
           style={{ height: '60%' }}
@@ -80,7 +80,7 @@ const EditCardAppo = ({ appoiment, onFlip }: { appoiment: Appointment, onFlip: (
           <div className="flex flex-col w-full">
             <label className="">Branch</label>
             <select
-              className="text-gray-500 border  rounded-md border-gray-500"
+              className="text-gray-500 border cursor-pointer  rounded-md border-gray-500"
               {...register('id_ClinicBranch', { required: true, onChange: handleChange })}
             >
               <option value="1">Under Loch Ness</option>
@@ -91,7 +91,7 @@ const EditCardAppo = ({ appoiment, onFlip }: { appoiment: Appointment, onFlip: (
           <div className="flex flex-col w-full">
             <label className="">Medical speciality</label>
             <select
-              className="text-gray-500 border  rounded-md border-gray-500"
+              className="text-gray-500 border cursor-pointer  rounded-md border-gray-500"
               {...register('id_Appoitment_Type', { required: true, onChange: handleChange })}
             >
               <option value="1">General Medicine</option>

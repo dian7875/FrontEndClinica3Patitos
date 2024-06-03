@@ -14,7 +14,8 @@ const ViewCardAppo = ({ appoiment, onFlip }:{ appoiment:Appointment, onFlip:()=>
     <>
        <div
        style={{padding:'1% 2% 0 2%', fontSize:'110%'}}
-              className={`bg-white h-full rounded-lg shadow-xl dark:bg-Dark-card dark:text-white`}>
+              className={`bg-white h-full rounded-lg shadow-xl hover:bg-neutral-100
+               dark:hover:bg-slate-600 dark:bg-Dark-card dark:text-white`}>
               <div className="flex w-full h-3/5 gap-4">
                 <div className="flex flex-col w-full">
                   <label className="">Date:</label>
@@ -39,7 +40,7 @@ const ViewCardAppo = ({ appoiment, onFlip }:{ appoiment:Appointment, onFlip:()=>
                 style={{ padding: '1% 0% 0 0%', fontSize: '110%' }}
                 className="flex justify-around">
                 <button onClick={editflip} type="button"
-                  className={`text-white bg-violet-300 rounded-md w-24 shadow-lg dark:bg-gray-400 `}>Edit</button>
+                  className={`text-white hover:scale-105 bg-violet-300 rounded-md w-24 shadow-lg dark:bg-gray-400 `}>Edit</button>
               </div>
             </div>
     </>

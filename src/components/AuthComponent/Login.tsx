@@ -28,9 +28,9 @@ const Login = ({onFlip}:any) => {
           <div className="w-full"
             style={{ height: '10%' }}>
             <button type="button"
-              className="bg-secondary w-2/4 h-full rounded-l-lg">Login</button>
+              className="bg-secondary w-2/4 h-full rounded-l-lg hover:scale-105">Login</button>
               <button type="button" onClick={onFlip}
-                className="bg-white w-2/4 h-full text-secondary rounded-r-lg">Sing Up</button>
+                className="bg-white w-2/4 h-full text-secondary rounded-r-lg hover:scale-105">Sing Up</button>
           </div>
           <div className="w-full h-2/5 flex flex-col"
             style={{ margin: '4% 0 2% 0', gap:'10%' }}>

@@ -24,7 +24,7 @@ const Description = () => {
         </div>
         <div>
           <button type="button" className='w-32 mt-2 bg-primary text-white rounded-xl
-          dark:bg-Dark-light hover:bg-black shadow-lg shadow-primary dark:shadow-white
+          dark:bg-Dark-light hover:bg-black shadow-lg shadow-primary dark:shadow-slate-600
           '>View more</button>
         </div>
       </div>

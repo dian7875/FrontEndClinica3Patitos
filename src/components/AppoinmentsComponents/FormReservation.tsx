@@ -55,10 +55,10 @@ const FormReservation = () => {
               <ListTypes register={register} />
             </div>
             <div className="flex h-fit justify-around py-2">
-              <button type="submit" className={`bg-white rounded-md w-24 shadow-lg shadow-purple-500/50 h-full dark:bg-gray-900 dark:shadow-gray-900/50 dark:text-white`}>
+              <button type="submit" className={`bg-white hover:scale-105 rounded-md w-24 shadow-lg shadow-purple-500/50 h-full dark:bg-gray-900 dark:shadow-gray-900/50 dark:text-white`}>
                 Reserve
               </button>
-              <button onClick={clearField} type="button" className={` bg-primary text-white rounded-md w-24 dark:bg-gray-800`}>
+              <button onClick={clearField} type="button" className={` bg-primary hover:scale-105 text-white rounded-md w-24 dark:bg-gray-800`}>
                 Clean
               </button>
             </div>

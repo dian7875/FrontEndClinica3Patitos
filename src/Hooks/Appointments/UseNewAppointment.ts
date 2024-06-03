@@ -10,6 +10,9 @@ const useNewAppointment = () => {
     const confirmed = await confirmActionReserve();
     if (confirmed) {
       try {
+        toast('Please Wait!', {
+          icon: '⌛',duration:600
+        });
         await createAppointment(data);
         getAppoiments();
         toast.success('Appointment created successfully');

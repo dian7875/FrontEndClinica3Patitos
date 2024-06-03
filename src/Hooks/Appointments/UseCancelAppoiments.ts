@@ -6,6 +6,9 @@ const useCancelAppoiments = async (id_Appointment:number, getAppoiments:()=>void
     const confirmed = await CancelAction();
     if (confirmed) {
     try {
+        toast('Please Wait!', {
+            icon: '⌛', duration:600
+          });
         await cancelAppoiment(id_Appointment)
         toast.success('Success, appointment canceled')
         getAppoiments()

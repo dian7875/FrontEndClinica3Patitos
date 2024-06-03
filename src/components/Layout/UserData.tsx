@@ -13,7 +13,11 @@ function UserData() {
           <div className="cursor-pointer flex gap-3 text-white">
             <span className="mt-2">{currentUser?.user_Name}</span>
             <img
-              className="invert dark:invert-0"
+              className="
+              hover:invert-0
+              dark:hover:invert
+              invert 
+              dark:invert-0"
               width={35}
               src="https://cdn-icons-png.flaticon.com/128/3033/3033143.png"
               alt=""

@@ -6,6 +6,9 @@ const useDeleteAppoiment = async (id_Appointment: number, getToDayAppoiments: ()
     const confirmed = await DeleteAction();
     if (confirmed) {
     try {
+        toast('Please Wait!', {
+            icon: '⌛',duration:600
+          });
         await deleteAppointment(id_Appointment)
         toast.success('Appoiment Delete')
         getToDayAppoiments()

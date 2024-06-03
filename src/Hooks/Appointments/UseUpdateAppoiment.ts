@@ -10,6 +10,9 @@ const useUpdateAppoiment = () => {
     const confirmed = await confirmActionEdit();
     if (confirmed) {
       try {
+        toast('Please Wait!', {
+          icon: '⌛',duration:600
+        });
         await updateAppointment(data, id_Appointment)
         getAppoiments()
         toast.success('The appointment was edited successfully')

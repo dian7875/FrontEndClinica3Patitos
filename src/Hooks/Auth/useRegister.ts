@@ -7,6 +7,9 @@ const useRegister = ({onFlip}:{onFlip:()=>void}) => {
   const Register = useCallback(async (data: User) => {
     
     try {
+      toast('Please Wait!', {
+        icon: '⌛',duration:600
+      });
       await createUser(data);
       onFlip()
       toast.success("User created successfully now login");

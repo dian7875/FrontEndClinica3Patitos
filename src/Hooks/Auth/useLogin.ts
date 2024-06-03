@@ -11,6 +11,9 @@ const useLogin = () => {
   const navi = useNavigate()
   const Login = useCallback(async (data: LoginData) => {
     try {
+      toast('Please Wait!', {
+        icon: '⌛',duration:600
+      });
       await getTryLogin(data.Email, data.Password);
       const Token = localStorage.getItem('UserToken')
       if(Token){

@@ -6,7 +6,7 @@ const Footer = () => {
       <footer
       style={{ gridTemplateColumns: '25% 50% 25%' }}
        className={`h-12 fixed bottom-0 w-full
-       text-white bg-primary
+       text-white bg-primary z-50
        dark:bg-Dark-light grid`}>
            <div>
            <img width={45} className="ml-7" src={Logo} alt="" />

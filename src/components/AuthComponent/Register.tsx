@@ -27,9 +27,9 @@ return (
           <div className="w-full"
             style={{ height: '8%' }}>
             <button type="button" onClick={onFlip}
-              className="bg-white w-2/4 h-full text-black rounded-l-lg">Login</button>
+              className="bg-white hover:scale-105 w-2/4 h-full text-black rounded-l-lg">Login</button>
             <button type="button" 
-            className="bg-black w-2/4 h-full text-white rounded-r-lg">Sing Up</button>
+            className="bg-black w-2/4 hover:scale-105 h-full text-white rounded-r-lg">Sing Up</button>
             
           </div>
           <div className="w-full flex flex-col"

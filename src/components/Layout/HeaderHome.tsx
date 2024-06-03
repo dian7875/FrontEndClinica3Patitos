@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import AuthContext from "../../Contexts/AutContext/AuthContext";
 import DarkModeToggle from "../microComponents/DarkModeButton";
-import LoginAcces from "../microComponents/LoginAcces";
-import UserData from "../HomeComponents/UserData";
+import LoginAcces from "./LoginAcces";
+import UserData from "./UserData";
 import { Link } from "react-router-dom";
 import { Sidebar } from "flowbite-react";
 
@@ -34,7 +34,7 @@ function HeaderHome() {
         <DarkModeToggle />
         {isLogged ? <UserData /> : <LoginAcces />}
       </header>
-      <Sidebar className={`fixed ${visible? `fixed`:`hidden`}`} id="sideBar">
+      <Sidebar className={`fixed z-40 opacity-95 ${visible? `fixed`:`hidden`}`} id="sideBar">
       <Sidebar.Items className="mt-12">
         <Sidebar.ItemGroup>
           <Sidebar.Item>
