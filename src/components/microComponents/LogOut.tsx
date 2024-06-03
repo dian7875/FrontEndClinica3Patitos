@@ -20,9 +20,9 @@ const LogOut = () => {
   return (
     <>
       <div
-        className=" mt-2   gap-2 flex w-44 rounded-r-md
+        className=" mt-2 gap-2 flex w-44 rounded-r-md
     shadow-Pop-bordes bg-Pop-bordes border
-    dark:shadow-Pop-darkborder dark:bg-Pop-darkborder dark:border dark:border-Pop-darkbord"
+    dark:shadow-Pop-darkborder dark:bg-Pop-darkborder dark:border dark:border-Pop-darkbord hover:bg-hoversPOP-light dark:hover:bg-hoversPOP-dark "
       >
         <button onClick={onLogOut} type="button" className="flex gap-2 items-center">
           <img
