@@ -41,8 +41,8 @@ function UserData() {
           </header>
           <menu className="flex ml-2 mr-2">
             <div className=" mt-2  gap-2 flex w-40 
-            rounded-l-md dark:shadow-Pop-darkborder dark:bg-Pop-darkborder border dark:border-Pop-darkbord shadow-Pop-bordes bg-Pop-bordes ">
-              <img className="w-8 ml-2 mt-2 mb-2 dark:invert"
+            rounded-l-md dark:shadow-Pop-darkborder dark:bg-Pop-darkborder border dark:border-Pop-darkbord shadow-Pop-bordes bg-Pop-bordes hover:bg-hoversPOP-light dark:hover:bg-hoversPOP-dark ">
+              <img className="w-8 ml-2 mt-2 mb-2 dark:invert "
                 src="https://cdn-icons-png.flaticon.com/128/17/17789.png" alt="" />
               <span className="mt-2 "> settings</span>
             </div>
@@ -52,7 +52,7 @@ function UserData() {
           <span className=" mt-2 ml-2">More options:</span>
 
           <menu >
-            <div className="flex justify-between ml-2 mr-2 rounded-t-lg gap-2  dark:shadow-Pop-darkborder  dark:bg-Pop-darkborder bg-Pop-bordes">
+            <div className="flex justify-between ml-2 mr-2 rounded-t-lg gap-2  dark:shadow-Pop-darkborder  dark:bg-Pop-darkborder bg-Pop-bordes hover:bg-hoversPOP-light dark:hover:bg-hoversPOP-dark ">
               <div className="flex ">
                 <img className="w-8 ml-2 mr-2 mt-2 mb-2 
                 dark:invert" src="https://cdn-icons-png.flaticon.com/128/5056/5056904.png" alt="" />
@@ -62,14 +62,14 @@ function UserData() {
             <div className="flex ml-2 mr-2">
               <div className="rounded-bl-lg gap-2 flex w-40 bg-Pop-bordes 
               dark:shadow-Pop-darkborder dark:bg-Pop-darkborder
-               border-t border-r dark:border-Pop-darkbord shadow-Pop-bordes">
+               border-t border-r dark:border-Pop-darkbord shadow-Pop-bordes hover:bg-hoversPOP-light dark:hover:bg-hoversPOP-dark ">
                 <img className="w-8 ml-2 mt-1 mb-1 
                 dark:invert"
                   src="https://cdn-icons-png.flaticon.com/128/4460/4460832.png" alt="" />
                 <span className="mt-2">Help</span>
               </div>
               <div className=" rounded-br-lg  gap-2 flex w-40 
-              dark:shadow-Pop-darkborder dark:bg-Pop-darkborder border-t border-l dark:border-Pop-darkbord shadow-Pop-bordes bg-Pop-bordes">
+              dark:shadow-Pop-darkborder dark:bg-Pop-darkborder border-t border-l dark:border-Pop-darkbord shadow-Pop-bordes bg-Pop-bordes hover:bg-hoversPOP-light dark:hover:bg-hoversPOP-dark ">
                 <img className="w-8 ml-2 mt-1 mb-1 dark:invert"
                   src="https://cdn-icons-png.flaticon.com/128/1705/1705243.png" alt="" />
                 <span className="mt-2">Guide</span>
@@ -79,8 +79,8 @@ function UserData() {
           </menu>
 
           <footer className="flex justify-between ml-2 mr-2 mt-4 pb-4">
-            <span>Privacy policy</span>
-            <span>Terms of service</span>
+            <span className="hover:text-gray-600 dark:hover:text-gray-300">Privacy policy</span>
+            <span className="hover:text-gray-600 dark:hover:text-gray-300">Terms of service</span>
           </footer>
 
 
