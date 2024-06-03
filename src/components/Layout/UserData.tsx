@@ -8,7 +8,7 @@ function UserData() {
 
   return (
     <Popover>
-      <div className="mt-2 mb-2 mr-2">
+      <div className="mt-2 mb-2 mr-2 w-full flex justify-end">
         <PopoverTrigger>
           <div className="cursor-pointer flex gap-3 text-white">
             <span className="mt-2">{currentUser?.user_Name}</span>

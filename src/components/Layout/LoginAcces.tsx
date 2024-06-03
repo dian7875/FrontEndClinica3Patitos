@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom'
 
 const LoginAcces = () => {
     return (
-        <Link className="flex gap-3 mt-1 mr-2 text-white" to={"/Auth"}>
-            <h1 className="mt-2">Login</h1>
+        <Link className="flex gap-3 mt-1 pr-2 w-full justify-end text-white " to={"/Auth"}>
+            <span className="mt-3">Login</span>
             <img
+            width={49}
                 title="ig"
-                className="w-10 h-10
+                className="
                  invert
                 hover:invert-0
               dark:hover:invert

@@ -7,10 +7,14 @@ import { confirmActionReserve } from "../Alerts/UseAlerts";
 const useNewAppointment = () => {
   const { getAppoiments } = UseGetAllAppoiments();
   const onSubmit = async (data: NewAppointment) => {
-    const confirmed = await confirmActionReserve();
-    if (confirmed) {
-      try {
-        toast('Please Wait!', {
+    
+    if(data.id_Appoitment_Type==0 || data.id_ClinicBranch==0 || data.date==null){
+      toast.error('Please Fill the fields')
+    }else{   
+      const confirmed = await confirmActionReserve();
+      if (confirmed) {
+        try {
+          toast('Please Wait!', {
           icon: '⌛',duration:600
         });
         await createAppointment(data);
@@ -23,8 +27,9 @@ const useNewAppointment = () => {
         if (errorMessage.includes(only1DateMessage)) {
           toast.error(only1DateMessage);
         } else {
-          toast.error('Please fill all fields');
+          toast.error('Please Chek the fields');
         }
+      }
       }
     }
   };

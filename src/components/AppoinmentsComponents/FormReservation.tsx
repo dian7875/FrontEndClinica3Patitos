@@ -45,6 +45,7 @@ const FormReservation = () => {
               <div className="flex flex-col h-full w-full">
                 <label className="">Date</label>
                 <DateTimePicker
+                defaultValue={dayjs()}
                   className="text-gray-500 border rounded-md bg-white border-gray-500"
                   views={['hours', 'day', 'month']}
                   {...register('date')}

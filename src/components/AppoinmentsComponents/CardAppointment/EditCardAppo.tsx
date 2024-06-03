@@ -32,7 +32,6 @@ const EditCardAppo = ({ appoiment, onFlip }: { appoiment: Appointment, onFlip: (
     const adjustedDate = dayjs(date).subtract(timezoneOffset, 'minute');
     const formattedDate = adjustedDate.format('YYYY-MM-DDTHH:mm:ss[Z]');
 
-    console.log(formattedDate)
     const dateObject = new Date(formattedDate);
     setChanges((prevChanges) => ({
       ...prevChanges,

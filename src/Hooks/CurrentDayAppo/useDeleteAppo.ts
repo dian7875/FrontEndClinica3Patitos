@@ -12,16 +12,20 @@ const useDeleteAppoiment = async (id_Appointment: number, getToDayAppoiments: ()
         await deleteAppointment(id_Appointment)
         toast.success('Appoiment Delete')
         getToDayAppoiments()
-    } catch (error) {
-        console.log(error)
-        toast.error('Unknow Error')
+    }  catch (error:any) {
+        console.error(error)
+        if (error.message.includes('permission')) {
+            toast.error('You do not have permission to delete appointments.');
+          } else {
+            toast.error('Unknown Error');
+          }
+        }
     }
 
     return{
         
     }
 
-    }
 }
 
 export default useDeleteAppoiment;

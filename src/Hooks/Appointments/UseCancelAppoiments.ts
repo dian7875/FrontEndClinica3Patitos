@@ -13,7 +13,7 @@ const useCancelAppoiments = async (id_Appointment:number, getAppoiments:()=>void
         toast.success('Success, appointment canceled')
         getAppoiments()
     } catch (error:any) {
-        console.log(error)
+        console.error(error)
         const errorMessage = extractErrorMessage(error.message);
     console.error("Error:", errorMessage);
         toast.error(errorMessage)

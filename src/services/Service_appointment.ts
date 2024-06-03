@@ -107,6 +107,10 @@ const deleteAppointment = async (id_Appointment: number) => {
     },
   });
 
+ if (response.status === 403) {
+    throw new Error('You may not have permission to delete appointments.');
+  }
+
   if (!response.ok) {
     const errorMessage = await response.text();
     throw new Error(`Failed to delete appointment: ${errorMessage}`);
