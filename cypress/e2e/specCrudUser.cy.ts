@@ -6,9 +6,9 @@ describe('Register A User',()=>{
     cy.get('a').contains('Login').click();
     cy.get('button').contains('Sing Up').click();
     cy.get('[name=user_Name]').type('Cypress Test',{force:true});
-    cy.get('[name=email]').type('dian7875.a@gmail.com',{force:true});
+    cy.get('[name=email]').type('cy@test.com',{force:true});
     cy.get('[name=phone]').type('+506 0000-0000', {force:true});
-    cy.get('[name=password]').type('123', {force:true});
+    cy.get('[name=password]').type('Secret', {force:true});
     cy.get('[type=submit]').eq(1).click({force:true})
   })
 })
@@ -17,8 +17,8 @@ describe('Login User',()=>{
   it('LOGIN OK',()=>{
     cy.visit('http://localhost:5173/');
     cy.get('a').contains('Login').click();
-    cy.get('[name=Email]').type('dian7875.a@gmail.com',{force:true});
-    cy.get('[name=Password]').type('123', {force:true});
+    cy.get('[name=Email]').type('cy@test.com',{force:true});
+    cy.get('[name=Password]').type('secret', {force:true});
     cy.get('[type=submit]').eq(0).click({force:true})
     cy.wait(2000)
     cy.get('a').contains('My Apointtments').click({force:true});
