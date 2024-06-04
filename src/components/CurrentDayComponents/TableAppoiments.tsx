@@ -24,7 +24,7 @@ const TableAppoiments = () => {
       <div className="w-2/3">
         <span className="w-full text-2xl pl-2">Day Appoiments</span>
         <Table>
-          <Table.Head className="bg-black">
+          <Table.Head className="bg-black text-base">
             <Table.HeadCell className="bg-primary text-white">Pacient Name</Table.HeadCell>
             <Table.HeadCell className="bg-primary text-white">Medical speciality</Table.HeadCell>
             <Table.HeadCell className="bg-primary text-white">Branch</Table.HeadCell>
@@ -35,7 +35,7 @@ const TableAppoiments = () => {
           </Table.Head>
           <TableBody>
             {appoiments.map((appoiment) => (
-              <Table.Row key={appoiment.id_Appointment}>
+              <Table.Row className=" text-base" key={appoiment.id_Appointment}>
                 <Table.Cell>{appoiment.user_Name}</Table.Cell>
                 <Table.Cell>{appoiment.name_type}</Table.Cell>
                 <Table.Cell>{appoiment.branch_Name}</Table.Cell>

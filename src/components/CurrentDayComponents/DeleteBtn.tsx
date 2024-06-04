@@ -12,7 +12,7 @@ const Deletebtn = ({ id_Appointment }: { id_Appointment: number }) => {
 
   return (
     <>
-      <button onClick={DeleteAppo} type="button" className="font-medium text-primary dark:text-cyan-500">
+      <button onClick={DeleteAppo} type="button" className="font-medium text-primary hover:text-red-900 hover:scale-150 dark:text-cyan-500">
         Delete
       </button>
     </>
