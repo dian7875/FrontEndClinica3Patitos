@@ -18,7 +18,7 @@ describe('Login User',()=>{
     cy.visit('http://localhost:5173/');
     cy.get('a').contains('Login').click();
     cy.get('[name=Email]').type('cy@test.com',{force:true});
-    cy.get('[name=Password]').type('secret', {force:true});
+    cy.get('[name=Password]').type('Secret', {force:true});
     cy.get('[type=submit]').eq(0).click({force:true})
     cy.wait(2000)
     cy.get('a').contains('My Apointtments').click({force:true});
