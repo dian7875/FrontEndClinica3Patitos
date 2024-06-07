@@ -45,7 +45,7 @@ const Login = ({onFlip}:any) => {
               <label>Password:</label>
               <input required className="text-secondary w-full rounded-sm pl-1"
                 type="password"
-                placeholder="xxx"
+                placeholder="*******"
                 {...register("Password")} />
             </div>
           </div>

@@ -63,7 +63,7 @@ return (
                 <input className="text-secondary w-full rounded-sm pl-2"
                 required
                 type="password"
-                placeholder="xxx"
+                placeholder="*******"
                 {...register("password")} />
             </div>
           </div>
@@ -75,41 +75,3 @@ return (
 }
 
 export default Register
-
-
-/*
-<div className="w-full ">
-                <label>Full Name:</label>
-                <input className="text-secondary w-full rounded-sm pl-2"
-                required
-                type="text"
-                placeholder="Name and Last Name"
-                {...register("user_Name")} />
-            </div>
-
-            <div className="w-full ">
-                <label>Email:</label>
-                <input className="text-secondary w-full rounded-sm pl-2"
-                required
-                type="email"
-                placeholder="example@gmail.com"
-                {...register("email")} />
-            </div>
-            <div className="w-full ">
-                <label>Phone:</label>
-                <input className="text-secondary w-full rounded-sm pl-2"
-                required
-                type="tel"
-                placeholder="xxxx-xxxx"
-                {...register("phone")} />
-            </div>
-            <div className="w-full">
-                <label>Password:</label>
-                <input className="text-secondary w-full rounded-sm pl-2"
-                required
-                type="password"
-                placeholder="xxx"
-                {...register("password")} />
-            </div>
-                <LogButtoms />
-*/
