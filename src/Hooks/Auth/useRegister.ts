@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import { User } from "../../types/User";
 import { createUser } from "../../services/Services_Users";
 
-const useRegister = ({onFlip}:{onFlip:()=>void}) => {
+const useRegister = (onFlip:any) => {
   const Register = useCallback(async (data: User) => {
     
     try {
